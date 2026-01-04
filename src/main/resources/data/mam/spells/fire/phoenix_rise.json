@@ -1,0 +1,25 @@
+{
+  "id": "MosbergApi:phoenix_rise",
+  "name": "Phoenix Rise",
+  "school": "fire",
+  "description": "Summon a phoenix that revives the caster upon death and scorches nearby enemies.",
+  "castType": "utility",
+  "manaCost": 200.0,
+  "castTime": 2.5,
+  "cooldown": 120.0,
+  "tier": 4,
+  "requiredLevel": 30,
+  "damage": 40.0,
+  "aoeRadius": 8.0,
+  "statusEffects": [{ "effect": "fire", "duration": 100, "amplifier": 1 }],
+  "customData": {
+    "reviveOnDeath": true,
+    "effect": "phoenix_rebirth"
+  },
+  "sound": "entity.phantom.death",
+  "vfx": {
+    "particleType": "flame",
+    "particleCount": 200,
+    "color": "FF4500"
+  }
+}

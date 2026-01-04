@@ -1,0 +1,22 @@
+{
+  "textures": {
+    "particle": "mana_and_magic:block/amplifier_top",
+    "top": "mana_and_magic:block/amplifier_top",
+    "bottom": "mana_and_magic:block/amplifier_bottom",
+    "side": "mana_and_magic:block/amplifier_side"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 4, 16],
+      "faces": {
+        "down": { "uv": [0, 0, 16, 16], "texture": "#bottom" },
+        "up": { "uv": [0, 0, 16, 16], "texture": "#top" },
+        "north": { "uv": [0, 12, 16, 16], "texture": "#side" },
+        "south": { "uv": [0, 12, 16, 16], "texture": "#side" },
+        "west": { "uv": [0, 12, 16, 16], "texture": "#side" },
+        "east": { "uv": [0, 12, 16, 16], "texture": "#side" }
+      }
+    }
+  ]
+}

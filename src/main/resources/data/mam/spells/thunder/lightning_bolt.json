@@ -1,0 +1,23 @@
+{
+  "id": "MosbergApi:lightning_bolt",
+  "name": "Lightning Bolt",
+  "school": "thunder",
+  "description": "Strike a target with a bolt of lightning, stunning them.",
+  "castType": "ray",
+  "manaCost": 18.0,
+  "castTime": 0.7,
+  "cooldown": 3.0,
+  "tier": 1,
+  "requiredLevel": 1,
+  "damage": 10.0,
+  "range": 18.0,
+  "aoeRadius": 0.0,
+  "statusEffects": [{ "effect": "stun", "duration": 20, "amplifier": 1 }],
+  "customData": {},
+  "sound": "entity.lightning_bolt.impact",
+  "vfx": {
+    "particleType": "electric_spark",
+    "particleCount": 30,
+    "color": "FFFF33"
+  }
+}

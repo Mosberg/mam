@@ -1,0 +1,46 @@
+{
+  "id": "MosbergApi:planar_shift",
+  "name": "Planar Shift",
+  "category": "planar",
+  "description": "Shift the area into another plane, altering physics and effects.",
+  "ritual_items": ["MosbergApi:planar_essence", "minecraft:chorus_fruit"],
+  "mana_cost": 350.0,
+  "duration_seconds": 80,
+  "cooldown_seconds": 480,
+  "level_requirement": 42,
+  "pattern": {
+    "type": "planar_circle",
+    "center_block": "minecraft:purpur_block",
+    "ring1": {
+      "material": "minecraft:chorus_flower",
+      "count": 8,
+      "radius": 2,
+      "height": 0
+    },
+    "ring2": {
+      "material": "MosbergApi:planar_crystal_block",
+      "count": 8,
+      "radius": 4,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "plane_shift",
+    "area_radius": 25.0,
+    "physics_alteration": true
+  },
+  "particles": {
+    "type": "planar_warp",
+    "particle": "dragon_breath",
+    "count": 120,
+    "duration": 80
+  },
+  "sound": "entity.shulker.teleport",
+  "synergy_schools": ["Arcane", "Chaos"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "end",
+    "surface": ["purpur_block"]
+  }
+}

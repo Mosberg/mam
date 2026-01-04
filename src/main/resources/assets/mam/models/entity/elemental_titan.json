@@ -1,0 +1,49 @@
+{
+  "format_version": "1.21.10",
+  "credit": "Made with Blockbench",
+  "author": "Mosberg",
+  "textures": {
+    "0": "mana_and_magic:entity/elemental_titan_body",
+    "1": "mana_and_magic:entity/elemental_titan_chest",
+    "2": "mana_and_magic:entity/elemental_titan_crown"
+  },
+  "elements": [
+    {
+      "from": [4, 0, 4],
+      "to": [12, 14, 12],
+      "faces": {
+        "north": { "uv": [0, 0, 8, 14], "texture": "#0" },
+        "east": { "uv": [8, 0, 16, 14], "texture": "#0" },
+        "south": { "uv": [0, 14, 8, 28], "texture": "#0" },
+        "west": { "uv": [8, 14, 16, 28], "texture": "#0" },
+        "up": { "uv": [0, 28, 8, 36], "texture": "#0" },
+        "down": { "uv": [8, 28, 16, 36], "texture": "#0" }
+      }
+    },
+    {
+      "from": [2, 14, 2],
+      "to": [14, 22, 14],
+      "faces": {
+        "north": { "uv": [0, 0, 12, 8], "texture": "#1" },
+        "east": { "uv": [12, 0, 24, 8], "texture": "#1" },
+        "south": { "uv": [0, 8, 12, 16], "texture": "#1" },
+        "west": { "uv": [12, 8, 24, 16], "texture": "#1" },
+        "up": { "uv": [0, 16, 12, 28], "texture": "#1" },
+        "down": { "uv": [12, 16, 24, 28], "texture": "#1" }
+      }
+    },
+    {
+      "from": [1, 22, 1],
+      "to": [15, 26, 15],
+      "faces": {
+        "north": { "uv": [0, 0, 14, 4], "texture": "#2" },
+        "east": { "uv": [14, 0, 28, 4], "texture": "#2" },
+        "south": { "uv": [0, 4, 14, 8], "texture": "#2" },
+        "west": { "uv": [14, 4, 28, 8], "texture": "#2" },
+        "up": { "uv": [0, 8, 14, 22], "texture": "#2" },
+        "down": { "uv": [14, 8, 28, 22], "texture": "#2" }
+      }
+    }
+  ],
+  "model_format": "json-format-version:1.8"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "MosbergApi:wind_slash",
+  "name": "Wind Slash",
+  "school": "air",
+  "description": "Slash enemies with a blade of wind, dealing damage and strong knockback.",
+  "castType": "projectile",
+  "manaCost": 12.0,
+  "castTime": 0.4,
+  "cooldown": 1.5,
+  "tier": 1,
+  "requiredLevel": 1,
+  "damage": 5.0,
+  "range": 20.0,
+  "projectileSpeed": 2.0,
+  "aoeRadius": 0.0,
+  "knockback": 2.0,
+  "statusEffects": [],
+  "customData": {},
+  "sound": "entity.wind_charge.wind_burst",
+  "vfx": {
+    "particleType": "wind_particle",
+    "particleCount": 30,
+    "color": "B0E0E6"
+  }
+}

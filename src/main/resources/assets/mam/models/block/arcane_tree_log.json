@@ -1,0 +1,7 @@
+{
+  "parent": "block/logs",
+  "textures": {
+    "side": "mana_and_magic:block/arcane_log_side",
+    "end": "mana_and_magic:block/arcane_log_end"
+  }
+}

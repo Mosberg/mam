@@ -1,0 +1,47 @@
+{
+  "id": "MosbergApi:elemental_convergence",
+  "name": "Elemental Convergence",
+  "category": "elemental",
+  "description": "Combine the powers of all elements for a massive effect.",
+  "ritual_items": ["MosbergApi:elemental_core", "minecraft:nether_star"],
+  "mana_cost": 500.0,
+  "duration_seconds": 90,
+  "cooldown_seconds": 600,
+  "level_requirement": 50,
+  "pattern": {
+    "type": "elemental_star",
+    "center_block": "minecraft:beacon",
+    "ring1": {
+      "material": "MosbergApi:elemental_crystal_block",
+      "count": 12,
+      "radius": 3,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:gold_block",
+      "count": 12,
+      "radius": 5,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "elemental_burst",
+    "area_radius": 30.0,
+    "damage": 60.0,
+    "elemental_effects": true
+  },
+  "particles": {
+    "type": "elemental_burst",
+    "particle": "firework",
+    "count": 200,
+    "duration": 90
+  },
+  "sound": "entity.ender_dragon.growl",
+  "synergy_schools": ["All"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "any",
+    "surface": ["beacon"]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:void_lance",
+  "name": "Void Lance",
+  "school": "void",
+  "description": "Hurl a lance of void energy that pierces through enemies, causing heavy damage.",
+  "castType": "projectile",
+  "manaCost": 180.0,
+  "castTime": 2.4,
+  "cooldown": 100.0,
+  "tier": 4,
+  "requiredLevel": 32,
+  "damage": 44.0,
+  "projectileSpeed": 3.2,
+  "aoeRadius": 0.0,
+  "statusEffects": [{ "effect": "void", "duration": 80, "amplifier": 1 }],
+  "customData": {
+    "pierce": 3,
+    "effect": "void_pierce",
+    "particle": "portal"
+  },
+  "sound": "entity.enderman.scream",
+  "vfx": {
+    "particleType": "portal",
+    "particleCount": 120,
+    "color": "4B0082"
+  }
+}

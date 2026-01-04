@@ -1,0 +1,48 @@
+{
+  "id": "MosbergApi:time_freeze",
+  "name": "Time Freeze",
+  "category": "temporal",
+  "description": "Temporarily freeze time in a large area",
+  "ritual_items": ["MosbergApi:mana_shard", "minecraft:amethyst_block"],
+  "mana_cost": 250.0,
+  "duration_seconds": 30,
+  "cooldown_seconds": 300,
+  "level_requirement": 35,
+  "pattern": {
+    "type": "temporal_circle",
+    "center_block": "minecraft:purpur_block",
+    "ring1": {
+      "material": "minecraft:amethyst_block",
+      "count": 12,
+      "radius": 2,
+      "height": 0
+    },
+    "ring2": {
+      "material": "MosbergApi:mana_crystal_block",
+      "count": 12,
+      "radius": 4,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "freeze_time",
+    "area_radius": 40.0,
+    "freeze_duration": 30,
+    "player_immunity": true,
+    "affects_allies": false
+  },
+  "particles": {
+    "type": "temporal_vortex",
+    "particle": "end_rod",
+    "count": 120,
+    "duration": 30
+  },
+  "sound": "ambient.cave",
+  "synergy_schools": ["Arcane", "Ice"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "any",
+    "surface": ["purpur_block"]
+  }
+}

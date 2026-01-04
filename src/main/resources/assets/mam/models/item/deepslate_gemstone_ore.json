@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mam:block/deepslate_gemstone_ore/deepslate_gemstone_ore"
+  }
+}

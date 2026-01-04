@@ -1,0 +1,56 @@
+{
+  "credit": "Made with Blockbench",
+  "author": "Mosberg",
+  "format_version": "1.21.10",
+  "elements": [
+    {
+      "from": [5, 4, 5],
+      "to": [11, 12, 11],
+      "faces": {
+        "north": { "uv": [0, 0, 6, 8], "texture": "#0" },
+        "east": { "uv": [6, 0, 12, 8], "texture": "#0" },
+        "south": { "uv": [0, 8, 6, 16], "texture": "#0" },
+        "west": { "uv": [6, 8, 12, 16], "texture": "#0" },
+        "up": { "uv": [0, 16, 6, 22], "texture": "#0" },
+        "down": { "uv": [6, 16, 12, 22], "texture": "#0" }
+      }
+    },
+    {
+      "from": [4, 12, 4],
+      "to": [12, 18, 12],
+      "faces": {
+        "north": { "uv": [0, 0, 8, 6], "texture": "#1" },
+        "east": { "uv": [8, 0, 16, 6], "texture": "#1" },
+        "south": { "uv": [0, 6, 8, 12], "texture": "#1" },
+        "west": { "uv": [8, 6, 16, 12], "texture": "#1" },
+        "up": { "uv": [0, 12, 8, 20], "texture": "#1" },
+        "down": { "uv": [8, 12, 16, 20], "texture": "#1" }
+      }
+    },
+    {
+      "from": [1, 4, 8],
+      "to": [5, 8, 12],
+      "faces": {
+        "north": { "uv": [0, 0, 4, 4], "texture": "#2" },
+        "east": { "uv": [4, 0, 8, 4], "texture": "#2" },
+        "south": { "uv": [0, 4, 4, 8], "texture": "#2" },
+        "west": { "uv": [4, 4, 8, 8], "texture": "#2" }
+      }
+    },
+    {
+      "from": [11, 4, 8],
+      "to": [15, 8, 12],
+      "faces": {
+        "north": { "uv": [0, 0, 4, 4], "texture": "#2" },
+        "east": { "uv": [4, 0, 8, 4], "texture": "#2" },
+        "south": { "uv": [0, 4, 4, 8], "texture": "#2" },
+        "west": { "uv": [4, 4, 8, 8], "texture": "#2" }
+      }
+    }
+  ],
+  "textures": {
+    "0": "mana_and_magic:entity/phoenix_body",
+    "1": "mana_and_magic:entity/phoenix_head",
+    "2": "mana_and_magic:entity/phoenix_wing"
+  }
+}

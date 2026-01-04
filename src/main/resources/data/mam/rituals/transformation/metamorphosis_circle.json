@@ -1,0 +1,49 @@
+{
+  "id": "MosbergApi:metamorphosis_circle",
+  "name": "Metamorphosis Circle",
+  "category": "transformation",
+  "description": "Transform the caster or a target into a powerful new form.",
+  "ritual_items": [
+    "MosbergApi:transformation_essence",
+    "minecraft:golden_apple"
+  ],
+  "mana_cost": 350.0,
+  "duration_seconds": 90,
+  "cooldown_seconds": 600,
+  "level_requirement": 48,
+  "pattern": {
+    "type": "transformation_circle",
+    "center_block": "minecraft:emerald_block",
+    "ring1": {
+      "material": "MosbergApi:transformation_crystal_block",
+      "count": 10,
+      "radius": 3,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:emerald_block",
+      "count": 10,
+      "radius": 5,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "transform",
+    "form": "powerful_beast",
+    "duration": 90
+  },
+  "particles": {
+    "type": "transformation_aura",
+    "particle": "happy_villager",
+    "count": 120,
+    "duration": 90
+  },
+  "sound": "entity.player.levelup",
+  "synergy_schools": ["Nature", "Arcane"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "any",
+    "surface": ["emerald_block"]
+  }
+}

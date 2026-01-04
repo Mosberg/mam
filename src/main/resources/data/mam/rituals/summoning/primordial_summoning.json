@@ -1,0 +1,49 @@
+{
+  "id": "MosbergApi:primordial_summoning",
+  "name": "Primordial Summoning",
+  "category": "summoning",
+  "description": "Summon a primordial entity to fight for you.",
+  "ritual_items": [
+    "MosbergApi:primordial_essence",
+    "minecraft:totem_of_undying"
+  ],
+  "mana_cost": 400.0,
+  "duration_seconds": 180,
+  "cooldown_seconds": 1200,
+  "level_requirement": 55,
+  "pattern": {
+    "type": "summoning_circle",
+    "center_block": "minecraft:crying_obsidian",
+    "ring1": {
+      "material": "MosbergApi:primordial_crystal_block",
+      "count": 14,
+      "radius": 3,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:obsidian",
+      "count": 14,
+      "radius": 5,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "summon",
+    "entity": "MosbergApi:primordial_guardian",
+    "duration": 180
+  },
+  "particles": {
+    "type": "summoning_aura",
+    "particle": "smoke",
+    "count": 180,
+    "duration": 180
+  },
+  "sound": "entity.wither.spawn",
+  "synergy_schools": ["Chaos", "Earth"],
+  "requirements": {
+    "time_of_day": "night",
+    "weather": "thunder",
+    "biome": "mountains",
+    "surface": ["crying_obsidian"]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mana_and_magic:block/spell_amplifier",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "mana_and_magic:block/spell_amplifier",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "mana_and_magic:block/spell_amplifier",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mana_and_magic:block/spell_amplifier",
+      "y": 270
+    }
+  }
+}

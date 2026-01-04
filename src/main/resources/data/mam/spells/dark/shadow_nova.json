@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:shadow_nova",
+  "name": "Shadow Nova",
+  "school": "dark",
+  "description": "Release a burst of shadow energy, blinding and damaging enemies.",
+  "castType": "aoe",
+  "manaCost": 135.0,
+  "castTime": 1.7,
+  "cooldown": 68.0,
+  "tier": 3,
+  "requiredLevel": 23,
+  "damage": 26.0,
+  "aoeRadius": 9.0,
+  "statusEffects": [
+    { "effect": "blindness", "duration": 60, "amplifier": 1 },
+    { "effect": "fear", "duration": 40, "amplifier": 1 }
+  ],
+  "customData": {
+    "effect": "shadow_burst"
+  },
+  "sound": "entity.ender_eye.death",
+  "vfx": {
+    "particleType": "shadow",
+    "particleCount": 110,
+    "color": "2E0854"
+  }
+}

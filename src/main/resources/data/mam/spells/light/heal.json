@@ -1,0 +1,24 @@
+{
+  "id": "MosbergApi:heal",
+  "name": "Heal",
+  "school": "light",
+  "description": "Restore health to yourself or an ally.",
+  "castType": "utility",
+  "manaCost": 20.0,
+  "castTime": 1.0,
+  "cooldown": 5.0,
+  "tier": 1,
+  "requiredLevel": 1,
+  "damage": 0.0,
+  "aoeRadius": 0.0,
+  "statusEffects": [],
+  "customData": {
+    "heal": 8.0
+  },
+  "sound": "entity.player.levelup",
+  "vfx": {
+    "particleType": "end_rod",
+    "particleCount": 20,
+    "color": "FFF8DC"
+  }
+}

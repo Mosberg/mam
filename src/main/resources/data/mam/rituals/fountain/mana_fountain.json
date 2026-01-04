@@ -1,0 +1,48 @@
+{
+  "id": "MosbergApi:mana_fountain",
+  "name": "Mana Fountain",
+  "category": "fountain",
+  "description": "Creates a permanent mana regeneration zone",
+  "ritual_items": ["MosbergApi:mana_crystal", "minecraft:water_bucket"],
+  "mana_cost": 150.0,
+  "duration_seconds": 0,
+  "cooldown_seconds": 300,
+  "level_requirement": 20,
+  "pattern": {
+    "type": "fountain",
+    "center_block": "minecraft:water",
+    "ring1": {
+      "material": "MosbergApi:mana_crystal_block",
+      "count": 8,
+      "radius": 2,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:prismarine",
+      "count": 8,
+      "radius": 3,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "mana_regeneration_zone",
+    "area_radius": 15.0,
+    "mana_per_second": 5.0,
+    "duration_seconds": 0
+  },
+  "particles": {
+    "type": "mana_aura",
+    "particle": "spell",
+    "color": "0000FF",
+    "count": 100,
+    "duration": 0
+  },
+  "sound": "block.enchantment_table.use",
+  "synergy_schools": ["Arcane", "Utility"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "any",
+    "surface": ["water", "prismarine"]
+  }
+}

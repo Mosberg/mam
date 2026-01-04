@@ -1,0 +1,25 @@
+{
+  "id": "MosbergApi:inferno_nova",
+  "name": "Inferno Nova",
+  "school": "fire",
+  "description": "Unleash a fiery explosion around the caster, burning all nearby enemies.",
+  "castType": "aoe",
+  "manaCost": 140.0,
+  "castTime": 1.8,
+  "cooldown": 70.0,
+  "tier": 3,
+  "requiredLevel": 22,
+  "damage": 32.0,
+  "aoeRadius": 10.0,
+  "statusEffects": [{ "effect": "fire", "duration": 80, "amplifier": 1 }],
+  "customData": {
+    "effect": "burn",
+    "knockback": 2.0
+  },
+  "sound": "entity.blaze.shoot",
+  "vfx": {
+    "particleType": "flame",
+    "particleCount": 180,
+    "color": "FF3300"
+  }
+}

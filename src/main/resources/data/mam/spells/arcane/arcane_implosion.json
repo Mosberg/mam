@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:arcane_implosion",
+  "name": "Arcane Implosion",
+  "school": "arcane",
+  "description": "Collapse arcane energy inward, damaging and silencing enemies.",
+  "castType": "aoe",
+  "manaCost": 150.0,
+  "castTime": 1.8,
+  "cooldown": 75.0,
+  "tier": 3,
+  "requiredLevel": 25,
+  "damage": 34.0,
+  "aoeRadius": 11.0,
+  "statusEffects": [
+    { "effect": "silence", "duration": 50, "amplifier": 1 },
+    { "effect": "dispel", "duration": 30, "amplifier": 1 }
+  ],
+  "customData": {
+    "effect": "arcane_collapse"
+  },
+  "sound": "entity.enderman.teleport",
+  "vfx": {
+    "particleType": "end_rod",
+    "particleCount": 140,
+    "color": "8A2BE2"
+  }
+}

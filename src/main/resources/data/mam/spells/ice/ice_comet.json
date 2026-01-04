@@ -1,0 +1,26 @@
+{
+  "id": "MosbergApi:ice_comet",
+  "name": "Ice Comet",
+  "school": "ice",
+  "description": "Summon a massive comet of ice that crashes down, freezing and damaging all in its path.",
+  "castType": "projectile",
+  "manaCost": 150.0,
+  "castTime": 2.2,
+  "cooldown": 90.0,
+  "tier": 4,
+  "requiredLevel": 29,
+  "damage": 40.0,
+  "range": 32.0,
+  "projectileSpeed": 2.5,
+  "aoeRadius": 10.0,
+  "statusEffects": [{ "effect": "freeze", "duration": 60, "amplifier": 1 }],
+  "customData": {
+    "effect": "freeze"
+  },
+  "sound": "block.snow.fall",
+  "vfx": {
+    "particleType": "snowflake",
+    "particleCount": 180,
+    "color": "E0FFFF"
+  }
+}

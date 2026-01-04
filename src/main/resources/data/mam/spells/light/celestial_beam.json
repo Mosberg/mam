@@ -1,0 +1,26 @@
+{
+  "id": "MosbergApi:celestial_beam",
+  "name": "Celestial Beam",
+  "school": "light",
+  "description": "Call down a beam of celestial energy, healing allies and damaging undead.",
+  "castType": "utility",
+  "manaCost": 100.0,
+  "castTime": 1.2,
+  "cooldown": 40.0,
+  "tier": 2,
+  "requiredLevel": 15,
+  "damage": 24.0,
+  "aoeRadius": 8.0,
+  "statusEffects": [],
+  "customData": {
+    "heal": 16.0,
+    "effect": "celestial_heal",
+    "target": "undead"
+  },
+  "sound": "entity.experience_orb.pickup",
+  "vfx": {
+    "particleType": "glow",
+    "particleCount": 60,
+    "color": "FFFFE0"
+  }
+}

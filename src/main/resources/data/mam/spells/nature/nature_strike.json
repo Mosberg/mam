@@ -1,0 +1,24 @@
+{
+  "id": "MosbergApi:nature_strike",
+  "name": "Nature Strike",
+  "school": "nature",
+  "description": "Strike an enemy with nature's power, dealing poison damage.",
+  "castType": "projectile",
+  "manaCost": 13.0,
+  "castTime": 0.5,
+  "cooldown": 2.0,
+  "tier": 1,
+  "requiredLevel": 1,
+  "damage": 6.0,
+  "range": 18.0,
+  "projectileSpeed": 1.7,
+  "aoeRadius": 0.0,
+  "statusEffects": [{ "effect": "poison", "duration": 40, "amplifier": 1 }],
+  "customData": {},
+  "sound": "block.grass.break",
+  "vfx": {
+    "particleType": "leaf",
+    "particleCount": 30,
+    "color": "228B22"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "MosbergApi:blood_strike",
+  "name": "Blood Strike",
+  "school": "blood",
+  "description": "Strike an enemy with blood magic, dealing damage and stealing life.",
+  "castType": "projectile",
+  "manaCost": 16.0,
+  "castTime": 0.5,
+  "cooldown": 2.0,
+  "tier": 1,
+  "requiredLevel": 1,
+  "damage": 7.0,
+  "range": 18.0,
+  "projectileSpeed": 1.7,
+  "aoeRadius": 0.0,
+  "statusEffects": [],
+  "customData": {
+    "lifesteal": 3.0
+  },
+  "sound": "entity.player.hurt_sweet_berry_bush",
+  "vfx": {
+    "particleType": "redstone",
+    "particleCount": 30,
+    "color": "8B0000"
+  }
+}

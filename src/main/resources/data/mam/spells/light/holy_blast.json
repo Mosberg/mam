@@ -1,0 +1,26 @@
+{
+  "id": "MosbergApi:holy_blast",
+  "name": "Holy Blast",
+  "school": "light",
+  "description": "Release a blast of holy energy that damages and blinds enemies.",
+  "castType": "projectile",
+  "manaCost": 90.0,
+  "castTime": 0.9,
+  "cooldown": 30.0,
+  "tier": 2,
+  "requiredLevel": 12,
+  "damage": 14.0,
+  "range": 18.0,
+  "projectileSpeed": 2.0,
+  "aoeRadius": 6.0,
+  "statusEffects": [{ "effect": "blindness", "duration": 40, "amplifier": 1 }],
+  "customData": {
+    "effect": "blind"
+  },
+  "sound": "entity.experience_orb.pickup",
+  "vfx": {
+    "particleType": "glow",
+    "particleCount": 40,
+    "color": "FFFFE0"
+  }
+}

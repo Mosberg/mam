@@ -1,0 +1,46 @@
+{
+  "id": "MosbergApi:apotheosis_ritual",
+  "name": "Apotheosis Ritual",
+  "category": "ascension",
+  "description": "Ascend to a higher state, gaining immense power for a limited time.",
+  "ritual_items": ["MosbergApi:ascension_gem", "minecraft:nether_star"],
+  "mana_cost": 600.0,
+  "duration_seconds": 120,
+  "cooldown_seconds": 900,
+  "level_requirement": 60,
+  "pattern": {
+    "type": "ascension_circle",
+    "center_block": "minecraft:beacon",
+    "ring1": {
+      "material": "MosbergApi:ascension_crystal_block",
+      "count": 16,
+      "radius": 4,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:gold_block",
+      "count": 16,
+      "radius": 6,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "ascend",
+    "buffs": ["strength", "regeneration", "resistance"],
+    "duration": 120
+  },
+  "particles": {
+    "type": "ascension_aura",
+    "particle": "firework",
+    "count": 250,
+    "duration": 120
+  },
+  "sound": "entity.ender_dragon.growl",
+  "synergy_schools": ["All"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "any",
+    "surface": ["beacon"]
+  }
+}

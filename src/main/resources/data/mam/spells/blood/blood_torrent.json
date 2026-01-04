@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:blood_torrent",
+  "name": "Blood Torrent",
+  "school": "blood",
+  "description": "Summon a torrent of blood that damages and weakens enemies.",
+  "castType": "aoe",
+  "manaCost": 128.0,
+  "castTime": 1.6,
+  "cooldown": 62.0,
+  "tier": 3,
+  "requiredLevel": 21,
+  "damage": 24.0,
+  "aoeRadius": 13.0,
+  "statusEffects": [
+    { "effect": "weakness", "duration": 60, "amplifier": 1 },
+    { "effect": "bleed", "duration": 50, "amplifier": 1 }
+  ],
+  "customData": {
+    "effect": "bleed"
+  },
+  "sound": "entity.zombie.attack_iron_door",
+  "vfx": {
+    "particleType": "redstone",
+    "particleCount": 120,
+    "color": "B22222"
+  }
+}

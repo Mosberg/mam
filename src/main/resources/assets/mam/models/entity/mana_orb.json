@@ -1,0 +1,23 @@
+{
+  "credit": "Made with Blockbench",
+  "author": "Mosberg",
+  "format_version": "1.21.10",
+  "elements": [
+    {
+      "from": [6, 6, 6],
+      "to": [10, 10, 10],
+      "rotation": { "angle": 0, "axis": "y", "origin": [8, 8, 8] },
+      "faces": {
+        "north": { "uv": [0, 0, 4, 4], "texture": "#0" },
+        "east": { "uv": [4, 0, 8, 4], "texture": "#0" },
+        "south": { "uv": [8, 0, 12, 4], "texture": "#0" },
+        "west": { "uv": [12, 0, 16, 4], "texture": "#0" },
+        "up": { "uv": [0, 4, 4, 8], "texture": "#0" },
+        "down": { "uv": [4, 4, 8, 8], "texture": "#0" }
+      }
+    }
+  ],
+  "textures": {
+    "0": "mana_and_magic:entity/mana_orb"
+  }
+}

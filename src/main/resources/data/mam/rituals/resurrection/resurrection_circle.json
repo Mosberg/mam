@@ -1,0 +1,52 @@
+{
+  "id": "MosbergApi:resurrection_circle",
+  "name": "Resurrection Circle",
+  "category": "resurrection",
+  "description": "Bring a fallen ally back to life",
+  "ritual_items": [
+    "MosbergApi:mana_crystal",
+    "MosbergApi:mana_crystal",
+    "minecraft:diamond_block"
+  ],
+  "mana_cost": 300.0,
+  "duration_seconds": 0,
+  "cooldown_seconds": 600,
+  "level_requirement": 40,
+  "pattern": {
+    "type": "resurrection_circle",
+    "center_block": "minecraft:diamond_block",
+    "ring1": {
+      "material": "MosbergApi:mana_crystal_block",
+      "count": 12,
+      "radius": 2,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:purpur_block",
+      "count": 12,
+      "radius": 4,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "resurrect",
+    "target_type": "player",
+    "health_restore": 0.5,
+    "buff_duration": 120
+  },
+  "particles": {
+    "type": "resurrection_aura",
+    "particle": "glow",
+    "color": "FFFF99",
+    "count": 150,
+    "duration": 60
+  },
+  "sound": "entity.player.levelup",
+  "synergy_schools": ["Light", "Life"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "any",
+    "surface": ["diamond_block"]
+  }
+}

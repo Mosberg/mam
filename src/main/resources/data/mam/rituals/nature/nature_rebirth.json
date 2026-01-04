@@ -1,0 +1,47 @@
+{
+  "id": "MosbergApi:nature_rebirth",
+  "name": "Nature's Rebirth",
+  "category": "nature",
+  "description": "Restore life to a barren area, causing plants to flourish and healing allies.",
+  "ritual_items": ["MosbergApi:life_seed", "minecraft:bone_meal"],
+  "mana_cost": 180.0,
+  "duration_seconds": 60,
+  "cooldown_seconds": 240,
+  "level_requirement": 28,
+  "pattern": {
+    "type": "nature_circle",
+    "center_block": "minecraft:grass_block",
+    "ring1": {
+      "material": "minecraft:leaves",
+      "count": 8,
+      "radius": 2,
+      "height": 0
+    },
+    "ring2": {
+      "material": "MosbergApi:life_crystal_block",
+      "count": 8,
+      "radius": 4,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "regrowth",
+    "area_radius": 18.0,
+    "heal_amount": 16.0,
+    "plant_growth": true
+  },
+  "particles": {
+    "type": "nature_burst",
+    "particle": "happy_villager",
+    "count": 100,
+    "duration": 60
+  },
+  "sound": "block.grass.place",
+  "synergy_schools": ["Nature", "Light"],
+  "requirements": {
+    "time_of_day": "day",
+    "weather": "rain",
+    "biome": "plains",
+    "surface": ["grass_block"]
+  }
+}

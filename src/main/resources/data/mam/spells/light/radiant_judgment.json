@@ -1,0 +1,24 @@
+{
+  "id": "MosbergApi:radiant_judgment",
+  "name": "Radiant Judgment",
+  "school": "light",
+  "description": "Call forth a pillar of radiant energy, dealing massive damage to evil creatures.",
+  "castType": "aoe",
+  "manaCost": 180.0,
+  "castTime": 2.5,
+  "cooldown": 100.0,
+  "tier": 5,
+  "requiredLevel": 35,
+  "damage": 50.0,
+  "aoeRadius": 18.0,
+  "statusEffects": [{ "effect": "smite", "duration": 80, "amplifier": 1 }],
+  "customData": {
+    "effect": "radiant_pillar"
+  },
+  "sound": "entity.experience_orb.pickup",
+  "vfx": {
+    "particleType": "glow",
+    "particleCount": 200,
+    "color": "FFFACD"
+  }
+}

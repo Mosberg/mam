@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:blizzard_storm",
+  "name": "Blizzard Storm",
+  "school": "ice",
+  "description": "Summon a raging blizzard that damages and slows all enemies in the area.",
+  "castType": "aoe",
+  "manaCost": 140.0,
+  "castTime": 1.9,
+  "cooldown": 70.0,
+  "tier": 3,
+  "requiredLevel": 23,
+  "damage": 28.0,
+  "aoeRadius": 14.0,
+  "statusEffects": [
+    { "effect": "slowness", "duration": 80, "amplifier": 2 },
+    { "effect": "freeze", "duration": 40, "amplifier": 1 }
+  ],
+  "customData": {
+    "effect": "blizzard"
+  },
+  "sound": "block.snow.break",
+  "vfx": {
+    "particleType": "snowflake",
+    "particleCount": 120,
+    "color": "B0E0E6"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "MosbergApi:spell_weave",
+  "name": "Spell Weave",
+  "school": "arcane",
+  "description": "Weave multiple spells together for a combined effect.",
+  "castType": "utility",
+  "manaCost": 190.0,
+  "castTime": 2.2,
+  "cooldown": 110.0,
+  "tier": 4,
+  "requiredLevel": 35,
+  "damage": 0.0,
+  "aoeRadius": 0.0,
+  "statusEffects": [],
+  "customData": {
+    "combineSpells": true,
+    "effect": "weave"
+  },
+  "sound": "block.enchantment_table.use",
+  "vfx": {
+    "particleType": "enchant",
+    "particleCount": 160,
+    "color": "9370DB"
+  }
+}

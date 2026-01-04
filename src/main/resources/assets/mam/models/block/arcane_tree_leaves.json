@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "mana_and_magic:block/arcane_leaves"
+  }
+}

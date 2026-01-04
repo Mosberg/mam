@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:chain_lightning",
+  "name": "Chain Lightning",
+  "school": "thunder",
+  "description": "Strike multiple enemies with arcs of lightning that jump between targets.",
+  "castType": "projectile",
+  "manaCost": 125.0,
+  "castTime": 1.5,
+  "cooldown": 50.0,
+  "tier": 3,
+  "requiredLevel": 20,
+  "damage": 22.0,
+  "range": 24.0,
+  "projectileSpeed": 3.0,
+  "aoeRadius": 0.0,
+  "statusEffects": [{ "effect": "stun", "duration": 30, "amplifier": 1 }],
+  "customData": {
+    "chainCount": 5,
+    "effect": "lightning_chain"
+  },
+  "sound": "entity.lightning_bolt.thunder",
+  "vfx": {
+    "particleType": "electric_spark",
+    "particleCount": 100,
+    "color": "FFFF33"
+  }
+}

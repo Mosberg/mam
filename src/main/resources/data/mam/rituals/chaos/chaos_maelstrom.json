@@ -1,0 +1,50 @@
+{
+  "id": "MosbergApi:chaos_maelstrom",
+  "name": "Chaos Maelstrom",
+  "category": "chaos",
+  "description": "Unleash chaotic forces in a destructive vortex",
+  "ritual_items": ["MosbergApi:mana_shard", "minecraft:crying_obsidian"],
+  "mana_cost": 220.0,
+  "duration_seconds": 60,
+  "cooldown_seconds": 240,
+  "level_requirement": 32,
+  "pattern": {
+    "type": "chaos_vortex",
+    "center_block": "minecraft:crying_obsidian",
+    "ring1": {
+      "material": "MosbergApi:mana_crystal_block",
+      "count": 10,
+      "radius": 2,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:redstone_block",
+      "count": 10,
+      "radius": 3,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "chaos_vortex",
+    "area_radius": 35.0,
+    "damage_per_tick": 3.0,
+    "random_effects": true,
+    "duration_seconds": 60,
+    "affects_allies": false
+  },
+  "particles": {
+    "type": "chaotic_storm",
+    "particle": "flame",
+    "color": "FF00FF",
+    "count": 200,
+    "duration": 60
+  },
+  "sound": "entity.wither.spawn",
+  "synergy_schools": ["Chaos", "All"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "any",
+    "surface": ["crying_obsidian", "blackstone"]
+  }
+}

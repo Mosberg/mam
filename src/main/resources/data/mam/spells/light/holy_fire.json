@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:holy_fire",
+  "name": "Holy Fire",
+  "school": "light",
+  "description": "Ignite enemies with holy fire, dealing damage over time and purging debuffs from allies.",
+  "castType": "aoe",
+  "manaCost": 130.0,
+  "castTime": 1.8,
+  "cooldown": 65.0,
+  "tier": 3,
+  "requiredLevel": 22,
+  "damage": 26.0,
+  "aoeRadius": 13.0,
+  "statusEffects": [
+    { "effect": "purge", "duration": 80, "amplifier": 1 },
+    { "effect": "burn", "duration": 60, "amplifier": 1 }
+  ],
+  "customData": {
+    "effect": "purge"
+  },
+  "sound": "entity.experience_orb.pickup",
+  "vfx": {
+    "particleType": "glow",
+    "particleCount": 100,
+    "color": "FFD700"
+  }
+}

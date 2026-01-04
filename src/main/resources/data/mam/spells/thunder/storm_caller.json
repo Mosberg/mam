@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:storm_caller",
+  "name": "Storm Caller",
+  "school": "thunder",
+  "description": "Summon a violent storm that strikes enemies with lightning bolts.",
+  "castType": "aoe",
+  "manaCost": 160.0,
+  "castTime": 2.1,
+  "cooldown": 85.0,
+  "tier": 4,
+  "requiredLevel": 27,
+  "damage": 36.0,
+  "aoeRadius": 15.0,
+  "statusEffects": [
+    { "effect": "stun", "duration": 60, "amplifier": 1 },
+    { "effect": "wet", "duration": 40, "amplifier": 1 }
+  ],
+  "customData": {
+    "effect": "storm"
+  },
+  "sound": "entity.lightning_bolt.impact",
+  "vfx": {
+    "particleType": "electric_spark",
+    "particleCount": 160,
+    "color": "00BFFF"
+  }
+}

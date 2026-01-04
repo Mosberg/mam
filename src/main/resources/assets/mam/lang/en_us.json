@@ -1,0 +1,22 @@
+{
+  "block.mam.gemstone_ore": "Gemstone Ore",
+  "block.mam.deepslate_gemstone_ore": "Deepslate Gemstone Ore",
+
+  "item.mam.hematite": "Hematite",
+  "item.mam.carnelian": "Carnelian",
+  "item.mam.citrine": "Citrine",
+  "item.mam.jade": "Jade",
+  "item.mam.peridot": "Peridot",
+  "item.mam.sodalite": "Sodalite",
+  "item.mam.apatite": "Apatite",
+  "item.mam.aquamarine": "Aquamarine",
+  "item.mam.moonstone": "Moonstone",
+  "item.mam.rhodonite": "Rhodonite",
+  "item.mam.topaz": "Topaz",
+  "item.mam.tourmaline": "Tourmaline",
+  "item.mam.ruby": "Ruby",
+  "item.mam.sapphire": "Sapphire",
+  "item.mam.tanzanite": "Tanzanite",
+
+  "itemGroup.mam.gemstones": "Mana & Magic: Gemstones"
+}

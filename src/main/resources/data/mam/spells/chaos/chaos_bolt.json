@@ -1,0 +1,26 @@
+{
+  "id": "MosbergApi:chaos_bolt",
+  "name": "Chaos Bolt",
+  "school": "chaos",
+  "description": "Launch a bolt of chaotic energy that causes random effects on impact.",
+  "castType": "projectile",
+  "manaCost": 20.0,
+  "castTime": 0.6,
+  "cooldown": 2.5,
+  "tier": 1,
+  "requiredLevel": 1,
+  "damage": 10.0,
+  "range": 20.0,
+  "projectileSpeed": 2.0,
+  "aoeRadius": 0.0,
+  "statusEffects": [],
+  "customData": {
+    "randomEffects": ["ignite", "poison", "wither"]
+  },
+  "sound": "entity.wither.shoot",
+  "vfx": {
+    "particleType": "portal",
+    "particleCount": 40,
+    "color": "8B008B"
+  }
+}

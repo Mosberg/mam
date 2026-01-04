@@ -1,0 +1,27 @@
+{
+  "id": "MosbergApi:chaos_rift_strike",
+  "name": "Chaos Rift Strike",
+  "school": "chaos",
+  "description": "Tear open a rift, unleashing chaotic energy that damages and confuses enemies.",
+  "castType": "aoe",
+  "manaCost": 185.0,
+  "castTime": 2.2,
+  "cooldown": 92.0,
+  "tier": 4,
+  "requiredLevel": 31,
+  "damage": 42.0,
+  "aoeRadius": 13.0,
+  "statusEffects": [
+    { "effect": "confusion", "duration": 80, "amplifier": 1 },
+    { "effect": "random_effect", "duration": 40, "amplifier": 1 }
+  ],
+  "customData": {
+    "effect": "chaos_rift"
+  },
+  "sound": "entity.wither.shoot",
+  "vfx": {
+    "particleType": "portal",
+    "particleCount": 150,
+    "color": "8B008B"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "MosbergApi:reality_anchor",
+  "name": "Reality Anchor",
+  "category": "reality",
+  "description": "Stabilize reality in an area, preventing teleportation and phasing.",
+  "ritual_items": ["MosbergApi:anchor_stone", "minecraft:lodestone"],
+  "mana_cost": 200.0,
+  "duration_seconds": 120,
+  "cooldown_seconds": 600,
+  "level_requirement": 45,
+  "pattern": {
+    "type": "anchor_circle",
+    "center_block": "minecraft:lodestone",
+    "ring1": {
+      "material": "minecraft:iron_block",
+      "count": 8,
+      "radius": 2,
+      "height": 0
+    },
+    "ring2": {
+      "material": "MosbergApi:anchor_crystal_block",
+      "count": 8,
+      "radius": 4,
+      "height": 1
+    }
+  },
+  "effect": {
+    "type": "anchor",
+    "area_radius": 20.0,
+    "teleport_block": true
+  },
+  "particles": {
+    "type": "anchor_field",
+    "particle": "block_marker",
+    "count": 80,
+    "duration": 120
+  },
+  "sound": "block.lodestone.place",
+  "synergy_schools": ["Earth", "Arcane"],
+  "requirements": {
+    "time_of_day": "any",
+    "weather": "any",
+    "biome": "any",
+    "surface": ["lodestone"]
+  }
+}
