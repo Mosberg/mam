@@ -19,3 +19,6 @@ pluginManagement {
 
 // Project Configuration
 rootProject.name = "mam"
+
+// Include local moddinghelperapi for source code navigation and hot-reload
+includeBuild '../moddinghelperapi'
