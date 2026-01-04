@@ -87,7 +87,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     // Mod Dependencies
-    modImplementation "curse.maven:mosberg-api-1420961:7418646"
+    modImplementation "curse.maven:modding-helper-api-1420961:7418646"
 
     // Libraries - Bundled with JAR
     include implementation("com.google.code.gson:gson:${project.gson_version}")
