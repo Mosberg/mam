@@ -1,9 +1,9 @@
 {
   "textures": {
-    "particle": "mana_and_magic:block/amplifier_top",
-    "top": "mana_and_magic:block/amplifier_top",
-    "bottom": "mana_and_magic:block/amplifier_bottom",
-    "side": "mana_and_magic:block/amplifier_side"
+    "particle": "mam:block/amplifier_top",
+    "top": "mam:block/amplifier_top",
+    "bottom": "mam:block/amplifier_bottom",
+    "side": "mam:block/amplifier_side"
   },
   "elements": [
     {

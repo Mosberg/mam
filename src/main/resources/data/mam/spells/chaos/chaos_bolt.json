@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:chaos_bolt",
+  "id": "mam:chaos_bolt",
   "name": "Chaos Bolt",
   "school": "chaos",
   "description": "Launch a bolt of chaotic energy that causes random effects on impact.",

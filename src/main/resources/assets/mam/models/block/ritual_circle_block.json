@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "mana_and_magic:block/ritual_circle"
+    "all": "mam:block/ritual_circle"
   }
 }

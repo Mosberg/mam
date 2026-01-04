@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:cosmic_alignment",
+  "id": "mam:cosmic_alignment",
   "name": "Cosmic Alignment",
   "category": "cosmic",
   "description": "Align the area with cosmic forces, granting buffs and rare phenomena.",
-  "ritual_items": ["MosbergApi:cosmic_shard", "minecraft:amethyst_shard"],
+  "ritual_items": ["mam:cosmic_shard", "minecraft:amethyst_shard"],
   "mana_cost": 420.0,
   "duration_seconds": 150,
   "cooldown_seconds": 900,
@@ -12,7 +12,7 @@
     "type": "cosmic_circle",
     "center_block": "minecraft:amethyst_block",
     "ring1": {
-      "material": "MosbergApi:cosmic_crystal_block",
+      "material": "mam:cosmic_crystal_block",
       "count": 14,
       "radius": 4,
       "height": 0

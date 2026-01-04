@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:fire_strike",
+  "id": "mam:fire_strike",
   "name": "Fire Strike",
   "school": "fire",
   "description": "A blazing projectile that scorches enemies on impact, dealing fire damage over a small area.",

@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:air_strike",
+  "id": "mam:air_strike",
   "name": "Air Strike",
   "school": "air",
   "description": "A concentrated projectile of wind that strikes enemies, dealing moderate damage and knocking them back slightly.",

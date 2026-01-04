@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/arcane_golem"
+    "0": "mam:entity/arcane_golem"
   }
 }

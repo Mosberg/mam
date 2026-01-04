@@ -3,9 +3,9 @@
   "credit": "Made with Blockbench",
   "author": "Mosberg",
   "textures": {
-    "0": "mana_and_magic:entity/elemental_titan_body",
-    "1": "mana_and_magic:entity/elemental_titan_chest",
-    "2": "mana_and_magic:entity/elemental_titan_crown"
+    "0": "mam:entity/elemental_titan_body",
+    "1": "mam:entity/elemental_titan_chest",
+    "2": "mam:entity/elemental_titan_crown"
   },
   "elements": [
     {

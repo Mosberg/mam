@@ -1,70 +1,70 @@
 {
-	"format_version": "1.21.10",
-	"credit": "Made by Mosberg",
-	"parent": "minecraft:block/block",
-	"texture_size": [64, 64],
-	"textures": {
-		"0": "mana_and_magic:entity/gift_box",
-		"particle": "mana_and_magic:entity/gift_box"
-	},
-	"elements": [
-		{
-			"name": "box",
-			"from": [2, 0, 2],
-			"to": [14, 12, 14],
-			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 2]},
-			"faces": {
-				"north": {"uv": [0, 8.5, 3.5, 10.75], "texture": "#0"},
-				"east": {"uv": [7, 8.5, 10.5, 10.75], "texture": "#0"},
-				"south": {"uv": [3.5, 8.5, 7, 10.75], "texture": "#0"},
-				"west": {"uv": [10.5, 8.5, 14, 10.75], "texture": "#0"},
-				"up": {"uv": [10.5, 8.25, 7, 4.75], "texture": "#0"},
-				"down": {"uv": [7, 4.75, 3.5, 8.25], "texture": "#0"}
-			}
-		},
-		{
-			"name": "ribbon_vertical_n_s",
-			"from": [7, -0.1, 1.9],
-			"to": [9, 11, 14.1],
-			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 2]},
-			"faces": {
-				"north": {"uv": [8.5, 0, 9, 3.525], "texture": "#0"},
-				"east": {"uv": [8.5, 0, 9, 3.5], "texture": "#0"},
-				"south": {"uv": [8.5, 0, 9, 3.525], "texture": "#0"},
-				"west": {"uv": [8.5, 0, 9, 3.5], "texture": "#0"},
-				"up": {"uv": [9, 3.55, 8.5, 0], "texture": "#0"},
-				"down": {"uv": [9, 0, 8.5, 3.55], "texture": "#0"}
-			}
-		},
-		{
-			"name": "ribbon_vertical_e_w",
-			"from": [1.9, -0.1, 7],
-			"to": [14.1, 11, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 2]},
-			"faces": {
-				"north": {"uv": [8.5, 0, 9, 3.5], "texture": "#0"},
-				"east": {"uv": [8.5, 0, 9, 3.5], "texture": "#0"},
-				"south": {"uv": [8.5, 0, 9, 3.5], "texture": "#0"},
-				"west": {"uv": [8.5, 0, 9, 0], "texture": "#0"},
-				"up": {"uv": [10.5, 2, 7, 1.5], "texture": "#0"},
-				"down": {"uv": [10.5, 1.5, 7, 2], "texture": "#0"}
-			}
-		}
-	],
-	"groups": [
-		{
-			"name": "gift_box",
-			"origin": [8, 8, 8],
-			"color": 0,
-			"children": [
-				0,
-				{
-					"name": "ribbon_vertical",
-					"origin": [8, 8, 8],
-					"color": 0,
-					"children": [1, 2]
-				}
-			]
-		}
-	]
+  "format_version": "1.21.10",
+  "credit": "Made by Mosberg",
+  "parent": "minecraft:block/block",
+  "texture_size": [64, 64],
+  "textures": {
+    "0": "mam:entity/gift_box",
+    "particle": "mam:entity/gift_box"
+  },
+  "elements": [
+    {
+      "name": "box",
+      "from": [2, 0, 2],
+      "to": [14, 12, 14],
+      "rotation": { "angle": 0, "axis": "y", "origin": [2, 0, 2] },
+      "faces": {
+        "north": { "uv": [0, 8.5, 3.5, 10.75], "texture": "#0" },
+        "east": { "uv": [7, 8.5, 10.5, 10.75], "texture": "#0" },
+        "south": { "uv": [3.5, 8.5, 7, 10.75], "texture": "#0" },
+        "west": { "uv": [10.5, 8.5, 14, 10.75], "texture": "#0" },
+        "up": { "uv": [10.5, 8.25, 7, 4.75], "texture": "#0" },
+        "down": { "uv": [7, 4.75, 3.5, 8.25], "texture": "#0" }
+      }
+    },
+    {
+      "name": "ribbon_vertical_n_s",
+      "from": [7, -0.1, 1.9],
+      "to": [9, 11, 14.1],
+      "rotation": { "angle": 0, "axis": "y", "origin": [0, 0, 2] },
+      "faces": {
+        "north": { "uv": [8.5, 0, 9, 3.525], "texture": "#0" },
+        "east": { "uv": [8.5, 0, 9, 3.5], "texture": "#0" },
+        "south": { "uv": [8.5, 0, 9, 3.525], "texture": "#0" },
+        "west": { "uv": [8.5, 0, 9, 3.5], "texture": "#0" },
+        "up": { "uv": [9, 3.55, 8.5, 0], "texture": "#0" },
+        "down": { "uv": [9, 0, 8.5, 3.55], "texture": "#0" }
+      }
+    },
+    {
+      "name": "ribbon_vertical_e_w",
+      "from": [1.9, -0.1, 7],
+      "to": [14.1, 11, 9],
+      "rotation": { "angle": 0, "axis": "y", "origin": [0, 0, 2] },
+      "faces": {
+        "north": { "uv": [8.5, 0, 9, 3.5], "texture": "#0" },
+        "east": { "uv": [8.5, 0, 9, 3.5], "texture": "#0" },
+        "south": { "uv": [8.5, 0, 9, 3.5], "texture": "#0" },
+        "west": { "uv": [8.5, 0, 9, 0], "texture": "#0" },
+        "up": { "uv": [10.5, 2, 7, 1.5], "texture": "#0" },
+        "down": { "uv": [10.5, 1.5, 7, 2], "texture": "#0" }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": "gift_box",
+      "origin": [8, 8, 8],
+      "color": 0,
+      "children": [
+        0,
+        {
+          "name": "ribbon_vertical",
+          "origin": [8, 8, 8],
+          "color": 0,
+          "children": [1, 2]
+        }
+      ]
+    }
+  ]
 }

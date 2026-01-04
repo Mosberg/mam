@@ -1,14 +1,14 @@
 {
   "variants": {
     "axis=y": {
-      "model": "mana_and_magic:block/arcane_tree_log"
+      "model": "mam:block/arcane_tree_log"
     },
     "axis=z": {
-      "model": "mana_and_magic:block/arcane_tree_log",
+      "model": "mam:block/arcane_tree_log",
       "x": 90
     },
     "axis=x": {
-      "model": "mana_and_magic:block/arcane_tree_log",
+      "model": "mam:block/arcane_tree_log",
       "x": 90,
       "y": 90
     }

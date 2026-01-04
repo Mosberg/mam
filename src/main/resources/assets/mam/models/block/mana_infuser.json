@@ -1,10 +1,10 @@
 {
   "textures": {
-    "particle": "mana_and_magic:block/infuser_top",
-    "top": "mana_and_magic:block/infuser_top",
-    "bottom": "mana_and_magic:block/infuser_bottom",
-    "side": "mana_and_magic:block/infuser_side",
-    "front": "mana_and_magic:block/infuser_front"
+    "particle": "mam:block/infuser_top",
+    "top": "mam:block/infuser_top",
+    "bottom": "mam:block/infuser_bottom",
+    "side": "mam:block/infuser_side",
+    "front": "mam:block/infuser_front"
   },
   "elements": [
     {

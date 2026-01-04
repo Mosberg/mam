@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/shadow_clone"
+    "0": "mam:entity/shadow_clone"
   }
 }

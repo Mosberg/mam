@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "mana_and_magic:block/ritual_circle_block"
+      "model": "mam:block/ritual_circle_block"
     }
   }
 }

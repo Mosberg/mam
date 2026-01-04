@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/primordial_beast"
+    "0": "mam:entity/primordial_beast"
   }
 }

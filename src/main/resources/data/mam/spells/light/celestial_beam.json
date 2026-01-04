@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:celestial_beam",
+  "id": "mam:celestial_beam",
   "name": "Celestial Beam",
   "school": "light",
   "description": "Call down a beam of celestial energy, healing allies and damaging undead.",

@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:fireball",
+  "id": "mam:fireball",
   "name": "Fireball",
   "school": "fire",
   "description": "Launch a fireball that explodes on impact, igniting enemies.",

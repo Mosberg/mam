@@ -49,8 +49,8 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/phoenix_body",
-    "1": "mana_and_magic:entity/phoenix_head",
-    "2": "mana_and_magic:entity/phoenix_wing"
+    "0": "mam:entity/phoenix_body",
+    "1": "mam:entity/phoenix_head",
+    "2": "mam:entity/phoenix_wing"
   }
 }

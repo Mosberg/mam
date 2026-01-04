@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/void_tentacle"
+    "0": "mam:entity/void_tentacle"
   }
 }

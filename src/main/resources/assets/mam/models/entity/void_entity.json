@@ -31,7 +31,7 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/void_entity_body",
-    "1": "mana_and_magic:entity/void_entity_crown"
+    "0": "mam:entity/void_entity_body",
+    "1": "mam:entity/void_entity_crown"
   }
 }

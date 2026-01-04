@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "mana_and_magic:item/wand_novice"
+    "model": "mam:item/wand_novice"
   }
 }

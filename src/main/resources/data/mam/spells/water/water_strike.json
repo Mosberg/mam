@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:water_strike",
+  "id": "mam:water_strike",
   "name": "Water Strike",
   "school": "water",
   "description": "A focused jet of water that hits enemies, dealing moderate damage and slowing them down temporarily.",

@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:chaos_maelstrom",
+  "id": "mam:chaos_maelstrom",
   "name": "Chaos Maelstrom",
   "category": "chaos",
   "description": "Unleash chaotic forces in a destructive vortex",
-  "ritual_items": ["MosbergApi:mana_shard", "minecraft:crying_obsidian"],
+  "ritual_items": ["mam:mana_shard", "minecraft:crying_obsidian"],
   "mana_cost": 220.0,
   "duration_seconds": 60,
   "cooldown_seconds": 240,
@@ -12,7 +12,7 @@
     "type": "chaos_vortex",
     "center_block": "minecraft:crying_obsidian",
     "ring1": {
-      "material": "MosbergApi:mana_crystal_block",
+      "material": "mam:mana_crystal_block",
       "count": 10,
       "radius": 2,
       "height": 0

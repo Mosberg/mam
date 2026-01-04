@@ -1,12 +1,9 @@
 {
-  "id": "MosbergApi:metamorphosis_circle",
+  "id": "mam:metamorphosis_circle",
   "name": "Metamorphosis Circle",
   "category": "transformation",
   "description": "Transform the caster or a target into a powerful new form.",
-  "ritual_items": [
-    "MosbergApi:transformation_essence",
-    "minecraft:golden_apple"
-  ],
+  "ritual_items": ["mam:transformation_essence", "minecraft:golden_apple"],
   "mana_cost": 350.0,
   "duration_seconds": 90,
   "cooldown_seconds": 600,
@@ -15,7 +12,7 @@
     "type": "transformation_circle",
     "center_block": "minecraft:emerald_block",
     "ring1": {
-      "material": "MosbergApi:transformation_crystal_block",
+      "material": "mam:transformation_crystal_block",
       "count": 10,
       "radius": 3,
       "height": 0

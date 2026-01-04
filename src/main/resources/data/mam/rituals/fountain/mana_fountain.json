@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:mana_fountain",
+  "id": "mam:mana_fountain",
   "name": "Mana Fountain",
   "category": "fountain",
   "description": "Creates a permanent mana regeneration zone",
-  "ritual_items": ["MosbergApi:mana_crystal", "minecraft:water_bucket"],
+  "ritual_items": ["mam:mana_crystal", "minecraft:water_bucket"],
   "mana_cost": 150.0,
   "duration_seconds": 0,
   "cooldown_seconds": 300,
@@ -12,7 +12,7 @@
     "type": "fountain",
     "center_block": "minecraft:water",
     "ring1": {
-      "material": "MosbergApi:mana_crystal_block",
+      "material": "mam:mana_crystal_block",
       "count": 8,
       "radius": 2,
       "height": 0

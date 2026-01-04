@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:frost_bolt",
+  "id": "mam:frost_bolt",
   "name": "Frost Bolt",
   "school": "ice",
   "description": "A shard of ice that pierces enemies, dealing damage and slowing them.",

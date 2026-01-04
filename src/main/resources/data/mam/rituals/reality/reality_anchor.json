@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:reality_anchor",
+  "id": "mam:reality_anchor",
   "name": "Reality Anchor",
   "category": "reality",
   "description": "Stabilize reality in an area, preventing teleportation and phasing.",
-  "ritual_items": ["MosbergApi:anchor_stone", "minecraft:lodestone"],
+  "ritual_items": ["mam:anchor_stone", "minecraft:lodestone"],
   "mana_cost": 200.0,
   "duration_seconds": 120,
   "cooldown_seconds": 600,
@@ -18,7 +18,7 @@
       "height": 0
     },
     "ring2": {
-      "material": "MosbergApi:anchor_crystal_block",
+      "material": "mam:anchor_crystal_block",
       "count": 8,
       "radius": 4,
       "height": 1

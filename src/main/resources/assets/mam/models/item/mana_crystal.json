@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mana_and_magic:item/mana_crystal"
+    "layer0": "mam:item/mana_crystal"
   },
   "display": {
     "thirdperson_righthand": {

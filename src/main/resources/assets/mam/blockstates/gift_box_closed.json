@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "mana_and_magic:block/gift_box_closed"
+      "model": "mam:block/gift_box_closed"
     }
   }
 }

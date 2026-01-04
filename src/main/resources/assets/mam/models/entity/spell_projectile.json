@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/spell_projectile"
+    "0": "mam:entity/spell_projectile"
   }
 }

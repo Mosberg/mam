@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mana_and_magic:item/grimoire"
+    "layer0": "mam:item/grimoire"
   },
   "display": {
     "thirdperson_righthand": {

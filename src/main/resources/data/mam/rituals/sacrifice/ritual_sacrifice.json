@@ -1,16 +1,16 @@
 {
-  "id": "MosbergApi:ritual_sacrifice",
+  "id": "mam:ritual_sacrifice",
   "name": "Ritual Sacrifice",
   "category": "sacrifice",
   "description": "Trade health for raw magical power",
-  "ritual_items": ["MosbergApi:mana_crystal", "minecraft:redstone_block"],
+  "ritual_items": ["mam:mana_crystal", "minecraft:redstone_block"],
   "mana_cost": 0.0,
   "duration_seconds": 0,
   "cooldown_seconds": 180,
   "level_requirement": 30,
   "pattern": {
     "type": "sacrifice_altar",
-    "center_block": "MosbergApi:ritual_altar",
+    "center_block": "mam:ritual_altar",
     "ring1": {
       "material": "minecraft:redstone_block",
       "count": 8,

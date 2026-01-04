@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mana_and_magic:item/enchanted_gem"
+    "layer0": "mam:item/enchanted_gem"
   },
   "display": {
     "thirdperson_righthand": {

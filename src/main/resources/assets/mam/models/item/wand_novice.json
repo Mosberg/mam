@@ -1,7 +1,7 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "mana_and_magic:item/wand_novice"
+    "layer0": "mam:item/wand_novice"
   },
   "display": {
     "thirdperson_righthand": {

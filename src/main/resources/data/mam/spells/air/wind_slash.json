@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:wind_slash",
+  "id": "mam:wind_slash",
   "name": "Wind Slash",
   "school": "air",
   "description": "Slash enemies with a blade of wind, dealing damage and strong knockback.",

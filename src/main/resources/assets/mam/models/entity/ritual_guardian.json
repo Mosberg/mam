@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/ritual_guardian"
+    "0": "mam:entity/ritual_guardian"
   }
 }

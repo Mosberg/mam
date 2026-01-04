@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/portal_entity"
+    "0": "mam:entity/portal_entity"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mana_and_magic:item/ritual_focus"
+    "layer0": "mam:item/ritual_focus"
   },
   "display": {
     "thirdperson_righthand": {

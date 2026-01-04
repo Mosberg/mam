@@ -18,6 +18,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/mana_orb"
+    "0": "mam:entity/mana_orb"
   }
 }

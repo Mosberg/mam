@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:apotheosis_ritual",
+  "id": "mam:apotheosis_ritual",
   "name": "Apotheosis Ritual",
   "category": "ascension",
   "description": "Ascend to a higher state, gaining immense power for a limited time.",
-  "ritual_items": ["MosbergApi:ascension_gem", "minecraft:nether_star"],
+  "ritual_items": ["mam:ascension_gem", "minecraft:nether_star"],
   "mana_cost": 600.0,
   "duration_seconds": 120,
   "cooldown_seconds": 900,
@@ -12,7 +12,7 @@
     "type": "ascension_circle",
     "center_block": "minecraft:beacon",
     "ring1": {
-      "material": "MosbergApi:ascension_crystal_block",
+      "material": "mam:ascension_crystal_block",
       "count": 16,
       "radius": 4,
       "height": 0

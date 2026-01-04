@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:shadow_bolt",
+  "id": "mam:shadow_bolt",
   "name": "Shadow Bolt",
   "school": "dark",
   "description": "Launch a bolt of shadow energy that withers the target.",

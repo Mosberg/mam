@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "mana_and_magic:block/ley_line"
+    "all": "mam:block/ley_line"
   }
 }

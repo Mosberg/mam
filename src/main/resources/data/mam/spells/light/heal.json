@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:heal",
+  "id": "mam:heal",
   "name": "Heal",
   "school": "light",
   "description": "Restore health to yourself or an ally.",

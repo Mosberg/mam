@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/chaos_fragment"
+    "0": "mam:entity/chaos_fragment"
   }
 }

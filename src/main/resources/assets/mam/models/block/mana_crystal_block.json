@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "mana_and_magic:block/mana_crystal"
+    "all": "mam:block/mana_crystal"
   }
 }

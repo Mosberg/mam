@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/storm_cloud"
+    "0": "mam:entity/storm_cloud"
   }
 }

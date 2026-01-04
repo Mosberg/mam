@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/nature_spirit"
+    "0": "mam:entity/nature_spirit"
   }
 }

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "mana_and_magic:block/mana_crystal_block"
+      "model": "mam:block/mana_crystal_block"
     }
   }
 }

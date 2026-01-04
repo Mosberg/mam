@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:blizzard_storm",
+  "id": "mam:blizzard_storm",
   "name": "Blizzard Storm",
   "school": "ice",
   "description": "Summon a raging blizzard that damages and slows all enemies in the area.",

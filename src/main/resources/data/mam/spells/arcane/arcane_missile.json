@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:arcane_missile",
+  "id": "mam:arcane_missile",
   "name": "Arcane Missile",
   "school": "arcane",
   "description": "Launch a fast-moving arcane missile that pierces multiple targets.",

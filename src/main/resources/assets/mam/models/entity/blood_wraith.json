@@ -17,6 +17,6 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/blood_wraith"
+    "0": "mam:entity/blood_wraith"
   }
 }

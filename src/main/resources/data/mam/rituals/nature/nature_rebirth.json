@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:nature_rebirth",
+  "id": "mam:nature_rebirth",
   "name": "Nature's Rebirth",
   "category": "nature",
   "description": "Restore life to a barren area, causing plants to flourish and healing allies.",
-  "ritual_items": ["MosbergApi:life_seed", "minecraft:bone_meal"],
+  "ritual_items": ["mam:life_seed", "minecraft:bone_meal"],
   "mana_cost": 180.0,
   "duration_seconds": 60,
   "cooldown_seconds": 240,
@@ -18,7 +18,7 @@
       "height": 0
     },
     "ring2": {
-      "material": "MosbergApi:life_crystal_block",
+      "material": "mam:life_crystal_block",
       "count": 8,
       "radius": 4,
       "height": 1

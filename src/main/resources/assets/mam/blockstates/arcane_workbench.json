@@ -1,19 +1,19 @@
 {
   "variants": {
     "facing=north": {
-      "model": "mana_and_magic:block/arcane_workbench",
+      "model": "mam:block/arcane_workbench",
       "y": 0
     },
     "facing=east": {
-      "model": "mana_and_magic:block/arcane_workbench",
+      "model": "mam:block/arcane_workbench",
       "y": 90
     },
     "facing=south": {
-      "model": "mana_and_magic:block/arcane_workbench",
+      "model": "mam:block/arcane_workbench",
       "y": 180
     },
     "facing=west": {
-      "model": "mana_and_magic:block/arcane_workbench",
+      "model": "mam:block/arcane_workbench",
       "y": 270
     }
   }

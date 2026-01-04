@@ -1,9 +1,9 @@
 {
   "textures": {
-    "particle": "mana_and_magic:block/altar_top",
-    "bottom": "mana_and_magic:block/altar_bottom",
-    "top": "mana_and_magic:block/altar_top",
-    "side": "mana_and_magic:block/altar_side"
+    "particle": "mam:block/altar_top",
+    "bottom": "mam:block/altar_bottom",
+    "top": "mam:block/altar_top",
+    "side": "mam:block/altar_side"
   },
   "elements": [
     {

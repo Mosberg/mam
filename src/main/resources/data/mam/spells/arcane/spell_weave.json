@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:spell_weave",
+  "id": "mam:spell_weave",
   "name": "Spell Weave",
   "school": "arcane",
   "description": "Weave multiple spells together for a combined effect.",

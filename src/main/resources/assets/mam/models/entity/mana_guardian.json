@@ -39,7 +39,7 @@
     }
   ],
   "textures": {
-    "0": "mana_and_magic:entity/mana_guardian_body",
-    "1": "mana_and_magic:entity/mana_guardian_head"
+    "0": "mam:entity/mana_guardian_body",
+    "1": "mam:entity/mana_guardian_head"
   }
 }

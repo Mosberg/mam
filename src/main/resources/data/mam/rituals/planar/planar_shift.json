@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:planar_shift",
+  "id": "mam:planar_shift",
   "name": "Planar Shift",
   "category": "planar",
   "description": "Shift the area into another plane, altering physics and effects.",
-  "ritual_items": ["MosbergApi:planar_essence", "minecraft:chorus_fruit"],
+  "ritual_items": ["mam:planar_essence", "minecraft:chorus_fruit"],
   "mana_cost": 350.0,
   "duration_seconds": 80,
   "cooldown_seconds": 480,
@@ -18,7 +18,7 @@
       "height": 0
     },
     "ring2": {
-      "material": "MosbergApi:planar_crystal_block",
+      "material": "mam:planar_crystal_block",
       "count": 8,
       "radius": 4,
       "height": 1

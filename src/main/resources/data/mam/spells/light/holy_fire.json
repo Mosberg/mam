@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:holy_fire",
+  "id": "mam:holy_fire",
   "name": "Holy Fire",
   "school": "light",
   "description": "Ignite enemies with holy fire, dealing damage over time and purging debuffs from allies.",

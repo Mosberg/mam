@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:time_freeze",
+  "id": "mam:time_freeze",
   "name": "Time Freeze",
   "category": "temporal",
   "description": "Temporarily freeze time in a large area",
-  "ritual_items": ["MosbergApi:mana_shard", "minecraft:amethyst_block"],
+  "ritual_items": ["mam:mana_shard", "minecraft:amethyst_block"],
   "mana_cost": 250.0,
   "duration_seconds": 30,
   "cooldown_seconds": 300,
@@ -18,7 +18,7 @@
       "height": 0
     },
     "ring2": {
-      "material": "MosbergApi:mana_crystal_block",
+      "material": "mam:mana_crystal_block",
       "count": 12,
       "radius": 4,
       "height": 1

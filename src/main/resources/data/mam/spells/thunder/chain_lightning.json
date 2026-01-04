@@ -1,5 +1,5 @@
 {
-  "id": "MosbergApi:chain_lightning",
+  "id": "mam:chain_lightning",
   "name": "Chain Lightning",
   "school": "thunder",
   "description": "Strike multiple enemies with arcs of lightning that jump between targets.",

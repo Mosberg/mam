@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:void_gateway",
+  "id": "mam:void_gateway",
   "name": "Void Gateway",
   "category": "void",
   "description": "Open a portal to the void, teleporting entities and distorting reality.",
-  "ritual_items": ["MosbergApi:obsidian_shard", "minecraft:ender_pearl"],
+  "ritual_items": ["mam:obsidian_shard", "minecraft:ender_pearl"],
   "mana_cost": 300.0,
   "duration_seconds": 45,
   "cooldown_seconds": 360,
@@ -18,7 +18,7 @@
       "height": 0
     },
     "ring2": {
-      "material": "MosbergApi:void_crystal_block",
+      "material": "mam:void_crystal_block",
       "count": 10,
       "radius": 4,
       "height": 1

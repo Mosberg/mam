@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "mana_and_magic:block/void_essence"
+    "all": "mam:block/void_essence"
   }
 }

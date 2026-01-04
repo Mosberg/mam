@@ -1,11 +1,11 @@
 {
-  "id": "MosbergApi:resurrection_circle",
+  "id": "mam:resurrection_circle",
   "name": "Resurrection Circle",
   "category": "resurrection",
   "description": "Bring a fallen ally back to life",
   "ritual_items": [
-    "MosbergApi:mana_crystal",
-    "MosbergApi:mana_crystal",
+    "mam:mana_crystal",
+    "mam:mana_crystal",
     "minecraft:diamond_block"
   ],
   "mana_cost": 300.0,
@@ -16,7 +16,7 @@
     "type": "resurrection_circle",
     "center_block": "minecraft:diamond_block",
     "ring1": {
-      "material": "MosbergApi:mana_crystal_block",
+      "material": "mam:mana_crystal_block",
       "count": 12,
       "radius": 2,
       "height": 0

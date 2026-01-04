@@ -1,9 +1,9 @@
 {
   "textures": {
-    "particle": "mana_and_magic:block/workbench_top",
-    "top": "mana_and_magic:block/workbench_top",
-    "bottom": "mana_and_magic:block/workbench_bottom",
-    "side": "mana_and_magic:block/workbench_side"
+    "particle": "mam:block/workbench_top",
+    "top": "mam:block/workbench_top",
+    "bottom": "mam:block/workbench_bottom",
+    "side": "mam:block/workbench_side"
   },
   "elements": [
     {

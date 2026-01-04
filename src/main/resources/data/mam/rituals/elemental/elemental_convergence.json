@@ -1,9 +1,9 @@
 {
-  "id": "MosbergApi:elemental_convergence",
+  "id": "mam:elemental_convergence",
   "name": "Elemental Convergence",
   "category": "elemental",
   "description": "Combine the powers of all elements for a massive effect.",
-  "ritual_items": ["MosbergApi:elemental_core", "minecraft:nether_star"],
+  "ritual_items": ["mam:elemental_core", "minecraft:nether_star"],
   "mana_cost": 500.0,
   "duration_seconds": 90,
   "cooldown_seconds": 600,
@@ -12,7 +12,7 @@
     "type": "elemental_star",
     "center_block": "minecraft:beacon",
     "ring1": {
-      "material": "MosbergApi:elemental_crystal_block",
+      "material": "mam:elemental_crystal_block",
       "count": 12,
       "radius": 3,
       "height": 0
