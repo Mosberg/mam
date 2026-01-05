@@ -13,10 +13,10 @@
   "item.mam.grimoire": "Grimoire",
 
   "item.mam.wand_novice": "Nybegynder-tryllestav",
-  "item.mam.staff_novice": "Nybegynder-stab",
-  "item.mam.staff_apprentice": "Lærling-stab",
-  "item.mam.staff_adept": "Dyktig-stab",
-  "item.mam.staff_master": "Mester-stab",
+  "item.mam.wand_novice": "Nybegynder-stab",
+  "item.mam.wand_apprentice": "Lærling-stab",
+  "item.mam.wand_adept": "Dyktig-stab",
+  "item.mam.wand_master": "Mester-stab",
 
   "item.mam.orb_novice": "Nybegynder-kugle",
   "item.mam.catalyst_artifact": "Katalysator-artefakt",

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "mam:item/staff_apprentice"
+    "layer0": "mam:item/wand/wand_adept"
   },
   "display": {
     "thirdperson_righthand": {
