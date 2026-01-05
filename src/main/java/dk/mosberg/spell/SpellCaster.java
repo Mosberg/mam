@@ -124,9 +124,25 @@ public class SpellCaster {
         // Apply immediate status effects to caster
         applyStatusEffects(player, spell);
 
-        // TODO: Create and launch custom projectile entity
-        // For now, apply damage to entities in front of player
-        sendSuccessMessage(player, "Projectile spell activated!");
+        // Launch projectile - use snowball as base entity for now
+        net.minecraft.server.world.ServerWorld world =
+                (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
+        net.minecraft.entity.projectile.thrown.SnowballEntity projectile =
+                new net.minecraft.entity.projectile.thrown.SnowballEntity(
+                        net.minecraft.entity.EntityType.SNOWBALL, world);
+        projectile.setOwner(player);
+        projectile.setPosition(player.getX(), player.getEyeY() - 0.1, player.getZ());
+
+        // Set velocity based on spell properties
+        double speed = spell.getProjectileSpeed() > 0 ? spell.getProjectileSpeed() : 1.5;
+        projectile.setVelocity(player, player.getPitch(), player.getYaw(), 0.0f, (float) speed,
+                1.0f);
+
+        // Spawn the projectile
+        world.spawnEntity(projectile);
+
+        MAM.LOGGER.debug("Spawned projectile with speed: {}", speed);
+        sendSuccessMessage(player, "Projectile spell launched!");
     }
 
     /**
@@ -136,15 +152,40 @@ public class SpellCaster {
         MAM.LOGGER.debug("Executing AOE spell: {}", spell.getId());
 
         double damage = spell.getDamage();
-        if (damage > 0) {
-            // Apply damage and effects to nearby entities
-            // Radius based on spell tier
-            double radius = 3.0 + (spell.getTier() * 0.5);
-            MAM.LOGGER.debug("AOE radius: {} blocks", radius);
-        }
+        double radius =
+                spell.getAoeRadius() > 0 ? spell.getAoeRadius() : (3.0 + (spell.getTier() * 0.5));
+        net.minecraft.server.world.ServerWorld world =
+                (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
 
-        applyStatusEffects(player, spell);
-        sendSuccessMessage(player, "AOE spell activated!");
+        if (damage > 0) {
+            // Get all living entities in radius
+            net.minecraft.util.math.Box box = new net.minecraft.util.math.Box(
+                    player.getX() - radius, player.getY() - radius, player.getZ() - radius,
+                    player.getX() + radius, player.getY() + radius, player.getZ() + radius);
+
+            int affectedCount = 0;
+            for (net.minecraft.entity.LivingEntity entity : world.getEntitiesByClass(
+                    net.minecraft.entity.LivingEntity.class, box,
+                    e -> e != player && e.squaredDistanceTo(player) <= radius * radius)) {
+
+                // Apply damage
+                entity.damage(world, player.getDamageSources().magic(), (float) damage);
+
+                // Apply status effects to target
+                if (spell.getStatusEffects() != null) {
+                    for (StatusEffectData effectData : spell.getStatusEffects()) {
+                        applyStatusEffectToEntity(entity, effectData);
+                    }
+                }
+                affectedCount++;
+            }
+
+            MAM.LOGGER.debug("AOE hit {} entities in {} block radius", affectedCount, radius);
+            sendSuccessMessage(player, String.format("AOE hit %d targets!", affectedCount));
+        } else {
+            applyStatusEffects(player, spell);
+            sendSuccessMessage(player, "AOE spell activated!");
+        }
     }
 
     /**
@@ -187,15 +228,80 @@ public class SpellCaster {
         }
 
         for (StatusEffectData effectData : spell.getStatusEffects()) {
-            try {
-                // Apply status effect to player
-                MAM.LOGGER.trace("Applying effect {} for {} ticks", effectData.getEffect(),
-                        effectData.getDuration());
-                // TODO: Convert effect string to StatusEffect and apply
-            } catch (Exception e) {
-                MAM.LOGGER.error("Failed to apply status effect: {}", effectData.getEffect(), e);
-            }
+            applyStatusEffectToEntity(player, effectData);
         }
+    }
+
+    /**
+     * Apply a status effect to an entity.
+     */
+    private static void applyStatusEffectToEntity(net.minecraft.entity.LivingEntity entity,
+            StatusEffectData effectData) {
+        try {
+            // Convert effect string to StatusEffect
+            net.minecraft.registry.entry.RegistryEntry<net.minecraft.entity.effect.StatusEffect> effect =
+                    getStatusEffectFromString(effectData.getEffect());
+
+            if (effect != null) {
+                entity.addStatusEffect(new net.minecraft.entity.effect.StatusEffectInstance(effect,
+                        effectData.getDuration(), effectData.getAmplifier(), false, // ambient
+                        true, // showParticles
+                        true // showIcon
+                ));
+
+                MAM.LOGGER.trace("Applied effect {} to {} for {} ticks", effectData.getEffect(),
+                        entity.getName().getString(), effectData.getDuration());
+            } else {
+                MAM.LOGGER.warn("Unknown status effect: {}", effectData.getEffect());
+            }
+        } catch (Exception e) {
+            MAM.LOGGER.error("Failed to apply status effect: {}", effectData.getEffect(), e);
+        }
+    }
+
+    /**
+     * Convert effect string to StatusEffect registry entry.
+     */
+    private static net.minecraft.registry.entry.RegistryEntry<net.minecraft.entity.effect.StatusEffect> getStatusEffectFromString(
+            String effectName) {
+
+        // Map common effect names to Minecraft status effects
+        return switch (effectName.toLowerCase()) {
+            case "fire", "burning" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("wither")).orElse(null);
+            case "speed", "swiftness" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("speed")).orElse(null);
+            case "strength" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("strength")).orElse(null);
+            case "regeneration", "regen" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("regeneration")).orElse(null);
+            case "poison" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("poison")).orElse(null);
+            case "weakness" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("weakness")).orElse(null);
+            case "slowness", "slow" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("slowness")).orElse(null);
+            case "resistance" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("resistance")).orElse(null);
+            case "absorption" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("absorption")).orElse(null);
+            case "levitation" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("levitation")).orElse(null);
+            case "glowing" -> net.minecraft.registry.Registries.STATUS_EFFECT
+                    .getEntry(net.minecraft.util.Identifier.ofVanilla("glowing")).orElse(null);
+            default -> {
+                // Try direct registry lookup
+                try {
+                    net.minecraft.util.Identifier id =
+                            effectName.contains(":") ? net.minecraft.util.Identifier.of(effectName)
+                                    : net.minecraft.util.Identifier.ofVanilla(effectName);
+                    yield net.minecraft.registry.Registries.STATUS_EFFECT.getEntry(id).orElse(null);
+                } catch (Exception e) {
+                    MAM.LOGGER.warn("Could not parse effect identifier: {}", effectName);
+                    yield null;
+                }
+            }
+        };
     }
 
     /**

@@ -13,7 +13,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 public class ManaComponent {
     private final Map<ManaPoolType, ManaPool> pools = new EnumMap<>(ManaPoolType.class);
     private final ServerPlayerEntity player;
-    private int tickCounter = 0;
 
     public ManaComponent(ServerPlayerEntity player) {
         if (player == null) {
@@ -91,8 +90,6 @@ public class ManaComponent {
      * Regenerate all mana pools. Should be called every tick for the player.
      */
     public void tick() {
-        tickCounter++;
-
         for (ManaPool pool : pools.values()) {
             pool.regenerate();
         }

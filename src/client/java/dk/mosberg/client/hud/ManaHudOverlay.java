@@ -1,12 +1,10 @@
 package dk.mosberg.client.hud;
 
-import dk.mosberg.MAM;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.util.Identifier;
 
 /**
  * Client-side HUD overlay for displaying mana pools, health, and status effects. Provides
@@ -14,9 +12,6 @@ import net.minecraft.util.Identifier;
  */
 @Environment(EnvType.CLIENT)
 public class ManaHudOverlay {
-    private static final Identifier MANA_ICONS =
-            Identifier.of(MAM.MOD_ID, "textures/gui/mana_icons.png");
-
     // Configuration
     private static boolean enabled = true;
     private static float scale = 1.0f;
@@ -62,9 +57,6 @@ public class ManaHudOverlay {
      */
     private static void renderManaDisplay(DrawContext context, MinecraftClient client,
             float tickDelta) {
-        int screenWidth = client.getWindow().getScaledWidth();
-        int screenHeight = client.getWindow().getScaledHeight();
-
         // Calculate position (default: top-left)
         int x = xOffset;
         int y = yOffset;
