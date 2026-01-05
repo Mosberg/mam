@@ -2,7 +2,6 @@ package dk.mosberg.mana;
 
 import java.util.HashMap;
 import java.util.Map;
-import dk.mosberg.util.NBTHelper;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -84,16 +83,21 @@ public class ManaComponent {
      * Read mana data from NBT.
      */
     public void readNbt(NbtCompound nbt) {
-        if (NBTHelper.contains(nbt, "mana")) {
-            NbtCompound manaData = nbt.getCompound("mana");
+        if (nbt.contains("mana")) {
+            NbtCompound manaData = nbt.getCompound("mana").orElse(new NbtCompound());
 
             for (ManaPoolType type : ManaPoolType.values()) {
-                if (NBTHelper.contains(manaData, type.getId())) {
-                    NbtCompound poolData = manaData.getCompound(type.getId());
+                if (manaData.contains(type.getId())) {
+                    NbtCompound poolData =
+                            manaData.getCompound(type.getId()).orElse(new NbtCompound());
                     ManaPool pool = pools.get(type);
 
-                    double max = NBTHelper.getDouble(poolData, "max", type.getMaxPool());
-                    double current = NBTHelper.getDouble(poolData, "current", max);
+                    double max = poolData.contains("max")
+                            ? poolData.getDouble("max").orElse(type.getMaxPool())
+                            : type.getMaxPool();
+                    double current =
+                            poolData.contains("current") ? poolData.getDouble("current").orElse(max)
+                                    : max;
 
                     pool.setMax(max);
                     pool.set(current);
