@@ -88,9 +88,6 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    // Mod Dependencies - Local source for full IDE integration
-    modImplementation "dk.mosberg:moddinghelperapi:1.0.0"
-
     // Libraries - Bundled with JAR
     include implementation("com.google.code.gson:gson:${project.gson_version}")
 
