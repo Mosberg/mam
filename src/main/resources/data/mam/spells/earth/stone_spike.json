@@ -1,0 +1,9 @@
+{
+  "id": "mam:stone_spike",
+  "school": "earth",
+  "castType": "projectile",
+  "manaCost": 13.0,
+  "tier": 1,
+  "damage": 9.0,
+  "projectileSpeed": 1.3
+}

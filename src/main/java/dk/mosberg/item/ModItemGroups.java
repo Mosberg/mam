@@ -16,46 +16,74 @@ import net.minecraft.util.Identifier;
  */
 public class ModItemGroups {
 
-    public static final RegistryKey<ItemGroup> GEMSTONES_GROUP =
-            RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(MAM.MOD_ID, "gemstones"));
+    public static final RegistryKey<ItemGroup> MAGIC_GROUP =
+            RegistryKey.of(RegistryKeys.ITEM_GROUP, Identifier.of(MAM.MOD_ID, "magic"));
 
-    public static final ItemGroup GEMSTONES =
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.RUBY))
-                    .displayName(Text.translatable("itemGroup.mam.gemstones")).build();
+    public static final ItemGroup MAGIC_ITEMS = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.ARCANE_WAND_MASTER))
+            .displayName(Text.translatable("itemGroup.mam.magic")).entries((context, entries) -> {
+                // === WANDS ===
+                entries.add(ModItems.FIRE_WAND_NOVICE);
+                entries.add(ModItems.FIRE_WAND_MASTER);
+                entries.add(ModItems.ICE_WAND_NOVICE);
+                entries.add(ModItems.ICE_WAND_MASTER);
+                entries.add(ModItems.ARCANE_WAND_NOVICE);
+                entries.add(ModItems.ARCANE_WAND_MASTER);
+
+                // === SPELL BOOKS ===
+                entries.add(ModItems.FIRE_SPELL_BOOK);
+                entries.add(ModItems.ICE_SPELL_BOOK);
+                entries.add(ModItems.ARCANE_SPELL_BOOK);
+                entries.add(ModItems.NATURE_SPELL_BOOK);
+                entries.add(ModItems.DARK_SPELL_BOOK);
+                entries.add(ModItems.LIGHT_SPELL_BOOK);
+
+                // === GEMSTONES ===
+                // Epic tier
+                entries.add(ModItems.RUBY);
+                entries.add(ModItems.SAPPHIRE);
+                entries.add(ModItems.TANZANITE);
+
+                // Rare tier
+                entries.add(ModItems.APATITE);
+                entries.add(ModItems.AQUAMARINE);
+                entries.add(ModItems.MOONSTONE);
+                entries.add(ModItems.RHODONITE);
+                entries.add(ModItems.TOPAZ);
+                entries.add(ModItems.TOURMALINE);
+
+                // Uncommon tier
+                entries.add(ModItems.CARNELIAN);
+                entries.add(ModItems.CITRINE);
+                entries.add(ModItems.JADE);
+                entries.add(ModItems.PERIDOT);
+                entries.add(ModItems.SODALITE);
+
+                // Common tier
+                entries.add(ModItems.HEMATITE);
+
+                // === MANA CRYSTAL BLOCKS ===
+                entries.add(ModBlockItems.PERSONAL_MANA_CRYSTAL);
+                entries.add(ModBlockItems.AURA_MANA_CRYSTAL);
+                entries.add(ModBlockItems.RESERVE_MANA_CRYSTAL);
+
+                // === RITUAL BLOCKS ===
+                entries.add(ModBlockItems.RITUAL_PEDESTAL);
+                entries.add(ModBlockItems.RITUAL_CANDLE);
+
+                // === BUILDING BLOCKS ===
+                entries.add(ModBlockItems.MANA_INFUSED_STONE);
+                entries.add(ModBlockItems.MANA_INFUSED_STONE_BRICKS);
+
+                // === CRAFTING BLOCKS ===
+                entries.add(ModBlockItems.ARCANE_ALTAR);
+            }).build();
 
     /**
      * Initialize and register all item groups.
      */
     public static void initialize() {
-        Registry.register(Registries.ITEM_GROUP, GEMSTONES_GROUP, GEMSTONES);
-
-        // Add all gemstones to the group
-        FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.RUBY))
-                .displayName(Text.translatable("itemGroup.mam.gemstones"))
-                .entries((context, entries) -> {
-                    // Epic tier
-                    entries.add(ModItems.RUBY);
-                    entries.add(ModItems.SAPPHIRE);
-                    entries.add(ModItems.TANZANITE);
-
-                    // Rare tier
-                    entries.add(ModItems.APATITE);
-                    entries.add(ModItems.AQUAMARINE);
-                    entries.add(ModItems.MOONSTONE);
-                    entries.add(ModItems.RHODONITE);
-                    entries.add(ModItems.TOPAZ);
-                    entries.add(ModItems.TOURMALINE);
-
-                    // Uncommon tier
-                    entries.add(ModItems.CARNELIAN);
-                    entries.add(ModItems.CITRINE);
-                    entries.add(ModItems.JADE);
-                    entries.add(ModItems.PERIDOT);
-                    entries.add(ModItems.SODALITE);
-
-                    // Common tier
-                    entries.add(ModItems.HEMATITE);
-                }).build();
+        Registry.register(Registries.ITEM_GROUP, MAGIC_GROUP, MAGIC_ITEMS);
 
         MAM.LOGGER.info("Registered item groups");
     }

@@ -1,0 +1,9 @@
+{
+  "id": "mam:wind_blade",
+  "school": "air",
+  "castType": "projectile",
+  "manaCost": 11.0,
+  "tier": 1,
+  "damage": 6.0,
+  "projectileSpeed": 2.8
+}

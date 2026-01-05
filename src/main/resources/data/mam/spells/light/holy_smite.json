@@ -1,0 +1,9 @@
+{
+  "id": "mam:holy_smite",
+  "school": "light",
+  "castType": "projectile",
+  "manaCost": 14.0,
+  "tier": 1,
+  "damage": 11.0,
+  "projectileSpeed": 2.2
+}

@@ -124,13 +124,12 @@ public class SpellCaster {
         // Apply immediate status effects to caster
         applyStatusEffects(player, spell);
 
-        // Launch projectile - use snowball as base entity for now
+        // Launch custom spell projectile
         net.minecraft.server.world.ServerWorld world =
                 (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
-        net.minecraft.entity.projectile.thrown.SnowballEntity projectile =
-                new net.minecraft.entity.projectile.thrown.SnowballEntity(
-                        net.minecraft.entity.EntityType.SNOWBALL, world);
-        projectile.setOwner(player);
+        dk.mosberg.entity.SpellProjectileEntity projectile =
+                new dk.mosberg.entity.SpellProjectileEntity(world, player);
+        projectile.setSpell(spell);
         projectile.setPosition(player.getX(), player.getEyeY() - 0.1, player.getZ());
 
         // Set velocity based on spell properties
@@ -141,7 +140,7 @@ public class SpellCaster {
         // Spawn the projectile
         world.spawnEntity(projectile);
 
-        MAM.LOGGER.debug("Spawned projectile with speed: {}", speed);
+        MAM.LOGGER.debug("Spawned spell projectile for {} with speed: {}", spell.getId(), speed);
         sendSuccessMessage(player, "Projectile spell launched!");
     }
 

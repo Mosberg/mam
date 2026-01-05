@@ -1,0 +1,20 @@
+{
+  "id": "mam:apotheosis",
+  "category": "ascension",
+  "ritual_items": [
+    "mam:reserve_mana_crystal",
+    "minecraft:nether_star",
+    "mam:ruby",
+    "mam:sapphire",
+    "mam:tanzanite"
+  ],
+  "pattern": {
+    "type": "circle",
+    "radius": 5
+  },
+  "effect": {
+    "type": "ascend",
+    "buffs": ["strength", "resistance", "regeneration"]
+  },
+  "duration": 6000
+}

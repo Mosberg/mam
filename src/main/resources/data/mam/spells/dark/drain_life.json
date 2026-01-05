@@ -1,0 +1,15 @@
+{
+  "id": "mam:drain_life",
+  "school": "dark",
+  "castType": "utility",
+  "manaCost": 25.0,
+  "tier": 3,
+  "damage": 8.0,
+  "statusEffects": [
+    {
+      "effect": "regeneration",
+      "duration": 40,
+      "amplifier": 2
+    }
+  ]
+}

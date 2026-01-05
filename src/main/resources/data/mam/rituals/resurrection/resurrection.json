@@ -1,0 +1,18 @@
+{
+  "id": "mam:resurrection",
+  "category": "resurrection",
+  "ritual_items": [
+    "minecraft:totem_of_undying",
+    "mam:light_spell_book",
+    "minecraft:golden_apple"
+  ],
+  "pattern": {
+    "type": "cross",
+    "radius": 4
+  },
+  "effect": {
+    "type": "cheat_death",
+    "charges": 1
+  },
+  "duration": 1200
+}

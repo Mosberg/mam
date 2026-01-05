@@ -1,0 +1,16 @@
+{
+  "id": "mam:flame_burst",
+  "school": "fire",
+  "castType": "aoe",
+  "manaCost": 25.0,
+  "tier": 2,
+  "damage": 12.0,
+  "aoeRadius": 5.0,
+  "statusEffects": [
+    {
+      "effect": "fire",
+      "duration": 100,
+      "amplifier": 1
+    }
+  ]
+}

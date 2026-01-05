@@ -107,7 +107,7 @@ public class MagicRegistry {
 
     /**
      * Get a spell by its identifier.
-     * 
+     *
      * @param id The spell identifier
      * @return The spell, or null if not found
      */
@@ -120,7 +120,7 @@ public class MagicRegistry {
 
     /**
      * Get a spell by namespace and path.
-     * 
+     *
      * @param namespace The namespace (e.g., "mam")
      * @param path The path (e.g., "fireball")
      * @return The spell, or null if not found
@@ -133,8 +133,29 @@ public class MagicRegistry {
     }
 
     /**
+     * Get a spell by string identifier (e.g., "mam:fireball" or "fireball"). If no namespace is
+     * provided, defaults to "mam".
+     *
+     * @param idString The spell identifier as a string
+     * @return The spell, or null if not found
+     */
+    public static Spell getSpell(String idString) {
+        if (idString == null || idString.isEmpty()) {
+            return null;
+        }
+
+        // If it contains a colon, parse as full identifier
+        if (idString.contains(":")) {
+            return getSpell(Identifier.of(idString));
+        }
+
+        // Otherwise, assume "mam" namespace
+        return getSpell(MAM.MOD_ID, idString);
+    }
+
+    /**
      * Get all spells.
-     * 
+     *
      * @return Immutable collection of all spells
      */
     public static Collection<Spell> getAllSpells() {
@@ -143,7 +164,7 @@ public class MagicRegistry {
 
     /**
      * Get all spells of a specific school.
-     * 
+     *
      * @param school The spell school
      * @return Collection of spells in this school
      */
@@ -156,7 +177,7 @@ public class MagicRegistry {
 
     /**
      * Get spells by cast type.
-     * 
+     *
      * @param castType The cast type to filter by
      * @return Collection of spells with this cast type
      */
@@ -170,7 +191,7 @@ public class MagicRegistry {
 
     /**
      * Get spells by tier.
-     * 
+     *
      * @param tier The tier level (1-10)
      * @return Collection of spells at this tier
      */
@@ -184,7 +205,7 @@ public class MagicRegistry {
 
     /**
      * Check if a spell exists.
-     * 
+     *
      * @param id The spell identifier
      * @return true if spell exists
      */
@@ -194,7 +215,7 @@ public class MagicRegistry {
 
     /**
      * Get total spell count.
-     * 
+     *
      * @return Number of loaded spells
      */
     public static int getSpellCount() {
@@ -205,7 +226,7 @@ public class MagicRegistry {
 
     /**
      * Get a ritual by its identifier.
-     * 
+     *
      * @param id The ritual identifier
      * @return The ritual, or null if not found
      */
@@ -218,7 +239,7 @@ public class MagicRegistry {
 
     /**
      * Get a ritual by namespace and path.
-     * 
+     *
      * @param namespace The namespace (e.g., "mam")
      * @param path The path (e.g., "apotheosis_ritual")
      * @return The ritual, or null if not found
@@ -231,8 +252,29 @@ public class MagicRegistry {
     }
 
     /**
+     * Get a ritual by string identifier (e.g., "mam:apotheosis_ritual" or "apotheosis_ritual"). If
+     * no namespace is provided, defaults to "mam".
+     *
+     * @param idString The ritual identifier as a string
+     * @return The ritual, or null if not found
+     */
+    public static Ritual getRitual(String idString) {
+        if (idString == null || idString.isEmpty()) {
+            return null;
+        }
+
+        // If it contains a colon, parse as full identifier
+        if (idString.contains(":")) {
+            return getRitual(Identifier.of(idString));
+        }
+
+        // Otherwise, assume "mam" namespace
+        return getRitual(MAM.MOD_ID, idString);
+    }
+
+    /**
      * Get all rituals.
-     * 
+     *
      * @return Immutable collection of all rituals
      */
     public static Collection<Ritual> getAllRituals() {
@@ -241,7 +283,7 @@ public class MagicRegistry {
 
     /**
      * Get all rituals of a specific category.
-     * 
+     *
      * @param category The ritual category
      * @return Collection of rituals in this category
      */
@@ -254,7 +296,7 @@ public class MagicRegistry {
 
     /**
      * Check if a ritual exists.
-     * 
+     *
      * @param id The ritual identifier
      * @return true if ritual exists
      */
@@ -264,7 +306,7 @@ public class MagicRegistry {
 
     /**
      * Get total ritual count.
-     * 
+     *
      * @return Number of loaded rituals
      */
     public static int getRitualCount() {
@@ -275,7 +317,7 @@ public class MagicRegistry {
 
     /**
      * Get total content count (spells + rituals).
-     * 
+     *
      * @return Total number of loaded magic content
      */
     public static int getTotalContentCount() {

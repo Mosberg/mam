@@ -1,0 +1,14 @@
+{
+  "id": "mam:nature_heal",
+  "school": "nature",
+  "castType": "utility",
+  "manaCost": 20.0,
+  "tier": 1,
+  "statusEffects": [
+    {
+      "effect": "regeneration",
+      "duration": 100,
+      "amplifier": 1
+    }
+  ]
+}

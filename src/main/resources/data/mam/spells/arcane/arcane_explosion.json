@@ -1,0 +1,9 @@
+{
+  "id": "mam:arcane_explosion",
+  "school": "arcane",
+  "castType": "aoe",
+  "manaCost": 35.0,
+  "tier": 3,
+  "damage": 15.0,
+  "aoeRadius": 4.0
+}

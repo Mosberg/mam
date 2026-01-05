@@ -1,0 +1,14 @@
+{
+  "id": "mam:blood_sacrifice_ritual",
+  "category": "sacrifice",
+  "ritual_items": ["mam:ruby", "minecraft:redstone", "mam:blood_sacrifice"],
+  "pattern": {
+    "type": "pentagram",
+    "radius": 3
+  },
+  "effect": {
+    "type": "power_boost",
+    "damage_multiplier": 1.5
+  },
+  "duration": 1800
+}

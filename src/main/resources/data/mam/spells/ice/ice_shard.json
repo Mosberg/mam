@@ -1,0 +1,16 @@
+{
+  "id": "mam:ice_shard",
+  "school": "ice",
+  "castType": "projectile",
+  "manaCost": 12.0,
+  "tier": 1,
+  "damage": 6.0,
+  "projectileSpeed": 2.0,
+  "statusEffects": [
+    {
+      "effect": "slowness",
+      "duration": 80,
+      "amplifier": 1
+    }
+  ]
+}

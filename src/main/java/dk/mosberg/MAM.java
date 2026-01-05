@@ -2,7 +2,7 @@ package dk.mosberg;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import dk.mosberg.command.ManaCommands;
+import dk.mosberg.command.MagicCommands;
 import dk.mosberg.event.ServerEventHandlers;
 import dk.mosberg.item.ModItemGroups;
 import dk.mosberg.item.ModItems;
@@ -33,8 +33,11 @@ public class MAM implements ModInitializer {
 			ManaConfig.load();
 
 			// Phase 2: Register game content
+			dk.mosberg.block.ModBlocks.initialize();
+			dk.mosberg.item.ModBlockItems.initialize();
 			ModItems.initialize();
 			ModItemGroups.initialize();
+			dk.mosberg.entity.ModEntities.initialize();
 
 			// Phase 3: Load data-driven content
 			MagicRegistry.initialize();
@@ -43,7 +46,7 @@ public class MAM implements ModInitializer {
 			ManaNetworkHandler.register();
 
 			// Phase 5: Register commands
-			CommandRegistrationCallback.EVENT.register(ManaCommands::register);
+			CommandRegistrationCallback.EVENT.register(MagicCommands::register);
 
 			// Phase 6: Register server event handlers
 			ServerEventHandlers.register();

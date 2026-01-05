@@ -1,0 +1,16 @@
+{
+  "id": "mam:void_ray",
+  "school": "void",
+  "castType": "projectile",
+  "manaCost": 24.0,
+  "tier": 3,
+  "damage": 15.0,
+  "projectileSpeed": 2.5,
+  "statusEffects": [
+    {
+      "effect": "wither",
+      "duration": 40,
+      "amplifier": 1
+    }
+  ]
+}

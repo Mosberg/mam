@@ -1,0 +1,15 @@
+{
+  "id": "mam:blood_drain",
+  "school": "blood",
+  "castType": "utility",
+  "manaCost": 22.0,
+  "tier": 2,
+  "damage": 7.0,
+  "statusEffects": [
+    {
+      "effect": "regeneration",
+      "duration": 80,
+      "amplifier": 1
+    }
+  ]
+}

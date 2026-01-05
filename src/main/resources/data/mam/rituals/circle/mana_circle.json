@@ -1,0 +1,18 @@
+{
+  "id": "mam:mana_circle",
+  "category": "circle",
+  "ritual_items": [
+    "mam:personal_mana_crystal",
+    "mam:aura_mana_crystal",
+    "mam:ritual_candle"
+  ],
+  "pattern": {
+    "type": "pentagram",
+    "radius": 4
+  },
+  "effect": {
+    "type": "boost_mana_regen",
+    "multiplier": 2.0
+  },
+  "duration": 3000
+}
