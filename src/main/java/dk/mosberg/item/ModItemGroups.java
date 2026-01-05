@@ -62,6 +62,18 @@ public class ModItemGroups {
                 // Common tier
                 entries.add(ModItems.HEMATITE);
 
+                // === MAGICAL ITEMS ===
+                entries.add(ModItems.MANA_BOTTLE);
+                entries.add(ModItems.MANA_SHARD);
+                entries.add(ModItems.ESSENCE_VIAL);
+                entries.add(ModItems.RITUAL_FOCUS);
+                entries.add(ModItems.SPELL_COMPONENT);
+                entries.add(ModItems.SPELL_SCROLL);
+                entries.add(ModItems.GRIMOIRE);
+                entries.add(ModItems.SPELL_TOME);
+                entries.add(ModItems.CATALYST_ARTIFACT);
+                entries.add(ModItems.ENCHANTED_GEM);
+
                 // === MANA CRYSTAL BLOCKS ===
                 entries.add(ModBlockItems.PERSONAL_MANA_CRYSTAL);
                 entries.add(ModBlockItems.AURA_MANA_CRYSTAL);

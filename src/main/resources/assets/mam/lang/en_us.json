@@ -1,6 +1,7 @@
 {
   "_comment": "Mana And Magic - English (US) Translations",
 
+  "itemGroup.mam.magic": "Mana & Magic",
   "itemGroup.mam.main": "Mana & Magic",
   "itemGroup.mam.gemstones": "Mana & Magic: Gemstones",
   "itemGroup.mam.blocks": "Mana & Magic: Blocks",
@@ -44,6 +45,17 @@
   "item.mam.nature_spell_book": "Nature Spell Book",
   "item.mam.dark_spell_book": "Dark Spell Book",
   "item.mam.light_spell_book": "Light Spell Book",
+
+  "item.mam.mana_bottle": "Mana Bottle",
+  "item.mam.mana_shard": "Mana Shard",
+  "item.mam.essence_vial": "Essence Vial",
+  "item.mam.ritual_focus": "Ritual Focus",
+  "item.mam.spell_component": "Spell Component",
+  "item.mam.spell_scroll": "Spell Scroll",
+  "item.mam.grimoire": "Grimoire",
+  "item.mam.spell_tome": "Spell Tome",
+  "item.mam.catalyst_artifact": "Catalyst Artifact",
+  "item.mam.enchanted_gem": "Enchanted Gem",
 
   "entity.mam.spell_projectile": "Spell Projectile",
 
