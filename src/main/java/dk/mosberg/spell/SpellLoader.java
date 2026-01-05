@@ -51,10 +51,7 @@ public class SpellLoader {
      */
     private static int loadSpellsFromResources(String basePath, SpellSchool school) {
         int count = 0;
-
-        // In a real implementation, you would need to list resource files
-        // For now, we'll try to load known spell files based on the JSON files that exist
-        // This is a simplified version - a production version would use a resource walker
+        int errors = 0;
 
         String[] knownSpells = getKnownSpellsForSchool(school);
         for (String spellFile : knownSpells) {
@@ -68,18 +65,53 @@ public class SpellLoader {
                             .getAsJsonObject();
 
                     Spell spell = Spell.fromJson(json);
-                    SPELLS.put(spell.getId(), spell);
-                    count++;
-                    MAM.LOGGER.debug("Loaded spell: {}", spell.getId());
+
+                    // Validate spell data
+                    if (validateSpell(spell)) {
+                        SPELLS.put(spell.getId(), spell);
+                        count++;
+                        MAM.LOGGER.debug("Loaded spell: {} (School: {}, Tier: {})", spell.getId(),
+                                spell.getSchool().getId(), spell.getTier());
+                    } else {
+                        errors++;
+                        MAM.LOGGER.warn("Spell validation failed: {}", spell.getId());
+                    }
+                } else {
+                    MAM.LOGGER.trace("Spell file not found: {}", resourcePath);
                 }
             } catch (IOException e) {
-                MAM.LOGGER.error("Failed to load spell from: {}", resourcePath, e);
+                errors++;
+                MAM.LOGGER.error("I/O error loading spell: {}", resourcePath, e);
             } catch (Exception e) {
-                MAM.LOGGER.error("Failed to parse spell from: {}", resourcePath, e);
+                errors++;
+                MAM.LOGGER.error("Error parsing spell: {}", resourcePath, e);
             }
         }
 
+        if (errors > 0) {
+            MAM.LOGGER.warn("Loaded {} spells for {} with {} errors", count, school.getId(),
+                    errors);
+        }
+
         return count;
+    }
+
+    /**
+     * Validate spell data for consistency.
+     */
+    private static boolean validateSpell(Spell spell) {
+        if (spell == null || spell.getId() == null) {
+            return false;
+        }
+        if (spell.getManaCost() < 0) {
+            MAM.LOGGER.warn("Spell {} has negative mana cost", spell.getId());
+            return false;
+        }
+        if (spell.getTier() < 1) {
+            MAM.LOGGER.warn("Spell {} has invalid tier", spell.getId());
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -145,5 +177,24 @@ public class SpellLoader {
      */
     public static boolean isLoaded() {
         return loaded;
+    }
+
+    /**
+     * Get the number of loaded spells.
+     * 
+     * @return Count of loaded spells
+     */
+    public static int getSpellCount() {
+        return SPELLS.size();
+    }
+
+    /**
+     * Check if a spell exists.
+     * 
+     * @param id The spell identifier
+     * @return true if the spell is loaded
+     */
+    public static boolean hasSpell(Identifier id) {
+        return SPELLS.containsKey(id);
     }
 }

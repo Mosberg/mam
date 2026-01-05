@@ -31,4 +31,12 @@ public enum ManaPoolType {
             case RESERVE -> ManaConfig.getReserveRegenRate();
         };
     }
+
+    public String getDisplayName() {
+        return switch (this) {
+            case PERSONAL -> "Personal";
+            case AURA -> "Aura";
+            case RESERVE -> "Reserve";
+        };
+    }
 }

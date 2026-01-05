@@ -62,9 +62,28 @@ public class ModItems {
 
     /**
      * Get a gemstone item by its type.
+     * 
+     * @param type The gemstone type
+     * @return The gemstone item, or null if not found
      */
     public static GemstoneItem getGemstone(GemstoneType type) {
         return GEMSTONES.get(type);
+    }
+
+    /**
+     * Get all registered gemstone items.
+     * 
+     * @return Unmodifiable map of gemstone types to items
+     */
+    public static Map<GemstoneType, GemstoneItem> getAllGemstones() {
+        return Map.copyOf(GEMSTONES);
+    }
+
+    /**
+     * Check if a gemstone type is registered.
+     */
+    public static boolean hasGemstone(GemstoneType type) {
+        return GEMSTONES.containsKey(type);
     }
 
     /**

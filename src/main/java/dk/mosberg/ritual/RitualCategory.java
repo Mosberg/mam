@@ -50,6 +50,24 @@ public enum RitualCategory {
         return focus;
     }
 
+    public String getDisplayName() {
+        return switch (this) {
+            case ASCENSION -> "Ascension";
+            case CIRCLE -> "Circle";
+            case COSMIC -> "Cosmic";
+            case ELEMENTAL -> "Elemental";
+            case FOUNTAIN -> "Fountain";
+            case PLANAR -> "Planar";
+            case REALITY -> "Reality";
+            case RESURRECTION -> "Resurrection";
+            case SACRIFICE -> "Sacrifice";
+            case SUMMONING -> "Summoning";
+            case TEMPORAL -> "Temporal";
+            case TRANSFORMATION -> "Transformation";
+            case VORTEX -> "Vortex";
+        };
+    }
+
     public static RitualCategory fromId(String id) {
         for (RitualCategory category : values()) {
             if (category.id.equals(id)) {

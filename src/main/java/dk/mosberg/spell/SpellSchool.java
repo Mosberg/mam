@@ -42,6 +42,24 @@ public enum SpellSchool {
         return focus;
     }
 
+    public String getDisplayName() {
+        return switch (this) {
+            case AIR -> "Air";
+            case ARCANE -> "Arcane";
+            case BLOOD -> "Blood";
+            case CHAOS -> "Chaos";
+            case DARK -> "Dark";
+            case EARTH -> "Earth";
+            case FIRE -> "Fire";
+            case ICE -> "Ice";
+            case LIGHT -> "Light";
+            case NATURE -> "Nature";
+            case THUNDER -> "Thunder";
+            case VOID -> "Void";
+            case WATER -> "Water";
+        };
+    }
+
     public static SpellSchool fromId(String id) {
         for (SpellSchool school : values()) {
             if (school.id.equals(id)) {

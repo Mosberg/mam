@@ -2,36 +2,60 @@ package dk.mosberg;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import dk.mosberg.command.ManaCommands;
+import dk.mosberg.event.ServerEventHandlers;
+import dk.mosberg.item.ModItemGroups;
 import dk.mosberg.item.ModItems;
 import dk.mosberg.mana.ManaConfig;
 import dk.mosberg.registry.MagicRegistry;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
+/**
+ * Main entry point for Mana And Magic mod. Initializes all systems, registers items, and sets up
+ * event handlers.
+ */
 public class MAM implements ModInitializer {
 	public static final String MOD_ID = "mam";
+	public static final String MOD_NAME = "Mana And Magic";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
+	/** Centralized logger for the entire mod */
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		long startTime = System.currentTimeMillis();
+		LOGGER.info("Initializing {} v{}...", MOD_NAME, getModVersion());
 
-		LOGGER.info("Initializing Mana And Magic...");
+		try {
+			// Phase 1: Load configuration
+			ManaConfig.load();
 
-		// Load mana configuration
-		ManaConfig.load();
+			// Phase 2: Register game content
+			ModItems.initialize();
+			ModItemGroups.initialize();
 
-		// Register all gemstone items
-		ModItems.initialize();
+			// Phase 3: Load data-driven content
+			MagicRegistry.initialize();
 
-		// Load all spells and rituals
-		MagicRegistry.initialize();
+			// Phase 4: Register commands
+			CommandRegistrationCallback.EVENT.register(ManaCommands::register);
 
-		LOGGER.info("Mana And Magic initialized successfully!");
+			// Phase 5: Register server event handlers
+			ServerEventHandlers.register();
+
+			long duration = System.currentTimeMillis() - startTime;
+			LOGGER.info("{} initialized successfully in {}ms", MOD_NAME, duration);
+		} catch (Exception e) {
+			LOGGER.error("Failed to initialize {}", MOD_NAME, e);
+			throw new RuntimeException("Mod initialization failed", e);
+		}
+	}
+
+	/**
+	 * Get the mod version from build properties.
+	 */
+	private String getModVersion() {
+		return "1.0.0"; // Could be loaded from gradle.properties
 	}
 }
