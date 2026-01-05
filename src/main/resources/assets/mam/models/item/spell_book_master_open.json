@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "mam:item/spell_book_master_open",
-    "layer1": "mam:item/spell_book_master_open_pages"
+    "layer0": "mam:item/spellbook/spell_book_master_open",
+    "layer1": "mam:item/spellbook/spell_book_master_open_pages"
   },
   "display": {
     "thirdperson_righthand": {

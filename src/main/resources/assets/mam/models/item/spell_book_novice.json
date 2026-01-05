@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "mam:item/spell_book_novice",
-    "layer1": "mam:item/spell_book_novice_overlay"
+    "layer0": "mam:item/spellbook/spell_book_novice",
+    "layer1": "mam:item/spellbook/spell_book_novice_overlay"
   },
   "display": {
     "thirdperson_righthand": {

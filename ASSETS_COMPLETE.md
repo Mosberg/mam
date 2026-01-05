@@ -86,12 +86,12 @@ All use `"parent": "minecraft:item/handheld"` for proper held rendering
 
 All use `"parent": "minecraft:item/generated"` for flat rendering
 
-- fire_spell_book.json → textures/item/spell_book/fire_spell_book.png
-- ice_spell_book.json → textures/item/spell_book/ice_spell_book.png
-- arcane_spell_book.json → textures/item/spell_book/arcane_spell_book.png
-- nature_spell_book.json → textures/item/spell_book/nature_spell_book.png
-- dark_spell_book.json → textures/item/spell_book/dark_spell_book.png
-- light_spell_book.json → textures/item/spell_book/light_spell_book.png
+- fire_spell_book.json → textures/item/spellbook/spell_book/fire_spell_book.png
+- ice_spell_book.json → textures/item/spellbook/spell_book/ice_spell_book.png
+- arcane_spell_book.json → textures/item/spellbook/spell_book/arcane_spell_book.png
+- nature_spell_book.json → textures/item/spellbook/spell_book/nature_spell_book.png
+- dark_spell_book.json → textures/item/spellbook/spell_book/dark_spell_book.png
+- light_spell_book.json → textures/item/spellbook/spell_book/light_spell_book.png
 
 #### Gemstones (15 models - ALREADY EXISTED)
 
