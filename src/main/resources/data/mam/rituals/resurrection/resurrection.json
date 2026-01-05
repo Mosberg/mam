@@ -1,6 +1,11 @@
 {
   "id": "mam:resurrection",
+  "name": "Ritual of Resurrection",
+  "description": "Defy death itself by weaving light magic into a protective ward that will revive you when struck down",
   "category": "resurrection",
+  "mana_cost": 300.0,
+  "cooldown_seconds": 1800,
+  "level_requirement": 30,
   "ritual_items": [
     "minecraft:totem_of_undying",
     "mam:light_spell_book",
@@ -8,11 +13,21 @@
   ],
   "pattern": {
     "type": "cross",
-    "radius": 4
+    "radius": 4,
+    "material": "minecraft:gold_block",
+    "candles_required": 4
   },
   "effect": {
     "type": "cheat_death",
-    "charges": 1
+    "charges": 1,
+    "restore_health": 20.0
   },
-  "duration": 1200
+  "duration": 1200,
+  "particles": {
+    "type": "totem_of_undying",
+    "color": "FFFF00",
+    "intensity": "high"
+  },
+  "sound": "item.totem.use",
+  "synergy_schools": ["light", "nature"]
 }

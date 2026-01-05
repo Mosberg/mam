@@ -1,16 +1,27 @@
 {
   "id": "mam:earthquake",
+  "name": "Earthquake",
+  "description": "Shake the ground violently, dealing heavy damage and slowing all enemies in a massive radius",
   "school": "earth",
   "castType": "aoe",
-  "manaCost": 35.0,
-  "tier": 3,
-  "damage": 13.0,
+  "manaCost": 38.0,
+  "tier": 4,
+  "castTime": 2.2,
+  "cooldown": 20.0,
+  "requiredLevel": 22,
+  "damage": 18.0,
   "aoeRadius": 8.0,
   "statusEffects": [
     {
       "effect": "slowness",
       "duration": 100,
-      "amplifier": 1
+      "amplifier": 2
     }
-  ]
+  ],
+  "sound": "entity.warden.sonic_boom",
+  "vfx": {
+    "particleType": "block",
+    "color": "8B4513",
+    "intensity": "very_high"
+  }
 }

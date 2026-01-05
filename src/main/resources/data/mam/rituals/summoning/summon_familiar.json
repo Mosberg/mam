@@ -1,6 +1,11 @@
 {
   "id": "mam:summon_familiar",
+  "name": "Summon Familiar",
+  "description": "Call forth a loyal companion from another realm to aid you in battle for an extended duration",
   "category": "summoning",
+  "mana_cost": 180.0,
+  "cooldown_seconds": 1200,
+  "level_requirement": 20,
   "ritual_items": [
     "minecraft:bone",
     "mam:arcane_spell_book",
@@ -8,11 +13,23 @@
   ],
   "pattern": {
     "type": "star",
-    "radius": 4
+    "radius": 4,
+    "material": "minecraft:obsidian",
+    "candles_required": 6
   },
   "effect": {
     "type": "summon",
-    "entity": "minecraft:wolf"
+    "entity": "minecraft:wolf",
+    "count": 2,
+    "tamed": true,
+    "health_bonus": 10.0
   },
-  "duration": 6000
+  "duration": 6000,
+  "particles": {
+    "type": "portal",
+    "color": "9370DB",
+    "intensity": "high"
+  },
+  "sound": "block.portal.trigger",
+  "synergy_schools": ["arcane", "void"]
 }

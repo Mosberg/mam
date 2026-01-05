@@ -1,9 +1,14 @@
 {
   "id": "mam:divine_shield",
+  "name": "Divine Shield",
+  "description": "Surround yourself with holy protection, gaining resistance and absorption",
   "school": "light",
   "castType": "utility",
   "manaCost": 30.0,
   "tier": 2,
+  "castTime": 1.0,
+  "cooldown": 20.0,
+  "requiredLevel": 10,
   "statusEffects": [
     {
       "effect": "resistance",
@@ -15,5 +20,11 @@
       "duration": 120,
       "amplifier": 1
     }
-  ]
+  ],
+  "sound": "block.enchantment_table.use",
+  "vfx": {
+    "particleType": "end_rod",
+    "color": "FFFFAA",
+    "intensity": "medium"
+  }
 }

@@ -4,7 +4,7 @@
   "school": "fire",
   "description": "A blazing projectile that scorches enemies on impact, dealing fire damage over a small area.",
   "castType": "projectile",
-  "manaCost": 50.0,
+  "manaCost": 15.0,
   "castTime": 1.0,
   "cooldown": 5.0,
   "tier": 1,

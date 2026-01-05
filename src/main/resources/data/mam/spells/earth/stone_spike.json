@@ -1,9 +1,20 @@
 {
   "id": "mam:stone_spike",
+  "name": "Stone Spike",
+  "description": "Summon a jagged spike of stone from the ground to impale your target",
   "school": "earth",
   "castType": "projectile",
-  "manaCost": 13.0,
+  "manaCost": 10.0,
   "tier": 1,
-  "damage": 9.0,
-  "projectileSpeed": 1.3
+  "castTime": 0.7,
+  "cooldown": 3.5,
+  "requiredLevel": 2,
+  "damage": 8.0,
+  "projectileSpeed": 2.0,
+  "sound": "block.stone.break",
+  "vfx": {
+    "particleType": "block",
+    "color": "696969",
+    "intensity": "medium"
+  }
 }

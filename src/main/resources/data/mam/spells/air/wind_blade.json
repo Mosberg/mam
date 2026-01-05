@@ -1,9 +1,20 @@
 {
   "id": "mam:wind_blade",
+  "name": "Wind Blade",
+  "description": "Launch a razor-sharp crescent of compressed air that slices through enemies",
   "school": "air",
   "castType": "projectile",
   "manaCost": 11.0,
   "tier": 1,
+  "castTime": 0.8,
+  "cooldown": 4.0,
+  "requiredLevel": 3,
   "damage": 6.0,
-  "projectileSpeed": 2.8
+  "projectileSpeed": 2.8,
+  "sound": "entity.player.attack.sweep",
+  "vfx": {
+    "particleType": "sweep_attack",
+    "color": "FFFFFF",
+    "intensity": "medium"
+  }
 }

@@ -4,7 +4,10 @@ import dk.mosberg.MAM;
 import dk.mosberg.client.config.HudConfig;
 import dk.mosberg.client.hud.ManaHudOverlay;
 import dk.mosberg.client.network.ClientManaNetworkHandler;
+import dk.mosberg.client.renderer.entity.SpellProjectileRenderer;
+import dk.mosberg.entity.ModEntities;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 
 /**
@@ -21,6 +24,9 @@ public class MAMClient implements ClientModInitializer {
 
 		// Register client-side networking
 		ClientManaNetworkHandler.register();
+
+		// Register entity renderers
+		EntityRendererRegistry.register(ModEntities.SPELL_PROJECTILE, SpellProjectileRenderer::new);
 
 		// Register HUD overlay (suppressing deprecation warning as HudRenderCallback is best
 		// available for 1.21)

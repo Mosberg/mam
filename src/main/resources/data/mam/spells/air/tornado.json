@@ -1,9 +1,14 @@
 {
   "id": "mam:tornado",
+  "name": "Tornado",
+  "description": "Summon a violent whirlwind that lifts enemies into the air and damages them over time",
   "school": "air",
   "castType": "aoe",
   "manaCost": 32.0,
   "tier": 3,
+  "castTime": 1.5,
+  "cooldown": 12.0,
+  "requiredLevel": 15,
   "damage": 10.0,
   "aoeRadius": 5.0,
   "statusEffects": [
@@ -12,5 +17,11 @@
       "duration": 60,
       "amplifier": 1
     }
-  ]
+  ],
+  "sound": "entity.wither.shoot",
+  "vfx": {
+    "particleType": "cloud",
+    "color": "F0F8FF",
+    "intensity": "high"
+  }
 }

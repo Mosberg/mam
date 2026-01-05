@@ -1,9 +1,14 @@
 {
   "id": "mam:blood_sacrifice",
+  "name": "Blood Sacrifice",
+  "description": "Sacrifice your vitality to gain immense strength and deal devastating area damage",
   "school": "blood",
   "castType": "aoe",
   "manaCost": 45.0,
   "tier": 3,
+  "castTime": 2.0,
+  "cooldown": 25.0,
+  "requiredLevel": 18,
   "damage": 18.0,
   "aoeRadius": 4.0,
   "statusEffects": [
@@ -12,5 +17,11 @@
       "duration": 100,
       "amplifier": 2
     }
-  ]
+  ],
+  "sound": "entity.wither.death",
+  "vfx": {
+    "particleType": "crimson_spore",
+    "color": "DC143C",
+    "intensity": "very_high"
+  }
 }

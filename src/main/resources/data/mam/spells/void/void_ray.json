@@ -1,9 +1,14 @@
 {
   "id": "mam:void_ray",
+  "name": "Void Ray",
+  "description": "Channel the emptiness of the void to wither and decay your enemies",
   "school": "void",
   "castType": "projectile",
   "manaCost": 24.0,
   "tier": 3,
+  "castTime": 1.5,
+  "cooldown": 10.0,
+  "requiredLevel": 16,
   "damage": 15.0,
   "projectileSpeed": 2.5,
   "statusEffects": [
@@ -12,5 +17,11 @@
       "duration": 40,
       "amplifier": 1
     }
-  ]
+  ],
+  "sound": "entity.wither.shoot",
+  "vfx": {
+    "particleType": "smoke",
+    "color": "191970",
+    "intensity": "high"
+  }
 }

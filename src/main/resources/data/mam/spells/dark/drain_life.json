@@ -1,9 +1,14 @@
 {
   "id": "mam:drain_life",
+  "name": "Drain Life",
+  "description": "Siphon the vital essence from your surroundings to rapidly restore your own health",
   "school": "dark",
   "castType": "utility",
   "manaCost": 25.0,
   "tier": 3,
+  "castTime": 1.5,
+  "cooldown": 15.0,
+  "requiredLevel": 14,
   "damage": 8.0,
   "statusEffects": [
     {
@@ -11,5 +16,11 @@
       "duration": 40,
       "amplifier": 2
     }
-  ]
+  ],
+  "sound": "entity.zombie_villager.converted",
+  "vfx": {
+    "particleType": "smoke",
+    "color": "4B0082",
+    "intensity": "medium"
+  }
 }

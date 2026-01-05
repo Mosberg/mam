@@ -1,9 +1,14 @@
 {
   "id": "mam:ice_shard",
+  "name": "Ice Shard",
+  "description": "Fire a piercing shard of ice that freezes enemies on impact",
   "school": "ice",
   "castType": "projectile",
   "manaCost": 12.0,
   "tier": 1,
+  "castTime": 0.7,
+  "cooldown": 4.0,
+  "requiredLevel": 4,
   "damage": 6.0,
   "projectileSpeed": 2.0,
   "statusEffects": [
@@ -12,5 +17,11 @@
       "duration": 80,
       "amplifier": 1
     }
-  ]
+  ],
+  "sound": "block.glass.break",
+  "vfx": {
+    "particleType": "snowflake",
+    "color": "B0E0E6",
+    "intensity": "medium"
+  }
 }

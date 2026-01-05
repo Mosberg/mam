@@ -1,9 +1,14 @@
 {
   "id": "mam:frost_nova",
+  "name": "Frost Nova",
+  "description": "Emit a wave of freezing energy that chills and slows all nearby enemies",
   "school": "ice",
   "castType": "aoe",
   "manaCost": 30.0,
   "tier": 2,
+  "castTime": 1.0,
+  "cooldown": 10.0,
+  "requiredLevel": 12,
   "damage": 10.0,
   "aoeRadius": 6.0,
   "statusEffects": [
@@ -12,5 +17,11 @@
       "duration": 120,
       "amplifier": 2
     }
-  ]
+  ],
+  "sound": "block.glass.break",
+  "vfx": {
+    "particleType": "snowflake",
+    "color": "00BFFF",
+    "intensity": "high"
+  }
 }

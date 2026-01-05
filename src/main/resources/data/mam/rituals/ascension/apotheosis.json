@@ -1,6 +1,11 @@
 {
   "id": "mam:apotheosis",
+  "name": "Ritual of Apotheosis",
+  "description": "Transcend mortal limits by channeling the power of legendary gems and a nether star into an ascension circle, granting immense power",
   "category": "ascension",
+  "mana_cost": 500.0,
+  "cooldown_seconds": 3600,
+  "level_requirement": 50,
   "ritual_items": [
     "mam:reserve_mana_crystal",
     "minecraft:nether_star",
@@ -10,11 +15,22 @@
   ],
   "pattern": {
     "type": "circle",
-    "radius": 5
+    "radius": 5,
+    "material": "mam:mana_infused_stone_bricks",
+    "inner_circle_radius": 3,
+    "candles_required": 8
   },
   "effect": {
     "type": "ascend",
-    "buffs": ["strength", "resistance", "regeneration"]
+    "buffs": ["strength", "resistance", "regeneration"],
+    "amplifier": 2
   },
-  "duration": 6000
+  "duration": 6000,
+  "particles": {
+    "type": "end_rod",
+    "color": "FFD700",
+    "intensity": "extreme"
+  },
+  "sound": "block.end_portal.spawn",
+  "synergy_schools": ["light", "arcane", "void"]
 }

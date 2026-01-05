@@ -1,9 +1,14 @@
 {
   "id": "mam:blood_drain",
+  "name": "Blood Drain",
+  "description": "Drain the essence of life itself, regenerating your health over time",
   "school": "blood",
   "castType": "utility",
   "manaCost": 22.0,
   "tier": 2,
+  "castTime": 1.2,
+  "cooldown": 10.0,
+  "requiredLevel": 8,
   "damage": 7.0,
   "statusEffects": [
     {
@@ -11,5 +16,11 @@
       "duration": 80,
       "amplifier": 1
     }
-  ]
+  ],
+  "sound": "entity.zombie_villager.cure",
+  "vfx": {
+    "particleType": "soul",
+    "color": "8B0000",
+    "intensity": "medium"
+  }
 }

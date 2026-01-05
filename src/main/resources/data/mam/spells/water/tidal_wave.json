@@ -1,9 +1,20 @@
 {
   "id": "mam:tidal_wave",
+  "name": "Tidal Wave",
+  "description": "Summon a massive wave that crashes down on enemies, washing them away",
   "school": "water",
   "castType": "aoe",
   "manaCost": 28.0,
   "tier": 2,
+  "castTime": 1.5,
+  "cooldown": 12.0,
+  "requiredLevel": 11,
   "damage": 11.0,
-  "aoeRadius": 6.0
+  "aoeRadius": 6.0,
+  "sound": "entity.player.splash.high_speed",
+  "vfx": {
+    "particleType": "splash",
+    "color": "1E90FF",
+    "intensity": "very_high"
+  }
 }

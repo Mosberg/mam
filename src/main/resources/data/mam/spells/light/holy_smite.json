@@ -1,9 +1,20 @@
 {
   "id": "mam:holy_smite",
+  "name": "Holy Smite",
+  "description": "Call down divine wrath upon your enemy with a bolt of pure light",
   "school": "light",
   "castType": "projectile",
   "manaCost": 14.0,
   "tier": 1,
+  "castTime": 0.8,
+  "cooldown": 5.0,
+  "requiredLevel": 5,
   "damage": 11.0,
-  "projectileSpeed": 2.2
+  "projectileSpeed": 2.2,
+  "sound": "entity.lightning_bolt.thunder",
+  "vfx": {
+    "particleType": "end_rod",
+    "color": "FFFF00",
+    "intensity": "high"
+  }
 }

@@ -1,6 +1,11 @@
 {
   "id": "mam:mana_circle",
+  "name": "Mana Regeneration Circle",
+  "description": "Construct a mystical pentagram that dramatically amplifies mana regeneration for all casters within its bounds",
   "category": "circle",
+  "mana_cost": 150.0,
+  "cooldown_seconds": 600,
+  "level_requirement": 15,
   "ritual_items": [
     "mam:personal_mana_crystal",
     "mam:aura_mana_crystal",
@@ -8,11 +13,21 @@
   ],
   "pattern": {
     "type": "pentagram",
-    "radius": 4
+    "radius": 4,
+    "material": "mam:mana_infused_stone",
+    "candles_required": 5
   },
   "effect": {
     "type": "boost_mana_regen",
-    "multiplier": 2.0
+    "multiplier": 2.0,
+    "radius": 10
   },
-  "duration": 3000
+  "duration": 3000,
+  "particles": {
+    "type": "enchanted_hit",
+    "color": "00FFFF",
+    "intensity": "medium"
+  },
+  "sound": "block.enchantment_table.use",
+  "synergy_schools": ["arcane", "nature"]
 }

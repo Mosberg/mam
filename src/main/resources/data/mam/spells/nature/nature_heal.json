@@ -1,14 +1,25 @@
 {
   "id": "mam:nature_heal",
+  "name": "Nature's Embrace",
+  "description": "Channel the restorative power of nature to heal your wounds over time",
   "school": "nature",
   "castType": "utility",
   "manaCost": 20.0,
   "tier": 1,
+  "castTime": 0.8,
+  "cooldown": 8.0,
+  "requiredLevel": 3,
   "statusEffects": [
     {
       "effect": "regeneration",
       "duration": 100,
       "amplifier": 1
     }
-  ]
+  ],
+  "sound": "block.grass.step",
+  "vfx": {
+    "particleType": "composter",
+    "color": "32CD32",
+    "intensity": "low"
+  }
 }

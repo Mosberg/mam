@@ -1,9 +1,14 @@
 {
   "id": "mam:thorn_barrage",
+  "name": "Thorn Barrage",
+  "description": "Launch a volley of razor-sharp thorns that poison your target",
   "school": "nature",
   "castType": "projectile",
   "manaCost": 18.0,
   "tier": 2,
+  "castTime": 1.0,
+  "cooldown": 6.0,
+  "requiredLevel": 9,
   "damage": 9.0,
   "projectileSpeed": 1.8,
   "statusEffects": [
@@ -12,5 +17,11 @@
       "duration": 60,
       "amplifier": 0
     }
-  ]
+  ],
+  "sound": "entity.arrow.shoot",
+  "vfx": {
+    "particleType": "happy_villager",
+    "color": "228B22",
+    "intensity": "medium"
+  }
 }

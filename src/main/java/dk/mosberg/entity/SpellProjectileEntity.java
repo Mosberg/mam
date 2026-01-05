@@ -49,6 +49,33 @@ public class SpellProjectileEntity extends ThrownItemEntity {
         }
     }
 
+    /**
+     * Get the color of the spell projectile based on spell school.
+     * 
+     * @return RGB color as int (0xRRGGBB)
+     */
+    public int getColor() {
+        if (spell == null) {
+            return 0xFFFFFF; // White default
+        }
+
+        return switch (spell.getSchool()) {
+            case FIRE -> 0xFF4500; // Orange-red
+            case ICE -> 0x00BFFF; // Deep sky blue
+            case NATURE -> 0x32CD32; // Lime green
+            case DARK -> 0x4B0082; // Indigo
+            case LIGHT -> 0xFFFFAA; // Light yellow
+            case THUNDER -> 0x9370DB; // Medium purple
+            case WATER -> 0x1E90FF; // Dodger blue
+            case AIR -> 0xF0F8FF; // Alice blue
+            case EARTH -> 0x8B4513; // Saddle brown
+            case ARCANE -> 0xDA70D6; // Orchid
+            case BLOOD -> 0x8B0000; // Dark red
+            case CHAOS -> 0xFF1493; // Deep pink
+            case VOID -> 0x191970; // Midnight blue
+        };
+    }
+
     @Override
     protected Item getDefaultItem() {
         return Items.SNOWBALL; // Fallback item

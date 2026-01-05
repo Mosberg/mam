@@ -1,9 +1,20 @@
 {
   "id": "mam:arcane_explosion",
+  "name": "Arcane Explosion",
+  "description": "Release a burst of raw arcane energy that devastates everything in a large radius",
   "school": "arcane",
   "castType": "aoe",
   "manaCost": 35.0,
   "tier": 3,
+  "castTime": 2.0,
+  "cooldown": 15.0,
+  "requiredLevel": 18,
   "damage": 15.0,
-  "aoeRadius": 4.0
+  "aoeRadius": 4.0,
+  "sound": "entity.generic.explode",
+  "vfx": {
+    "particleType": "enchanted_hit",
+    "color": "DA70D6",
+    "intensity": "very_high"
+  }
 }
