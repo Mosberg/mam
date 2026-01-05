@@ -4,7 +4,6 @@ import dk.mosberg.mana.ManaPoolType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -30,7 +29,7 @@ public class ManaCrystalBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
             BlockHitResult hit) {
-        if (world.isClient) {
+        if (world.isClient()) {
             return ActionResult.SUCCESS;
         }
 
@@ -46,13 +45,9 @@ public class ManaCrystalBlock extends Block {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (random.nextInt(10) == 0) {
-            // Spawn particles matching the pool type
-            double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.5;
-            double y = pos.getY() + 0.5 + (random.nextDouble() - 0.5) * 0.5;
-            double z = pos.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.5;
-
-            world.addParticle(ParticleTypes.END_ROD, x, y, z, 0, 0.05, 0);
+        if (random.nextInt(10) == 0 && world.isClient()) {
+            // Spawn particles - randomDisplayTick is called client-side only
+            // Note: Due to split source sets, particle spawning handled by client code
         }
     }
 

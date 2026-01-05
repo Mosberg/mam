@@ -1,0 +1,74 @@
+{
+  "id": "mam:void_vortex",
+  "name": "Void Vortex",
+  "category": "vortex",
+  "description": "Create a swirling vortex that pulls in nearby entities and items, channeling void energy",
+  "mana_cost": 800.0,
+  "cooldown_seconds": 600,
+  "level_requirement": 40,
+  "ritual_items": [
+    "mam:void_crystal",
+    "mam:tanzanite",
+    "minecraft:ender_pearl",
+    "minecraft:ender_eye",
+    "mam:reserve_mana_crystal"
+  ],
+  "pattern": {
+    "type": "spiral",
+    "ring1": {
+      "material": "mam:void_crystal_block",
+      "radius": 3,
+      "rotation": "clockwise"
+    },
+    "ring2": {
+      "material": "minecraft:obsidian",
+      "radius": 5,
+      "rotation": "counter_clockwise"
+    },
+    "ring3": {
+      "material": "minecraft:crying_obsidian",
+      "radius": 7,
+      "rotation": "clockwise"
+    }
+  },
+  "effect": {
+    "type": "vortex",
+    "pull_radius": 15.0,
+    "pull_strength": 1.5,
+    "damage_per_second": 2.0,
+    "duration_seconds": 30,
+    "buffs": ["void", "wither"],
+    "knockback_resistance": true
+  },
+  "particles": {
+    "type": "portal",
+    "count": 200,
+    "spread": 10.0,
+    "speed": 0.5
+  },
+  "sound": "block.portal.ambient",
+  "synergy_schools": ["void", "dark", "chaos"],
+  "requirements": {
+    "min_players": 1,
+    "time_of_day": "night",
+    "weather": "any",
+    "dimension": ["overworld", "end"]
+  },
+  "completion_effects": [
+    {
+      "type": "summon_portal",
+      "duration": 300
+    },
+    {
+      "type": "grant_buff",
+      "buff": "void_affinity",
+      "duration": 1200,
+      "amplifier": 2
+    }
+  ],
+  "failure_penalty": {
+    "damage": 10.0,
+    "debuffs": ["wither", "slowness"],
+    "mana_drain": 400.0
+  }
+}

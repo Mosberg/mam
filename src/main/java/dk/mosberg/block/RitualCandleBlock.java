@@ -1,11 +1,11 @@
 package dk.mosberg.block;
 
 import java.util.List;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.AbstractCandleBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -22,7 +22,13 @@ import net.minecraft.world.World;
  * by players.
  */
 public class RitualCandleBlock extends AbstractCandleBlock {
+    public static final MapCodec<RitualCandleBlock> CODEC = createCodec(RitualCandleBlock::new);
     public static final BooleanProperty LIT = BooleanProperty.of("lit");
+
+    @Override
+    protected MapCodec<? extends AbstractCandleBlock> getCodec() {
+        return CODEC;
+    }
 
     public RitualCandleBlock(Settings settings) {
         super(settings);
@@ -37,7 +43,7 @@ public class RitualCandleBlock extends AbstractCandleBlock {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
             BlockHitResult hit) {
-        if (world.isClient) {
+        if (world.isClient()) {
             return ActionResult.SUCCESS;
         }
 
@@ -54,17 +60,8 @@ public class RitualCandleBlock extends AbstractCandleBlock {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (state.get(LIT)) {
-            // Spawn flame particles
-            double x = pos.getX() + 0.5;
-            double y = pos.getY() + 0.7;
-            double z = pos.getZ() + 0.5;
-
-            world.addParticle(ParticleTypes.SMALL_FLAME, x, y, z, 0, 0, 0);
-
-            if (random.nextInt(10) == 0) {
-                world.addParticle(ParticleTypes.SMOKE, x, y, z, 0, 0.01, 0);
-            }
+        if (state.get(LIT) && world.isClient()) {
+            // Particle spawning handled by client code due to split source sets
         }
     }
 

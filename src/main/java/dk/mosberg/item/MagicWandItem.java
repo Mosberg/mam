@@ -13,9 +13,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 /**
@@ -33,13 +33,13 @@ public class MagicWandItem extends Item {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (world.isClient) {
-            return TypedActionResult.pass(user.getStackInHand(hand));
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
+        if (world.isClient()) {
+            return ActionResult.PASS;
         }
 
         if (!(user instanceof ServerPlayerEntity player)) {
-            return TypedActionResult.fail(user.getStackInHand(hand));
+            return ActionResult.FAIL;
         }
 
         // Get the first spell of the wand's school
@@ -48,28 +48,27 @@ public class MagicWandItem extends Item {
         if (spell == null) {
             player.sendMessage(Text.literal("No spells available for " + school.getDisplayName())
                     .formatted(Formatting.RED), true);
-            return TypedActionResult.fail(user.getStackInHand(hand));
+            return ActionResult.FAIL;
         }
 
         // Cast the spell with wand bonus
         ManaComponent mana = ManaManager.getComponent(player);
         double manaCost = spell.getManaCost() * tier.getManaCostMultiplier();
 
-        if (!mana.hasEnoughMana(spell.getPrimaryPool(), manaCost)) {
+        if (!mana.getPool(dk.mosberg.mana.ManaPoolType.PERSONAL).has(manaCost)) {
             player.sendMessage(Text.literal("Not enough mana!").formatted(Formatting.RED), true);
-            return TypedActionResult.fail(user.getStackInHand(hand));
+            return ActionResult.FAIL;
         }
 
         if (SpellCaster.castSpell(player, spell)) {
-            user.getItemCooldownManager().set(this, tier.getCooldownTicks());
-            return TypedActionResult.success(user.getStackInHand(hand));
+            user.getItemCooldownManager().set(user.getStackInHand(hand), tier.getCooldownTicks());
+            return ActionResult.SUCCESS;
         }
 
-        return TypedActionResult.fail(user.getStackInHand(hand));
+        return ActionResult.FAIL;
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip,
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip,
             TooltipType type) {
         tooltip.add(Text.literal("School: " + school.getDisplayName()).formatted(Formatting.AQUA));
         tooltip.add(Text.literal("Tier: " + tier.name()).formatted(Formatting.GOLD));

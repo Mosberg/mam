@@ -16,7 +16,7 @@ public class ManaPool {
 
     /**
      * Add mana to this pool.
-     * 
+     *
      * @param amount Amount to add
      * @return Actual amount added (may be less than requested if pool is near full)
      */
@@ -28,7 +28,7 @@ public class ManaPool {
 
     /**
      * Consume mana from this pool.
-     * 
+     *
      * @param amount Amount to consume
      * @return true if sufficient mana was available and consumed, false otherwise
      */
@@ -87,6 +87,20 @@ public class ManaPool {
 
     public double getPercentage() {
         return max > 0 ? (current / max) * 100.0 : 0.0;
+    }
+
+    /**
+     * Set current mana directly (alias for set).
+     */
+    public void setCurrent(double amount) {
+        set(amount);
+    }
+
+    /**
+     * Restore pool to maximum.
+     */
+    public void restore() {
+        current = max;
     }
 
     public boolean isFull() {

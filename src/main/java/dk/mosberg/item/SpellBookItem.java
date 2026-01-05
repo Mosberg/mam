@@ -1,5 +1,6 @@
 package dk.mosberg.item;
 
+import java.util.List;
 import dk.mosberg.registry.MagicRegistry;
 import dk.mosberg.spell.Spell;
 import dk.mosberg.spell.SpellSchool;
@@ -12,11 +13,10 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import java.util.List;
 
 /**
  * Spell book item that stores a specific spell and can be used to learn or cast it. Right-click to
@@ -31,28 +31,28 @@ public class SpellBookItem extends Item {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
 
-        if (world.isClient) {
-            return TypedActionResult.pass(stack);
+        if (world.isClient()) {
+            return ActionResult.PASS;
         }
 
         if (!(user instanceof ServerPlayerEntity player)) {
-            return TypedActionResult.fail(stack);
+            return ActionResult.FAIL;
         }
 
         String spellId = getStoredSpellId(stack);
         if (spellId == null) {
             player.sendMessage(Text.literal("Empty spell book").formatted(Formatting.GRAY), true);
-            return TypedActionResult.pass(stack);
+            return ActionResult.PASS;
         }
 
         Spell spell = MagicRegistry.getSpell(spellId);
         if (spell == null) {
             player.sendMessage(Text.literal("Unknown spell: " + spellId).formatted(Formatting.RED),
                     true);
-            return TypedActionResult.fail(stack);
+            return ActionResult.FAIL;
         }
 
         if (user.isSneaking()) {
@@ -77,20 +77,19 @@ public class SpellBookItem extends Item {
                         false);
             }
 
-            return TypedActionResult.success(stack);
+            return ActionResult.SUCCESS;
         }
 
         // Cast the spell
         if (dk.mosberg.spell.SpellCaster.castSpell(player, spell)) {
-            user.getItemCooldownManager().set(this, 60); // 3 second cooldown
-            return TypedActionResult.success(stack);
+            user.getItemCooldownManager().set(stack, 60); // 3 second cooldown
+            return ActionResult.SUCCESS;
         }
 
-        return TypedActionResult.fail(stack);
+        return ActionResult.FAIL;
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip,
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip,
             TooltipType type) {
         tooltip.add(Text.literal("School: " + school.getDisplayName()).formatted(Formatting.AQUA));
 
@@ -131,8 +130,11 @@ public class SpellBookItem extends Item {
      */
     public static String getStoredSpellId(ItemStack stack) {
         NbtComponent nbt = stack.get(DataComponentTypes.CUSTOM_DATA);
-        if (nbt != null && nbt.contains("spell_id")) {
-            return nbt.copyNbt().getString("spell_id");
+        if (nbt != null && !nbt.isEmpty()) {
+            var compound = nbt.copyNbt();
+            if (compound.contains("spell_id")) {
+                return compound.getString("spell_id").orElse(null);
+            }
         }
         return null;
     }

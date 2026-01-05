@@ -1,8 +1,6 @@
 package dk.mosberg.entity;
 
 import dk.mosberg.MAM;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -17,12 +15,11 @@ import net.minecraft.util.Identifier;
 public class ModEntities {
 
     public static final EntityType<SpellProjectileEntity> SPELL_PROJECTILE = Registry.register(
-            Registries.ENTITY_TYPE,
-            RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(MAM.MOD_ID, "spell_projectile")),
-            FabricEntityTypeBuilder
-                    .<SpellProjectileEntity>create(SpawnGroup.MISC, SpellProjectileEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).trackRangeChunks(4)
-                    .trackedUpdateRate(10).build());
+            Registries.ENTITY_TYPE, Identifier.of(MAM.MOD_ID, "spell_projectile"),
+            EntityType.Builder
+                    .<SpellProjectileEntity>create(SpellProjectileEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.25f, 0.25f).build(RegistryKey.of(RegistryKeys.ENTITY_TYPE,
+                            Identifier.of(MAM.MOD_ID, "spell_projectile"))));
 
     /**
      * Initialize all entities. Called from MAM.onInitialize()

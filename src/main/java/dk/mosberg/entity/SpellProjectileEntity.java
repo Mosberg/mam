@@ -28,7 +28,7 @@ public class SpellProjectileEntity extends ThrownItemEntity {
     }
 
     public SpellProjectileEntity(World world, LivingEntity owner) {
-        super(ModEntities.SPELL_PROJECTILE, owner, world);
+        super(ModEntities.SPELL_PROJECTILE, owner, world, Items.SNOWBALL.getDefaultStack());
     }
 
     public void setSpell(Spell spell) {
@@ -58,13 +58,13 @@ public class SpellProjectileEntity extends ThrownItemEntity {
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
 
-        if (this.getWorld().isClient || spell == null) {
+        if (this.getEntityWorld().isClient() || spell == null) {
             return;
         }
 
         // Apply spell effects to hit entity
         if (entityHitResult.getEntity() instanceof LivingEntity target) {
-            ServerWorld world = (ServerWorld) this.getWorld();
+            ServerWorld world = (ServerWorld) this.getEntityWorld();
 
             // Apply damage
             if (spell.getDamage() > 0) {
@@ -90,9 +90,9 @@ public class SpellProjectileEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
 
-        if (!this.getWorld().isClient) {
+        if (!this.getEntityWorld().isClient()) {
             // Create particle effect on impact
-            ServerWorld world = (ServerWorld) this.getWorld();
+            ServerWorld world = (ServerWorld) this.getEntityWorld();
             world.spawnParticles(particleType, this.getX(), this.getY(), this.getZ(), 10, 0.3, 0.3,
                     0.3, 0.1);
 
@@ -104,13 +104,7 @@ public class SpellProjectileEntity extends ThrownItemEntity {
     public void tick() {
         super.tick();
 
-        // Spawn particle trail
-        if (this.getWorld().isClient && spell != null) {
-            for (int i = 0; i < 2; i++) {
-                this.getWorld().addParticle(particleType, this.getX(), this.getY(), this.getZ(), 0,
-                        0, 0);
-            }
-        }
+        // Particle trail handled by client rendering code
     }
 
     /**

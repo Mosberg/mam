@@ -30,7 +30,8 @@ public class MagicCommands {
     // Suggestion provider for spell IDs
     private static final SuggestionProvider<ServerCommandSource> SPELL_SUGGESTIONS =
             (context, builder) -> CommandSource.suggestMatching(
-                    MagicRegistry.getAllSpells().stream().map(Spell::getId), builder);
+                    MagicRegistry.getAllSpells().stream().map(spell -> spell.getId().toString()),
+                    builder);
 
     // Suggestion provider for spell schools
     private static final SuggestionProvider<ServerCommandSource> SCHOOL_SUGGESTIONS =

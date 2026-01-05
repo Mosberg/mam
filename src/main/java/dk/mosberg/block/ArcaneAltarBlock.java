@@ -4,7 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -37,7 +36,7 @@ public class ArcaneAltarBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
             BlockHitResult hit) {
-        if (world.isClient) {
+        if (world.isClient()) {
             return ActionResult.SUCCESS;
         }
 
@@ -53,16 +52,6 @@ public class ArcaneAltarBlock extends Block {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        // Spawn enchantment glyphs
-        if (random.nextInt(5) == 0) {
-            for (int i = 0; i < 3; i++) {
-                double x = pos.getX() + random.nextDouble();
-                double y = pos.getY() + 0.75 + random.nextDouble() * 0.25;
-                double z = pos.getZ() + random.nextDouble();
-
-                world.addParticle(ParticleTypes.ENCHANT, x, y, z, (random.nextDouble() - 0.5) * 0.1,
-                        random.nextDouble() * 0.1, (random.nextDouble() - 0.5) * 0.1);
-            }
-        }
+        // Spawn enchantment glyphs - handled by client code due to split source sets
     }
 }
