@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/candle_one_candle",
+  "textures": {
+    "all": "mam:block/ritual_candle",
+    "particle": "mam:block/ritual_candle"
+  }
+}

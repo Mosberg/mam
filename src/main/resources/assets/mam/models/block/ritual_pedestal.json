@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mam:block/ritual_pedestal_top",
+    "side": "mam:block/ritual_pedestal_side"
+  }
+}

@@ -1,1 +1,58 @@
-{}
+{
+  "spell.cast": {
+    "subtitle": "mam.subtitle.spell.cast",
+    "sounds": ["minecraft:entity.evoker.cast_spell"]
+  },
+  "spell.fire": {
+    "subtitle": "mam.subtitle.spell.fire",
+    "sounds": ["minecraft:entity.blaze.shoot", "minecraft:block.fire.ambient"]
+  },
+  "spell.ice": {
+    "subtitle": "mam.subtitle.spell.ice",
+    "sounds": ["minecraft:block.glass.break"]
+  },
+  "spell.arcane": {
+    "subtitle": "mam.subtitle.spell.arcane",
+    "sounds": [
+      "minecraft:block.enchantment_table.use",
+      "minecraft:entity.evoker.prepare_attack"
+    ]
+  },
+  "spell.nature": {
+    "subtitle": "mam.subtitle.spell.nature",
+    "sounds": [
+      "minecraft:block.grass.step",
+      "minecraft:block.composter.fill_success"
+    ]
+  },
+  "spell.dark": {
+    "subtitle": "mam.subtitle.spell.dark",
+    "sounds": [
+      "minecraft:entity.wither.hurt",
+      "minecraft:entity.zombie_villager.cure"
+    ]
+  },
+  "spell.light": {
+    "subtitle": "mam.subtitle.spell.light",
+    "sounds": [
+      "minecraft:entity.lightning_bolt.thunder",
+      "minecraft:block.beacon.activate"
+    ]
+  },
+  "ritual.start": {
+    "subtitle": "mam.subtitle.ritual.start",
+    "sounds": ["minecraft:block.portal.trigger"]
+  },
+  "ritual.complete": {
+    "subtitle": "mam.subtitle.ritual.complete",
+    "sounds": ["minecraft:block.end_portal.spawn"]
+  },
+  "mana.restore": {
+    "subtitle": "mam.subtitle.mana.restore",
+    "sounds": ["minecraft:entity.experience_orb.pickup"]
+  },
+  "wand.use": {
+    "subtitle": "mam.subtitle.wand.use",
+    "sounds": ["minecraft:item.trident.throw"]
+  }
+}

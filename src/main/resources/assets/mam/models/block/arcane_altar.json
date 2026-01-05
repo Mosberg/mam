@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "mam:block/arcane_altar_bottom",
+    "up": "mam:block/arcane_altar_top",
+    "north": "mam:block/arcane_altar_side",
+    "south": "mam:block/arcane_altar_side",
+    "west": "mam:block/arcane_altar_side",
+    "east": "mam:block/arcane_altar_side",
+    "particle": "mam:block/arcane_altar_top"
+  }
+}

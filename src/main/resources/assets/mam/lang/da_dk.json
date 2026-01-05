@@ -174,5 +174,30 @@
   "mam.school.ice": "Is",
   "mam.school.arcane": "Arkan",
   "mam.school.blood": "Blod",
-  "mam.school.chaos": "Kaos"
+  "mam.school.chaos": "Kaos",
+
+  "block.mam.personal_mana_crystal": "Personlig Mana Krystal",
+  "block.mam.aura_mana_crystal": "Aura Mana Krystal",
+  "block.mam.reserve_mana_crystal": "Reserve Mana Krystal",
+  "block.mam.ritual_pedestal": "Ritual Piedestal",
+  "block.mam.ritual_candle": "Ritual Lys",
+  "block.mam.mana_infused_stone": "Mana-Indgivet Sten",
+  "block.mam.mana_infused_stone_bricks": "Mana-Indgivet Stenbrukker",
+  "block.mam.arcane_altar": "Arkant Alter",
+
+  "item.mam.fire_wand_novice": "Nybegynder Ild Tryllestav",
+  "item.mam.fire_wand_master": "Mester Ild Tryllestav",
+  "item.mam.ice_wand_novice": "Nybegynder Is Tryllestav",
+  "item.mam.ice_wand_master": "Mester Is Tryllestav",
+  "item.mam.arcane_wand_novice": "Nybegynder Arkant Tryllestav",
+  "item.mam.arcane_wand_master": "Mester Arkant Tryllestav",
+
+  "item.mam.fire_spell_book": "Ild Trylleformular Bog",
+  "item.mam.ice_spell_book": "Is Trylleformular Bog",
+  "item.mam.arcane_spell_book": "Arkant Trylleformular Bog",
+  "item.mam.nature_spell_book": "Natur Trylleformular Bog",
+  "item.mam.dark_spell_book": "Mørk Trylleformular Bog",
+  "item.mam.light_spell_book": "Lys Trylleformular Bog",
+
+  "entity.mam.spell_projectile": "Trylleformular Projektil"
 }

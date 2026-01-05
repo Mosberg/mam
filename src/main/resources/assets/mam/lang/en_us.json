@@ -1,6 +1,19 @@
 {
-  "block.mam.gemstone_ore": "Gemstone Ore",
-  "block.mam.deepslate_gemstone_ore": "Deepslate Gemstone Ore",
+  "_comment": "Mana And Magic - English (US) Translations",
+
+  "itemGroup.mam.main": "Mana & Magic",
+  "itemGroup.mam.gemstones": "Mana & Magic: Gemstones",
+  "itemGroup.mam.blocks": "Mana & Magic: Blocks",
+  "itemGroup.mam.tools": "Mana & Magic: Tools",
+
+  "block.mam.personal_mana_crystal": "Personal Mana Crystal",
+  "block.mam.aura_mana_crystal": "Aura Mana Crystal",
+  "block.mam.reserve_mana_crystal": "Reserve Mana Crystal",
+  "block.mam.ritual_pedestal": "Ritual Pedestal",
+  "block.mam.ritual_candle": "Ritual Candle",
+  "block.mam.mana_infused_stone": "Mana-Infused Stone",
+  "block.mam.mana_infused_stone_bricks": "Mana-Infused Stone Bricks",
+  "block.mam.arcane_altar": "Arcane Altar",
 
   "item.mam.hematite": "Hematite",
   "item.mam.carnelian": "Carnelian",
@@ -18,5 +31,66 @@
   "item.mam.sapphire": "Sapphire",
   "item.mam.tanzanite": "Tanzanite",
 
-  "itemGroup.mam.gemstones": "Mana & Magic: Gemstones"
+  "item.mam.fire_wand_novice": "Novice Fire Wand",
+  "item.mam.fire_wand_master": "Master Fire Wand",
+  "item.mam.ice_wand_novice": "Novice Ice Wand",
+  "item.mam.ice_wand_master": "Master Ice Wand",
+  "item.mam.arcane_wand_novice": "Novice Arcane Wand",
+  "item.mam.arcane_wand_master": "Master Arcane Wand",
+
+  "item.mam.fire_spell_book": "Fire Spell Book",
+  "item.mam.ice_spell_book": "Ice Spell Book",
+  "item.mam.arcane_spell_book": "Arcane Spell Book",
+  "item.mam.nature_spell_book": "Nature Spell Book",
+  "item.mam.dark_spell_book": "Dark Spell Book",
+  "item.mam.light_spell_book": "Light Spell Book",
+
+  "entity.mam.spell_projectile": "Spell Projectile",
+
+  "spell.mam.school.air": "Air",
+  "spell.mam.school.arcane": "Arcane",
+  "spell.mam.school.blood": "Blood",
+  "spell.mam.school.chaos": "Chaos",
+  "spell.mam.school.dark": "Dark",
+  "spell.mam.school.earth": "Earth",
+  "spell.mam.school.fire": "Fire",
+  "spell.mam.school.ice": "Ice",
+  "spell.mam.school.light": "Light",
+  "spell.mam.school.nature": "Nature",
+  "spell.mam.school.thunder": "Thunder",
+  "spell.mam.school.void": "Void",
+  "spell.mam.school.water": "Water",
+
+  "mana.mam.pool.personal": "Personal Mana",
+  "mana.mam.pool.aura": "Aura Mana",
+  "mana.mam.pool.reserve": "Reserve Mana",
+
+  "command.mam.spell.list": "Available spells: %s",
+  "command.mam.spell.cast.success": "Cast spell %s",
+  "command.mam.spell.cast.fail": "Failed to cast spell %s: %s",
+  "command.mam.spell.info": "Spell: %s\nSchool: %s\nMana Cost: %.1f\nTier: %d\nDamage: %.1f",
+  "command.mam.pool.show": "Mana Pools:\nPersonal: %.1f/%.1f\nAura: %.1f/%.1f\nReserve: %.1f/%.1f",
+  "command.mam.pool.set": "Set %s mana pool to %.1f",
+  "command.mam.pool.add": "Added %.1f to %s mana pool (now %.1f/%.1f)",
+  "command.mam.pool.restore": "Restored all mana pools to maximum",
+  "command.mam.ritual.list": "Available rituals: %s",
+  "command.mam.ritual.info": "Ritual: %s\nCategory: %s\nMana Cost: %.1f\nDuration: %d ticks",
+  "command.mam.reload.success": "Reloaded spell and ritual data",
+
+  "tooltip.mam.wand.tier": "Tier: %s",
+  "tooltip.mam.wand.school": "School: %s",
+  "tooltip.mam.wand.durability": "Durability: %d/%d",
+  "tooltip.mam.spell_book.school": "Contains %s spells",
+  "tooltip.mam.gemstone.rarity": "Rarity: %s",
+  "tooltip.mam.gemstone.schools": "Schools: %s",
+
+  "hud.mam.mana.personal": "Personal",
+  "hud.mam.mana.aura": "Aura",
+  "hud.mam.mana.reserve": "Reserve",
+
+  "message.mam.spell.cooldown": "Spell on cooldown: %.1fs remaining",
+  "message.mam.spell.insufficient_mana": "Insufficient mana! Need %.1f, have %.1f",
+  "message.mam.spell.learned": "Learned spell: %s",
+  "message.mam.ritual.started": "Ritual %s has begun",
+  "message.mam.ritual.completed": "Ritual %s completed successfully"
 }
