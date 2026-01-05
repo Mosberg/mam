@@ -7,6 +7,7 @@ import dk.mosberg.event.ServerEventHandlers;
 import dk.mosberg.item.ModItemGroups;
 import dk.mosberg.item.ModItems;
 import dk.mosberg.mana.ManaConfig;
+import dk.mosberg.network.ManaNetworkHandler;
 import dk.mosberg.registry.MagicRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -38,10 +39,13 @@ public class MAM implements ModInitializer {
 			// Phase 3: Load data-driven content
 			MagicRegistry.initialize();
 
-			// Phase 4: Register commands
+			// Phase 4: Register networking
+			ManaNetworkHandler.register();
+
+			// Phase 5: Register commands
 			CommandRegistrationCallback.EVENT.register(ManaCommands::register);
 
-			// Phase 5: Register server event handlers
+			// Phase 6: Register server event handlers
 			ServerEventHandlers.register();
 
 			long duration = System.currentTimeMillis() - startTime;
