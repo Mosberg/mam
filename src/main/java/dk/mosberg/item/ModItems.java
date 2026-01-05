@@ -6,6 +6,8 @@ import dk.mosberg.MAM;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 /**
@@ -39,20 +41,23 @@ public class ModItems {
      * Register a gemstone item with appropriate settings based on its rarity.
      */
     private static GemstoneItem registerGemstone(GemstoneType type) {
-        Item.Settings settings = new Item.Settings();
+        Identifier id = Identifier.of(MAM.MOD_ID, type.getId());
+        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
 
         // Set max stack size based on rarity
-        switch (type.getRarity()) {
-            case EPIC -> settings.maxCount(16);
-            case RARE -> settings.maxCount(32);
-            case UNCOMMON -> settings.maxCount(64);
-            case COMMON -> settings.maxCount(64);
-        }
+        int maxCount = switch (type.getRarity()) {
+            case EPIC -> 16;
+            case RARE -> 32;
+            case UNCOMMON, COMMON -> 64;
+        };
 
-        GemstoneItem item = new GemstoneItem(type, settings);
+        Item.Settings settings = new Item.Settings().registryKey(key).maxCount(maxCount);
+
+        GemstoneItem item =
+                Registry.register(Registries.ITEM, key, new GemstoneItem(type, settings));
         GEMSTONES.put(type, item);
 
-        return Registry.register(Registries.ITEM, Identifier.of(MAM.MOD_ID, type.getId()), item);
+        return item;
     }
 
     /**

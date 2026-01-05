@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "mana-and-magic:item/staff_adept"
+    "model": "mam:item/staff_adept"
   }
 }

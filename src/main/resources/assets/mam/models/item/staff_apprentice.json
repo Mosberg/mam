@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "mana-and-magic:item/staff_apprentice"
+    "layer0": "mam:item/staff_apprentice"
   },
   "display": {
     "thirdperson_righthand": {

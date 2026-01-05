@@ -203,7 +203,7 @@ src/main/resources/data/mam/
 
 ### Configuration System
 
-**`mana-and-magic.properties`** - Runtime configuration (hot-reloadable):
+**`mam.properties`** - Runtime configuration (hot-reloadable):
 
 ```properties
 mana.personal.max_pool=1000

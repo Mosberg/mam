@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "mana-and-magic:item/spell_book_apprentice"
+    "model": "mam:item/spell_book_apprentice"
   }
 }

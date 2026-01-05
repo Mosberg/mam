@@ -10,7 +10,7 @@ import java.util.Properties;
 import dk.mosberg.MAM;
 
 /**
- * Configuration for the mana system, loaded from mana-and-magic.properties.
+ * Configuration for the mana system, loaded from mam.properties.
  */
 public class ManaConfig {
     private static final Properties properties = new Properties();
@@ -37,7 +37,7 @@ public class ManaConfig {
 
         try {
             // Try to load from run directory
-            Path configPath = Paths.get("mana-and-magic.properties");
+            Path configPath = Paths.get("mam.properties");
 
             // If not found, try to load from resources
             InputStream input;
@@ -45,8 +45,7 @@ public class ManaConfig {
                 input = new FileInputStream(configPath.toFile());
                 MAM.LOGGER.info("Loading mana configuration from: {}", configPath.toAbsolutePath());
             } else {
-                input = ManaConfig.class.getClassLoader()
-                        .getResourceAsStream("mana-and-magic.properties");
+                input = ManaConfig.class.getClassLoader().getResourceAsStream("mam.properties");
                 MAM.LOGGER.info("Loading mana configuration from resources");
             }
 
@@ -69,7 +68,7 @@ public class ManaConfig {
                 loaded = true;
                 MAM.LOGGER.info("Mana configuration loaded successfully");
             } else {
-                MAM.LOGGER.warn("Could not find mana-and-magic.properties, using defaults");
+                MAM.LOGGER.warn("Could not find mam.properties, using defaults");
                 loaded = true;
             }
         } catch (IOException e) {

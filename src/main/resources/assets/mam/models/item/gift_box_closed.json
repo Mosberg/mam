@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mana-and-magic:item/gift_box_closed"
+    "layer0": "mam:item/gift_box_closed"
   },
   "display": {
     "thirdperson_righthand": {

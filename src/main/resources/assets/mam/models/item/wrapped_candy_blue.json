@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mana-and-magic:item/wrapped_candy_blue"
+    "layer0": "mam:item/wrapped_candy_blue"
   },
   "display": {
     "thirdperson_righthand": {
