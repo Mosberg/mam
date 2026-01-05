@@ -2,6 +2,9 @@ package dk.mosberg;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import dk.mosberg.item.ModItems;
+import dk.mosberg.mana.ManaConfig;
+import dk.mosberg.registry.MagicRegistry;
 import net.fabricmc.api.ModInitializer;
 
 public class MAM implements ModInitializer {
@@ -18,6 +21,17 @@ public class MAM implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Initializing Mana And Magic...");
+
+		// Load mana configuration
+		ManaConfig.load();
+
+		// Register all gemstone items
+		ModItems.initialize();
+
+		// Load all spells and rituals
+		MagicRegistry.initialize();
+
+		LOGGER.info("Mana And Magic initialized successfully!");
 	}
 }

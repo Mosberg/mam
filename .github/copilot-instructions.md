@@ -13,6 +13,14 @@
 
 ## Architecture & Source Organization
 
+### Core Content Design
+
+**13 Spell Schools:** Air, Arcane, Blood, Chaos, Dark, Earth, Fire, Ice, Light, Nature, Thunder, Void, Water
+**13 Ritual Categories:** Ascension, Circle, Cosmic, Elemental, Fountain, Planar, Reality, Resurrection, Sacrifice, Summoning, Temporal, Transformation, Vortex
+**15 Gemstone Types:** Ruby, Sapphire, Tanzanite (Epic); Apatite, Aquamarine, Moonstone, Rhodonite, Topaz, Tourmaline (Rare); Carnelian, Citrine, Jade, Peridot, Sodalite (Uncommon); Hematite (Common)
+
+**Design principle:** Each gemstone binds to specific spell schools and ritual categories. See README.md for complete gemstone-to-school/ritual mappings.
+
 ### Split Source Sets (Loom Feature)
 
 **Critical:** This project uses `splitEnvironmentSourceSets()` which physically separates client and server code at compile time.
@@ -70,7 +78,7 @@ src/
 
 - Yarn mappings for readable Minecraft names: `mappings "net.fabricmc:yarn:${yarn_mappings}:v2"`
 - Split source sets configured via `loom.splitEnvironmentSourceSets()`
-- Modding Helper API dependency from CurseMaven: `modding-helper-api`
+- Modding Helper API dependency: `modImplementation "dk.mosberg:moddinghelperapi:1.0.0"` (local Maven)
 - GSON bundled in JAR via `include implementation()`
 
 ### IDE Setup (IntelliJ IDEA / Eclipse)
@@ -140,14 +148,102 @@ public class MAMClient implements ClientModInitializer {
 import dk.mosberg.client.MAMClient;  // CRASHES on dedicated server!
 ```
 
+## Data-Driven Content System
+
+**Critical:** This mod is **data-driven** - most content is defined in JSON, not Java code.
+
+### Content Structure
+
+```
+src/main/resources/data/mam/
+├── spells/              # 13 spell schools (air, arcane, blood, chaos, dark, earth, fire, ice, light, nature, thunder, void, water)
+│   ├── fire/
+│   │   └── fireball.json    # Example: projectile spell with damage, AoE, status effects
+│   └── [school]/...         # Each school has multiple spells
+├── rituals/             # 13 ritual categories (ascension, circle, cosmic, elemental, fountain, planar, reality, resurrection, sacrifice, summoning, temporal, transformation, vortex)
+│   ├── ascension/
+│   │   └── apotheosis_ritual.json  # Example: multi-ring pattern, buffs, requirements
+│   └── [category]/...
+├── worldgen/            # Ore generation, structures
+│   ├── configured_feature/
+│   └── placed_feature/
+├── tags/                # Item/block tags for gemstones, etc.
+└── recipe/              # Crafting recipes
+```
+
+### Spell JSON Schema
+
+```json
+{
+  "id": "mam:fireball",
+  "school": "fire",
+  "castType": "projectile|aoe|utility|ritual|synergy",
+  "manaCost": 15.0,
+  "tier": 1,
+  "damage": 8.0,
+  "statusEffects": [{ "effect": "fire", "duration": 60 }],
+  "vfx": { "particleType": "flame", "color": "FF4500" }
+}
+```
+
+### Ritual JSON Schema
+
+```json
+{
+  "id": "mam:apotheosis_ritual",
+  "category": "ascension",
+  "ritual_items": ["mam:ascension_gem", "minecraft:nether_star"],
+  "pattern": {
+    "type": "ascension_circle",
+    "ring1": { "material": "mam:ascension_crystal_block", "radius": 4 }
+  },
+  "effect": { "type": "ascend", "buffs": ["strength"] }
+}
+```
+
+### Configuration System
+
+**`mana-and-magic.properties`** - Runtime configuration (hot-reloadable):
+
+```properties
+mana.personal.max_pool=1000
+mana.personal.regen_rate=0.5
+```
+
+### Adding New Content
+
+**To add a spell/ritual:**
+
+1. Create JSON file in appropriate `data/mam/spells/[school]/` or `data/mam/rituals/[category]/` directory
+2. Follow existing schema - no Java code needed
+3. Run `./gradlew runClient` to test
+4. Assets (textures/models) go in `assets/mam/textures/` or `assets/mam/models/`
+
+**Java registration** happens automatically via data loaders - only write Java for **custom behavior** (e.g., special projectile mechanics).
+
 ## Dependencies & Integration
 
 ### Key Dependencies
 
 - **Fabric API** (`fabric-api`) - Required; provides hooks into Minecraft events
-- **Modding Helper API** (`modding-helper-api`) - Custom utility library from CurseMaven
-- **GSON** (bundled) - JSON serialization for spell configs
+- **Modding Helper API** (`dk.mosberg:moddinghelperapi:1.0.0`) - Custom utility library (local Maven dependency)
+- **GSON** (bundled) - JSON serialization for spell/ritual configs
 - **JetBrains Annotations** (compile-only) - `@NotNull`, `@Nullable` for better IDE hints
+
+### Modding Helper API Setup
+
+**Local Maven dependency** - not from CurseMaven:
+
+```gradle
+modImplementation "dk.mosberg:moddinghelperapi:1.0.0"
+```
+
+If missing, check `mavenLocal()` repository or install locally:
+
+```bash
+cd /path/to/moddinghelperapi
+./gradlew publishToMavenLocal
+```
 
 ### Working with Yarn Mappings
 
@@ -205,9 +301,18 @@ Common Minecraft class names in Yarn:
 
 ### 4. Modding Helper API Not Found
 
-**Symptom:** `Could not resolve curse.maven:modding-helper-api`
-**Cause:** CurseMaven repository issue or version mismatch
-**Fix:** Check CurseForge for latest file ID and update in `build.gradle`
+**Symptom:** `Could not resolve dk.mosberg:moddinghelperapi:1.0.0`
+**Cause:** Dependency not installed in local Maven repository
+**Fix:**
+
+1. Ensure moddinghelperapi is published to local Maven:
+
+```bash
+cd /path/to/moddinghelperapi
+./gradlew publishToMavenLocal
+```
+
+2. Verify `mavenLocal()` is in repositories section of build.gradle
 
 ## Quick Reference
 
