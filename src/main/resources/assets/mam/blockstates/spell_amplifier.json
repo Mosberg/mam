@@ -1,20 +1,7 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "mam:block/spell_amplifier",
-      "y": 0
-    },
-    "facing=east": {
-      "model": "mam:block/spell_amplifier",
-      "y": 90
-    },
-    "facing=south": {
-      "model": "mam:block/spell_amplifier",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "mam:block/spell_amplifier",
-      "y": 270
+    "": {
+      "model": "mam:block/spell_amplifier"
     }
   }
 }

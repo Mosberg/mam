@@ -21,6 +21,39 @@ All requested features, functions, methods, logics, mechanics, options, settings
 - **Items:** 54+ registered (26 wands, 13 spell books, 15 gemstones)
 - **Blocks:** 19+ gemstone ore blocks with variants
 
+## 🎯 Session 6: January 6, 2026 - Resource & Lang Cleanup
+
+### ✅ Fixes
+
+- Aligned non-directional blockstates for arcane tree log, arcane workbench, mana infuser, spell altar, and spell amplifier to remove missing property warnings.
+- Corrected block models to use existing textures (arcane tree log/leaves, arcane workbench, mana infuser, spell altar, spell amplifier, mana node block) and fixed gift box model references.
+- Added placeholder texture for `void_essence_block` and updated translation coverage (EN + DA) for mana node, gift boxes, candy items, and remaining blocks.
+
+### 📁 Files Changed
+
+- src/main/resources/assets/mam/blockstates/arcane_tree_log.json
+- src/main/resources/assets/mam/blockstates/arcane_workbench.json
+- src/main/resources/assets/mam/blockstates/mana_infuser.json
+- src/main/resources/assets/mam/blockstates/spell_altar.json
+- src/main/resources/assets/mam/blockstates/spell_amplifier.json
+- src/main/resources/assets/mam/blockstates/gift_box.json
+- src/main/resources/assets/mam/models/block/arcane_tree_log.json
+- src/main/resources/assets/mam/models/block/arcane_tree_leaves.json
+- src/main/resources/assets/mam/models/block/arcane_workbench.json
+- src/main/resources/assets/mam/models/block/mana_infuser.json
+- src/main/resources/assets/mam/models/block/spell_altar.json
+- src/main/resources/assets/mam/models/block/spell_amplifier.json
+- src/main/resources/assets/mam/models/block/mana_node_block.json
+- src/main/resources/assets/mam/models/item/gift_box.json
+- src/main/resources/assets/mam/lang/en_us.json
+- src/main/resources/assets/mam/lang/da_dk.json
+- src/main/resources/assets/mam/textures/block/void_essence.png
+- generate_textures.py
+
+### 🧪 Build
+
+- `./gradlew build -x test` (January 6, 2026) ✅
+
 ## 🎯 Session 5: January 6, 2026 - Crafting Key Normalization
 
 ### ✅ Fixes

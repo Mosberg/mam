@@ -1,20 +1,7 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "mam:block/mana_infuser",
-      "y": 0
-    },
-    "facing=east": {
-      "model": "mam:block/mana_infuser",
-      "y": 90
-    },
-    "facing=south": {
-      "model": "mam:block/mana_infuser",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "mam:block/mana_infuser",
-      "y": 270
+    "": {
+      "model": "mam:block/mana_infuser"
     }
   }
 }

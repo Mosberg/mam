@@ -1,9 +1,16 @@
 # 🛣️ Mana & Magic - Development Roadmap
 
 **Version:** 1.0.0
-**Last Updated:** January 6, 2026 (Session 4 - Spell Book Recipe Corrections)
+**Last Updated:** January 6, 2026 (Session 6 - Resource & Lang Cleanup)
 **Target Release:** Q2 2026
 **Current Progress:** 75% Framework ✅, 80% Content 🚧
+
+## 🎉 Recent Completions (January 6, 2026 - Session 6)
+
+### Assets & Localization ✅
+
+- ✅ Fixed blockstates/models to match non-directional blocks (arcane tree log, arcane workbench, mana infuser, spell altar, spell amplifier, gift box) and corrected texture references.
+- ✅ Added placeholder texture for `void_essence_block` and expanded EN/DA translations for mana node, gift boxes, candy items, and remaining block keys.
 
 ## 🎉 Recent Completions (January 6, 2026 - Session 4)
 

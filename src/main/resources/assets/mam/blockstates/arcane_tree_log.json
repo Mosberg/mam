@@ -1,16 +1,7 @@
 {
   "variants": {
-    "axis=y": {
+    "": {
       "model": "mam:block/arcane_tree_log"
-    },
-    "axis=z": {
-      "model": "mam:block/arcane_tree_log",
-      "x": 90
-    },
-    "axis=x": {
-      "model": "mam:block/arcane_tree_log",
-      "x": 90,
-      "y": 90
     }
   }
 }

@@ -1,7 +1,6 @@
 {
-  "parent": "block/logs",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "side": "mam:block/arcane_log_side",
-    "end": "mam:block/arcane_log_end"
+    "all": "mam:block/arcane_tree_log"
   }
 }

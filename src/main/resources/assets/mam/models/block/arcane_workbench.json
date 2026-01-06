@@ -1,9 +1,9 @@
 {
   "textures": {
-    "particle": "mam:block/workbench_top",
-    "top": "mam:block/workbench_top",
-    "bottom": "mam:block/workbench_bottom",
-    "side": "mam:block/workbench_side"
+    "particle": "mam:block/arcane_workbench_top",
+    "top": "mam:block/arcane_workbench_top",
+    "bottom": "mam:block/arcane_workbench_bottom",
+    "side": "mam:block/arcane_workbench_side"
   },
   "elements": [
     {

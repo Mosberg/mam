@@ -1,6 +1,6 @@
 {
-  "parent": "block/leaves",
+  "parent": "minecraft:block/leaves",
   "textures": {
-    "all": "mam:block/arcane_leaves"
+    "all": "mam:block/arcane_tree_leaves"
   }
 }

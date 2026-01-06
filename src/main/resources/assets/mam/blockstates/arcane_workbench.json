@@ -1,20 +1,7 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "mam:block/arcane_workbench",
-      "y": 0
-    },
-    "facing=east": {
-      "model": "mam:block/arcane_workbench",
-      "y": 90
-    },
-    "facing=south": {
-      "model": "mam:block/arcane_workbench",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "mam:block/arcane_workbench",
-      "y": 270
+    "": {
+      "model": "mam:block/arcane_workbench"
     }
   }
 }

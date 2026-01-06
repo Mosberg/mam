@@ -20,6 +20,7 @@ block_textures = [
     "block/spell_amplifier.png",
     "block/arcane_tree_log.png",
     "block/arcane_tree_leaves.png",
+    "block/void_essence.png",
     "item/mana_node.png",
 ]
 

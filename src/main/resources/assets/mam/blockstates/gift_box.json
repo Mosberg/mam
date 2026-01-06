@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "mam:block/gift_box" }
+    "": { "model": "mam:block/gift_box_closed" }
   }
 }

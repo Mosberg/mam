@@ -1,6 +1,6 @@
 # Mana And Magic - Implementation Summary
 
-**Version:** 1.0.0 | **Last Updated:** January 6, 2026 (Crafting Key Normalization)
+**Version:** 1.0.0 | **Last Updated:** January 6, 2026 (Resource & Lang Cleanup)
 
 ## 📊 Architecture Overview
 
@@ -17,6 +17,12 @@
 - `dk.mosberg.registry` - Central registry for spells/rituals
 - `dk.mosberg.event` - Server tick handlers
 - `dk.mosberg.command` - Debug commands
+
+## 🔧 Recent Maintenance
+
+- Simplified blockstates for non-directional blocks (arcane tree log, arcane workbench, mana infuser, spell altar, spell amplifier) and aligned models to existing textures.
+- Corrected texture hookups for arcane foliage/logs, mana node block, and gift box models; added placeholder `void_essence.png` to cover void essence block rendering.
+- Expanded English/Danish translations for mana node, gift boxes, candy items, and remaining block keys to ensure parity with available models.
 
 ## ✅ Successfully Implemented Features
 

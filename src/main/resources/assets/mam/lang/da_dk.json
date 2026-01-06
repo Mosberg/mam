@@ -6,6 +6,7 @@
   "item.mam.mana_shard": "Mana-splint",
   "item.mam.mana_bottle": "Mana-flaske",
   "item.mam.mana_node_item": "Mana-knude",
+  "item.mam.mana_node": "Mana-knude",
   "item.mam.essence_vial": "Essensflaske",
 
   "item.mam.spell_tome": "Tryllebog",
@@ -14,7 +15,6 @@
   "item.mam.grimoire": "Grimoire",
 
   "item.mam.wand_novice": "Nybegynder-tryllestav",
-  "item.mam.wand_novice": "Nybegynder-stab",
   "item.mam.wand_apprentice": "Lærling-stab",
   "item.mam.wand_adept": "Dyktig-stab",
   "item.mam.wand_master": "Mester-stab",
@@ -43,6 +43,7 @@
 
   "item.mam.gift_box_closed": "Gavekasse",
   "item.mam.gift_box_open": "Gavekasse (Åben)",
+  "item.mam.gift_box": "Gavekasse",
 
   "block.mam.mana_node_block": "Mana-knude",
   "block.mam.mana_crystal_block": "Mana-krystal Blok",
@@ -61,6 +62,7 @@
 
   "block.mam.gift_box_closed": "Gavekasse",
   "block.mam.gift_box_open": "Gavekasse (Åben)",
+  "block.mam.gift_box": "Gavekasse",
 
   "entity.mam.mana_guardian": "Mana Vagter",
   "entity.mam.mana_orb": "Mana Kugle",
@@ -76,7 +78,6 @@
   "entity.mam.chaos_fragment": "Kaos Fragment",
   "entity.mam.lightning_elemental": "Lyn Elementar",
   "entity.mam.nature_spirit": "Natur Ånd",
-  "entity.mam.spell_projectile": "Trylleprojektion",
   "entity.mam.void_tentacle": "Tomdhed Tentakel",
   "entity.mam.portal_entity": "Magisk Portal",
   "entity.mam.dimension_rift": "Dimension Sprække",
