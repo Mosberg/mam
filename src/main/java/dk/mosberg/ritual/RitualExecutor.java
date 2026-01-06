@@ -1,3 +1,5 @@
+// Implement RitualLoader and Ritual classes
+// ...existing code...
 package dk.mosberg.ritual;
 
 import java.util.HashMap;
@@ -20,7 +22,6 @@ import net.minecraft.util.math.BlockPos;
  */
 public class RitualExecutor {
     private static final Map<String, Long> ritualCooldowns = new HashMap<>();
-    private static final Map<String, Integer> activeRituals = new HashMap<>();
 
     /**
      * Attempt to execute a ritual for a player.
@@ -265,14 +266,43 @@ public class RitualExecutor {
     private static void executeChaosEffect(ServerPlayerEntity player, RitualEffect effect,
             BlockPos pos) {
         applyBuffsToPlayer(player, effect.getBuffs(), effect.getDuration());
-        // TODO: Add AoE damage around ritual center
+
+        net.minecraft.server.world.ServerWorld world =
+                (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
+        net.minecraft.util.math.Box area = new net.minecraft.util.math.Box(pos).expand(4.0);
+
+        for (net.minecraft.entity.LivingEntity target : world.getEntitiesByClass(
+                net.minecraft.entity.LivingEntity.class, area,
+                entity -> !entity.isSpectator() && entity != player)) {
+            target.damage(world, player.getDamageSources().magic(), 6.0f);
+            target.setOnFireFor(4);
+        }
+
         sendSuccessMessage(player, "Chaos erupts from the ritual!");
     }
 
     private static void executeBindEffect(ServerPlayerEntity player, RitualEffect effect,
             BlockPos pos) {
         applyBuffsToPlayer(player, effect.getBuffs(), effect.getDuration());
-        // TODO: Prevent nearby enemies from moving
+
+        net.minecraft.server.world.ServerWorld world =
+                (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
+        net.minecraft.util.math.Box area = new net.minecraft.util.math.Box(pos).expand(6.0);
+        int durationTicks = effect.getDuration() * 20;
+
+        for (net.minecraft.entity.LivingEntity target : world.getEntitiesByClass(
+                net.minecraft.entity.LivingEntity.class, area,
+                entity -> !entity.isSpectator() && entity != player)) {
+            target.addStatusEffect(
+                    new StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.SLOWNESS,
+                            durationTicks, 4, false, true, true));
+            target.addStatusEffect(
+                    new StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.WEAKNESS,
+                            durationTicks, 1, false, true, true));
+            target.setVelocity(net.minecraft.util.math.Vec3d.ZERO);
+            target.velocityDirty = true;
+        }
+
         sendSuccessMessage(player, "Enemies are bound in place!");
     }
 
@@ -324,10 +354,10 @@ public class RitualExecutor {
             return;
         }
 
-        // Summon Fire Elemental
+        net.minecraft.server.world.ServerWorld world =
+                (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
+
         if (entityToSummon.equals("fire_elemental")) {
-            net.minecraft.server.world.ServerWorld world =
-                    (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
             FireElementalEntity elemental =
                     new FireElementalEntity(dk.mosberg.entity.ModEntities.FIRE_ELEMENTAL, world);
             elemental.setOwner(player);
@@ -335,10 +365,31 @@ public class RitualExecutor {
             world.spawnEntity(elemental);
             sendSuccessMessage(player, "A Fire Elemental has been summoned!");
             MAM.LOGGER.info("Summoned Fire Elemental for player {}", player.getName().getString());
-        } else {
-            // TODO: Add more summonable entities
-            sendSuccessMessage(player, "A creature has been summoned!");
+            return;
         }
+
+        String normalizedId = entityToSummon.contains(":") ? entityToSummon
+                : Identifier.of(MAM.MOD_ID, entityToSummon).toString();
+        Identifier id = Identifier.of(normalizedId);
+        net.minecraft.entity.EntityType<?> type = Registries.ENTITY_TYPE.get(id);
+
+        // If type is the default (pig), the ID wasn't found
+        if (type == net.minecraft.entity.EntityType.PIG) {
+            sendErrorMessage(player, "Unknown summon entity: " + entityToSummon);
+            return;
+        }
+
+        net.minecraft.entity.Entity summoned =
+                type.create(world, net.minecraft.entity.SpawnReason.MOB_SUMMONED);
+        if (summoned == null) {
+            sendErrorMessage(player, "Failed to summon entity: " + entityToSummon);
+            return;
+        }
+
+        summoned.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5,
+                world.getRandom().nextFloat() * 360.0f, 0.0f);
+        world.spawnEntity(summoned);
+        sendSuccessMessage(player, "A creature has been summoned!");
     }
 
     private static void executeAccelerateEffect(ServerPlayerEntity player, RitualEffect effect) {
@@ -348,7 +399,18 @@ public class RitualExecutor {
 
     private static void executeTransformEffect(ServerPlayerEntity player, RitualEffect effect) {
         applyBuffsToPlayer(player, effect.getBuffs(), effect.getDuration());
-        // TODO: Apply form-specific abilities
+
+        int durationTicks = effect.getDuration() * 20;
+        player.addStatusEffect(
+                new StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.STRENGTH,
+                        durationTicks, 1, false, true, true));
+        player.addStatusEffect(
+                new StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.RESISTANCE,
+                        durationTicks, 1, false, true, true));
+        player.addStatusEffect(
+                new StatusEffectInstance(net.minecraft.entity.effect.StatusEffects.SPEED,
+                        durationTicks, 1, false, true, true));
+
         sendSuccessMessage(player, "Your form has transformed!");
     }
 
@@ -359,7 +421,23 @@ public class RitualExecutor {
 
     private static void executeVortexEffect(ServerPlayerEntity player, RitualEffect effect,
             BlockPos pos) {
-        // TODO: Pull nearby entities and apply damage
+        net.minecraft.server.world.ServerWorld world =
+                (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
+        net.minecraft.util.math.Box area = new net.minecraft.util.math.Box(pos).expand(6.0);
+        net.minecraft.util.math.Vec3d center = net.minecraft.util.math.Vec3d.ofCenter(pos);
+        float damage = 4.0f;
+
+        for (net.minecraft.entity.LivingEntity target : world.getEntitiesByClass(
+                net.minecraft.entity.LivingEntity.class, area,
+                entity -> !entity.isSpectator() && entity != player)) {
+            net.minecraft.util.math.Vec3d targetPos =
+                    new net.minecraft.util.math.Vec3d(target.getX(), target.getY(), target.getZ());
+            net.minecraft.util.math.Vec3d direction = center.subtract(targetPos);
+            target.addVelocity(direction.normalize().multiply(0.35));
+            target.velocityDirty = true;
+            target.damage(world, player.getDamageSources().magic(), damage);
+        }
+
         sendSuccessMessage(player, "A vortex erupts from the ritual!");
     }
 

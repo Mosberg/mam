@@ -11,7 +11,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
  * persists across sessions via NBT.
  */
 public class ManaComponent {
-    private final Map<ManaPoolType, ManaPool> pools = new EnumMap<>(ManaPoolType.class);
+    private final EnumMap<ManaPoolType, ManaPool> pools = new EnumMap<>(ManaPoolType.class);
     private final ServerPlayerEntity player;
 
     public ManaComponent(ServerPlayerEntity player) {

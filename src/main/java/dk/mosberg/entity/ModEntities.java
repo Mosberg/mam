@@ -1,3 +1,5 @@
+// Add additional entities as needed
+// ...existing code...
 package dk.mosberg.entity;
 
 import dk.mosberg.MAM;

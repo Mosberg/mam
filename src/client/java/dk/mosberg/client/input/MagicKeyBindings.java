@@ -15,23 +15,52 @@ import net.minecraft.client.MinecraftClient;
  */
 @Environment(EnvType.CLIENT)
 public class MagicKeyBindings {
+    private static net.minecraft.client.option.KeyBinding openSpellKey;
+    private static net.minecraft.client.option.KeyBinding toggleHudKey;
+
     /**
      * Register client event handlers.
      */
     public static void register() {
-        // Register client tick event to handle input
+        openSpellKey =
+                net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper.registerKeyBinding(
+                        new net.minecraft.client.option.KeyBinding("key.mam.open_spell_selection",
+                                net.minecraft.client.util.InputUtil.Type.KEYSYM,
+                                org.lwjgl.glfw.GLFW.GLFW_KEY_R,
+                                net.minecraft.client.option.KeyBinding.Category.MISC));
+
+        toggleHudKey = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                .registerKeyBinding(new net.minecraft.client.option.KeyBinding("key.mam.toggle_hud",
+                        net.minecraft.client.util.InputUtil.Type.KEYSYM,
+                        org.lwjgl.glfw.GLFW.GLFW_KEY_H,
+                        net.minecraft.client.option.KeyBinding.Category.MISC));
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            // TODO: Implement proper keybinding handling when API is finalized for 1.21.11
+            if (client == null) {
+                return;
+            }
+
+            if (openSpellKey != null) {
+                while (openSpellKey.wasPressed()) {
+                    openSpellSelectionScreen(client);
+                }
+            }
+
+            if (toggleHudKey != null) {
+                while (toggleHudKey.wasPressed()) {
+                    toggleHUD();
+                }
+            }
         });
 
-        MAM.LOGGER.info("Registered client event infrastructure");
+        MAM.LOGGER.info("Registered client keybindings");
     }
 
     /**
      * Open the spell selection screen.
      */
     public static void openSpellSelectionScreen(MinecraftClient client) {
-        if (client.player == null || client.currentScreen != null) {
+        if (client == null || client.player == null || client.currentScreen != null) {
             return;
         }
 

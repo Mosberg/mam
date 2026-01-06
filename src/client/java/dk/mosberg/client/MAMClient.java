@@ -31,10 +31,9 @@ public class MAMClient implements ClientModInitializer {
 
 		// Register entity renderers
 		EntityRendererRegistry.register(ModEntities.SPELL_PROJECTILE, SpellProjectileRenderer::new);
-		// TODO: Add FireElementalRenderer when entity rendering API is stable
+		// Note: FireElementalRenderer deferred due to complex model API changes in 1.21.11
 
-		// Register HUD overlay (suppressing deprecation warning as HudRenderCallback is best
-		// available for 1.21.11)
+		// Register HUD overlay (suppressing deprecation warning)
 		@SuppressWarnings("deprecation")
 		net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback callback =
 				(drawContext, renderTickCounter) -> {

@@ -1,3 +1,6 @@
+// Implement the SpellCastPayload class and its codec
+// Handle potential exceptions during spell casting
+// ...existing code...
 package dk.mosberg.network;
 
 import dk.mosberg.MAM;

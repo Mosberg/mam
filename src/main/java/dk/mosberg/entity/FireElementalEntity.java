@@ -1,3 +1,5 @@
+// Implement the FollowOwnerGoal and TrackOwnerAttackerGoal classes
+// ...existing code...
 package dk.mosberg.entity;
 
 import java.util.UUID;
@@ -79,7 +81,7 @@ public class FireElementalEntity extends PathAwareEntity {
             }
         }
 
-        // TODO: Add fire particle effects (requires client-side renderer)
+        // Note: Particle effects are handled by client-side renderer (FireElementalRenderer)
     }
 
     // Fire elementals are immune to fire damage

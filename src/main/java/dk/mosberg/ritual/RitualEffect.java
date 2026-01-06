@@ -1,3 +1,5 @@
+// Implement JSON parsing for buffs
+// ...existing code...
 package dk.mosberg.ritual;
 
 import java.util.ArrayList;

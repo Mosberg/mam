@@ -1,6 +1,7 @@
 package dk.mosberg.block;
 
-import java.util.List;
+import java.util.Collections;
+import org.jetbrains.annotations.NotNull;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.AbstractCandleBlock;
 import net.minecraft.block.Block;
@@ -66,7 +67,7 @@ public class RitualCandleBlock extends AbstractCandleBlock {
     }
 
     @Override
-    protected Iterable<Vec3d> getParticleOffsets(BlockState state) {
-        return List.of(new Vec3d(0.5, 0.7, 0.5));
+    protected Iterable<@NotNull Vec3d> getParticleOffsets(BlockState state) {
+        return Collections.singletonList(new Vec3d(0.5, 0.7, 0.5));
     }
 }
