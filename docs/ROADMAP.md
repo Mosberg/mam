@@ -1,7 +1,7 @@
 # 🛣️ Mana & Magic - Development Roadmap
 
 **Version:** 1.0.0
-**Last Updated:** January 6, 2026
+**Last Updated:** January 6, 2026 (Session 3 - Texture Generation Automation)
 **Target Release:** Q2 2026
 **Current Progress:** 75% Framework ✅, 80% Content 🚧
 
@@ -30,6 +30,10 @@
 - ✅ **Item Tags:** 5 gemstone tags by rarity (common, uncommon, rare, epic, all)
 - ✅ **Crafting Recipes:** 39 recipes (26 wands, 13 spell books) using gemstone tags
 - ✅ **Total JSON Files:** 220+ (spells, rituals, worldgen, loot, recipes, tags, models)
+
+### Tooling Completed ✅
+
+- ✅ **Texture Generation Suite:** Python generators for items, blocks, entities, and GUI with shared palettes and overwrite-safe runs (see `generate_all_textures.py`).
 
 ---
 

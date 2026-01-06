@@ -1174,6 +1174,25 @@ cd mam
 # Output: build/docs/javadoc/
 ```
 
+### Texture Generation
+
+Use the Python generators to rebuild textures quickly (requires Pillow installed):
+
+```bash
+# Generate everything (items, blocks, entities, GUI)
+python generate_all_textures.py
+
+# Generate and overwrite existing outputs
+python generate_all_textures.py --overwrite
+
+# Generate a single category
+python generate_all_textures.py --items   # or --blocks / --entities / --gui
+```
+
+- Uses shared palettes in [texture_palettes.py](texture_palettes.py) for consistent school/gemstone colors.
+- Category generators live in [generate_item_textures.py](generate_item_textures.py), [generate_block_textures.py](generate_block_textures.py), [generate_entity_textures.py](generate_entity_textures.py), and [generate_gui_textures.py](generate_gui_textures.py).
+- Outputs land in `src/main/resources/assets/mam/textures/`.
+
 ### Testing
 
 ```bash

@@ -104,6 +104,15 @@
 8. `ServerEventHandlers.java` - Periodic mana sync (updated)
 9. `MAM.java` - Network registration (updated)
 
+### Asset Generation Tooling (Python)
+
+- `texture_palettes.py` - Centralized school/gemstone palettes, base stones, and ore vein settings.
+- `generate_item_textures.py` - Item textures for all schools/gemstones plus mana/ritual items; supports `--overwrite`.
+- `generate_block_textures.py` - Stone and deepslate ores for every gemstone, infused stone/brick, altar/pedestal/candle, and gift box; supports `--overwrite`.
+- `generate_entity_textures.py` - Spell projectile glow orbs per school palette; supports `--overwrite`.
+- `generate_gui_textures.py` - Mana bars, spell slot, altar/spellbook GUIs; supports `--overwrite`.
+- `generate_all_textures.py` - Orchestrator with category flags (`--items|--blocks|--entities|--gui`) plus `--overwrite` to rebuild outputs.
+
 ## ⚙️ Configuration
 
 ### Mana Pools (`mam.properties`)

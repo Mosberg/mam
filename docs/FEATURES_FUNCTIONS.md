@@ -1,7 +1,7 @@
 # 🔮 Mana & Magic - Features & Functions Reference
 
 **Version:** 1.0.0
-**Last Updated:** January 5, 2026
+**Last Updated:** January 6, 2026
 **Mod ID:** `mam`
 
 ---
@@ -17,8 +17,19 @@
 - [World Generation](#world-generation)
 - [HUD & UI Systems](#hud--ui-systems)
 - [Commands & Debug](#commands--debug)
+- [Asset Generation Utilities](#asset-generation-utilities)
 
 ---
+
+## 🛠️ Asset Generation Utilities
+
+Palette-driven Python generators for refreshing all textures quickly. Requires Pillow installed.
+
+- [texture_palettes.py](texture_palettes.py) centralizes school and gemstone colors plus ore base settings.
+- Run `python generate_all_textures.py` to build everything (use `--overwrite` to rebuild existing files).
+- Scope to a category with `--items`, `--blocks`, `--entities`, or `--gui`.
+- Category generators: [generate_item_textures.py](generate_item_textures.py), [generate_block_textures.py](generate_block_textures.py), [generate_entity_textures.py](generate_entity_textures.py), [generate_gui_textures.py](generate_gui_textures.py).
+- Outputs land in `src/main/resources/assets/mam/textures/`.
 
 ## 🌊 Mana Pool System
 
