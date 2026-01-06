@@ -65,6 +65,7 @@ public class ModItemGroups {
                 // === MAGICAL ITEMS ===
                 entries.add(ModItems.MANA_BOTTLE);
                 entries.add(ModItems.MANA_SHARD);
+                entries.add(ModItems.MANA_NODE);
                 entries.add(ModItems.ESSENCE_VIAL);
                 entries.add(ModItems.RITUAL_FOCUS);
                 entries.add(ModItems.SPELL_COMPONENT);
@@ -82,6 +83,7 @@ public class ModItemGroups {
                 // === RITUAL BLOCKS ===
                 entries.add(ModBlockItems.RITUAL_PEDESTAL);
                 entries.add(ModBlockItems.RITUAL_CANDLE);
+                entries.add(ModBlockItems.RITUAL_CIRCLE_BLOCK);
 
                 // === BUILDING BLOCKS ===
                 entries.add(ModBlockItems.MANA_INFUSED_STONE);
@@ -89,6 +91,21 @@ public class ModItemGroups {
 
                 // === CRAFTING BLOCKS ===
                 entries.add(ModBlockItems.ARCANE_ALTAR);
+
+                // === UTILITY BLOCKS ===
+                entries.add(ModBlockItems.GIFT_BOX);
+                entries.add(ModBlockItems.MANA_CRYSTAL_BLOCK);
+                entries.add(ModBlockItems.MANA_INFUSER);
+                entries.add(ModBlockItems.MANA_LAMP);
+                entries.add(ModBlockItems.MANA_LEY_LINE);
+                entries.add(ModBlockItems.MANA_NODE_BLOCK);
+                entries.add(ModBlockItems.SPELL_ALTAR);
+                entries.add(ModBlockItems.SPELL_AMPLIFIER);
+
+                // === NATURAL BLOCKS ===
+                entries.add(ModBlockItems.ARCANE_TREE_LOG);
+                entries.add(ModBlockItems.ARCANE_TREE_LEAVES);
+                entries.add(ModBlockItems.ARCANE_WORKBENCH);
             }).build();
 
     /**
