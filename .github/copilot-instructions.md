@@ -150,7 +150,7 @@ Example README.md update triggers:
 - Fabric Loom 1.14.10 with split source sets
 - Java 21 toolchain with G1GC optimization
 
-## Remote Indexing & API References
+## Minecraft 1.21.11 Remote Indexing & API References
 
 **GitHub Copilot Remote Indexing:** This project uses remote repository indexing for enhanced context awareness. The following repositories are indexed for API guidance:
 
@@ -159,15 +159,38 @@ Example README.md update triggers:
 - **Fabric API** - `https://github.com/FabricMC/fabric` - Fabric API hooks, networking, rendering
 - **Minecraft Yarn Mappings** - `https://github.com/FabricMC/yarn` - Readable class/method names for 1.21.11
 - **Fabric Loader** - `https://github.com/FabricMC/fabric-loader` - Mod loading system
-- **Fabric Loader 0.18.4 Docs** - `https://maven.fabricmc.net/docs/fabric-loader-0.18.4/` - Packages for Fabric Loader 0.18.4
-- **Fabric API 0.140.2+1.21.11 Docs** - `https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/` - Packages for Fabric API 0.140.2+1.21.11
-- **Yarn 1.21.11+build.3 Docs** - `https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/` - Packages for Yarn mappings 1.21.11+build.3
 
-### Key Documentation Sources
+## Minecraft 1.21.11 Key Documentation Sources (Remote Indexed)
 
-- **Fabric Wiki** - https://fabricmc.net/wiki/ - Comprehensive mod development guide
-- **Fabric API Docs** - https://maven.fabricmc.net/ - Maven repository with Javadocs
-- **Yarn Mappings Browser** - https://fabricmc.net/develop - Search intermediary mappings
+### Minecraft 1.21.11 Yarn Mappings Documentation by FabricMC (Remote Indexed)
+
+- **Yarn 1.21.11+build.3 - Overview** - https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/index.html - Minecraft 1.21.11 yarn-mappings overview list by FabricMC
+- **Yarn 1.21.11+build.3 - Hierarchy For All Packages** - https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/overview-tree.html - Minecraft 1.21.11 yarn-mappings Hierarchy For All Packages by FabricMC
+- **Yarn 1.21.11+build.3 - Deprecated** - https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/deprecated-list.html - Minecraft 1.21.11 yarn-mappings deprecated list by FabricMC
+- **Yarn 1.21.11+build.3 - Index** - https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/index-files/index-1.html - Minecraft 1.21.11 yarn-mappings index list by FabricMC
+- **Yarn 1.21.11+build.3 - JavaDoc Help** - https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/help-doc.html#index - Minecraft 1.21.11 yarn-mappings JavaDoc Help by FabricMC
+- - **Yarn 1.21.11+build.3 - All Packages** - https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/allpackages-index.html - Minecraft 1.21.11 yarn-mappings All Packages List by FabricMC
+- **Yarn 1.21.11+build.3 - All Classes and Interfaces** - https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/allclasses-index.html - Minecraft 1.21.11 yarn-mappings All Classes and Interfaces List by FabricMC
+- **Yarn 1.21.11+build.3 - Constant Field Values** - https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/constant-values.html - Minecraft 1.21.11 yarn-mappings Constant Field Values List by FabricMC
+
+### Minecraft 1.21.11 Fabric API Documentation (Remote Indexed)
+
+- **Fabric API 0.140.2+1.21.11 - Overview** - https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/index.html - Fabric API 0.140.2+1.21.11 overview list by FabricMC
+- **Fabric API 0.140.2+1.21.11 - Hierarchy For All Packages** - https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/overview-tree.html - Fabric API 0.140.2+1.21.11 Hierarchy For All Packages by FabricMC
+- **Fabric API 0.140.2+1.21.11 - Deprecated** - https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/deprecated-list.html - Fabric API 0.140.2+1.21.11 deprecated list by FabricMC
+- **Fabric API 0.140.2+1.21.11 - Index** - https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/index-all.html - Fabric API 0.140.2+1.21.11 index list by FabricMC
+- **Fabric API 0.140.2+1.21.11 - JavaDoc Help** - https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/help-doc.html#index - Fabric API 0.140.2+1.21.11 JavaDoc Help by FabricMC
+- **Fabric API 0.140.2+1.21.11 - All Packages** - https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/allpackages-index.html - Fabric API 0.140.2+1.21.11 All Packages List by FabricMC
+- **Fabric API 0.140.2+1.21.11 - All Classes and Interfaces** - https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/allclasses-index.html - Fabric API 0.140.2+1.21.11 All Classes and Interfaces List by FabricMC
+- **Fabric API 0.140.2+1.21.11 - Constant Field Values** - https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/constant-values.html - Fabric API 0.140.2+1.21.11 Constant Field Values List by FabricMC
+
+### Java 21 Documentation (Remote Indexed)
+
+- **Java SE 21 - Oracle Docs** - https://docs.oracle.com/en/java/javase/21/docs/api/index.html - Official Java SE 21 API documentation by Oracle
+- **Java SE 21 - Javadoc Search Spec** - https://docs.oracle.com/en/java/javase/21/docs/specs/javadoc/javadoc-search-spec.html - Java SE 21 Javadoc search specification by Oracle
+
+### Fabricmc 1.21.11 Developer Documentation (Remote Indexed)
+
 - **Docs Fabricmc Develop** - https://docs.fabricmc.net/develop/ - Developer Guides for Fabric projects
 - **Docs Fabricmc Develop Items Creating Your First Item** - https://docs.fabricmc.net/develop/items/first-item - Step-by-step item creation guide
 - **Docs Fabricmc Develop Items Food Items** - https://docs.fabricmc.net/develop/items/food - Guide on creating food items
@@ -224,7 +247,7 @@ Example README.md update triggers:
 **Usage in Development:**
 
 - Copilot can reference Fabric API patterns from indexed repositories
-- Minecraft 1.21.11-specific APIs are resolved via Yarn mappings
+- Minecraft 1.21.11-specific APIs are resolved via Yarn or Fabric API mappings
 - Client/server split patterns follow Fabric Loader conventions
 - Network packet handling uses Fabric Networking API v1
 
