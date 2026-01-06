@@ -11,6 +11,32 @@
 - Fabric Loom 1.14.10 with split source sets
 - Java 21 toolchain with G1GC optimization
 
+## Remote Indexing & API References
+
+**GitHub Copilot Remote Indexing:** This project uses remote repository indexing for enhanced context awareness. The following repositories are indexed for API guidance:
+
+### Core Dependencies (Remote Indexed)
+
+- **Fabric API** - `https://github.com/FabricMC/fabric` - Fabric API hooks, networking, rendering
+- **Minecraft Yarn Mappings** - `https://github.com/FabricMC/yarn` - Readable class/method names for 1.21.11
+- **Fabric Loader** - `https://github.com/FabricMC/fabric-loader` - Mod loading system
+- **Fabric Loader 0.18.4 Docs** - `https://maven.fabricmc.net/docs/fabric-loader-0.18.4/` - Packages for Fabric Loader 0.18.4
+- **Fabric API 0.140.2+1.21.11 Docs** - `https://maven.fabricmc.net/docs/fabric-api-0.140.2+1.21.11/` - Packages for Fabric API 0.140.2+1.21.11
+- **Yarn 1.21.11+build.3 Docs** - `https://maven.fabricmc.net/docs/yarn-1.21.11+build.3/` - Packages for Yarn mappings 1.21.11+build.3
+
+### Key Documentation Sources
+
+- **Fabric Wiki** - https://fabricmc.net/wiki/ - Comprehensive mod development guide
+- **Fabric API Docs** - https://maven.fabricmc.net/ - Maven repository with Javadocs
+- **Yarn Mappings Browser** - https://fabricmc.net/develop - Search intermediary mappings
+
+**Usage in Development:**
+
+- Copilot can reference Fabric API patterns from indexed repositories
+- Minecraft 1.21.11-specific APIs are resolved via Yarn mappings
+- Client/server split patterns follow Fabric Loader conventions
+- Network packet handling uses Fabric Networking API v1
+
 ## Architecture & Source Organization
 
 ### Core Content Design
