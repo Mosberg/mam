@@ -778,6 +778,26 @@ public class GemstoneBlock extends Block {
 }
 ```
 
+#### Spell Book Recipes (Corrected)
+
+All 13 spell book recipes now return their respective spell book items via explicit `result.id`/`count` fields (fixed on January 6, 2026).
+
+```json
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["GBG", "BPB", "GBG"],
+  "key": {
+    "G": [{ "tag": "mam:gemstones_uncommon" }],
+    "B": [{ "item": "minecraft:book" }],
+    "P": [{ "item": "minecraft:paper" }]
+  },
+  "result": {
+    "id": "mam:air_spell_book",
+    "count": 1
+  }
+}
+```
+
 ### Ore Generation
 
 #### Gemstone Ore Features

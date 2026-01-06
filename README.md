@@ -38,7 +38,7 @@ Mana and Magic is a data-driven, extensible Minecraft magic mod for Fabric. It f
 - **✅ Item Models:** 47 JSON models for wands, spell books, gemstones
 - **✅ Block Models:** 19 ore models with blockstates
 - **✅ Translations:** English (US) with 100+ entries
-- **✅ Crafting Recipes:** 39 recipes using gemstone tags
+- **✅ Crafting Recipes:** 39 recipes using gemstone tags (spell book outputs corrected on January 6, 2026)
 - **✅ Item Tags:** 5 gemstone rarity tags for flexible crafting
 
 ### Data-Driven Architecture ✅

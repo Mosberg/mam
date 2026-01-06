@@ -50,7 +50,7 @@ def main() -> None:
         generate_gui_textures(overwrite=args.overwrite)
 
     print("\n" + "=" * 60)
-    print("✅ Texture generation complete")
+    print("[OK] Texture generation complete")
     print("=" * 60)
 
 

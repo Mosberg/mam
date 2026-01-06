@@ -1,6 +1,6 @@
 # Mana And Magic - Implementation Summary
 
-**Version:** 1.0.0 | **Last Updated:** January 6, 2026
+**Version:** 1.0.0 | **Last Updated:** January 6, 2026 (Spell Book Recipe Corrections)
 
 ## 📊 Architecture Overview
 
@@ -83,6 +83,10 @@
 - `/spell list` - List all available spells
 - `/spell cast <index>` - Cast spell by index
 - `/spell info` - Display registry statistics
+
+### Recipe Data Corrections
+
+- Updated all 13 spell book crafting recipe JSONs to emit the proper `result.id` and `count` fields for each school, replacing the incorrect ingredient-map payload that previously appeared in outputs.
 
 ## 📁 New Files Created
 

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "pattern": ["  G", " S ", "S  "],
   "key": {
-    "G": {
-      "tag": "mam:gemstones_uncommon"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "G": { "tag": "mam:gemstones_uncommon" },
+    "S": { "item": "minecraft:stick" }
   },
   "result": {
     "id": "mam:fire_wand_novice",

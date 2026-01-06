@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "pattern": ["  G", " W ", "D  "],
   "key": {
-    "G": {
-      "tag": "mam:gemstones_rare"
-    },
-    "W": {
-      "item": "mam:nature_wand_novice"
-    },
-    "D": {
-      "item": "minecraft:diamond"
-    }
+    "G": { "tag": "mam:gemstones_rare" },
+    "W": { "item": "mam:nature_wand_novice" },
+    "D": { "item": "minecraft:diamond" }
   },
   "result": {
     "id": "mam:nature_wand_master",

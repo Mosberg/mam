@@ -23,10 +23,10 @@ def save_texture(img: Image.Image, relative_path: str, overwrite: bool = False) 
     full_path = os.path.join(ENTITY_DIR, relative_path)
     ensure_dir(os.path.dirname(full_path))
     if not overwrite and os.path.exists(full_path):
-        print(f"✓ Skipping existing {relative_path}")
+        print(f"[SKIP] Existing {relative_path}")
         return
     img.save(full_path)
-    print(f"  ✓ Created {relative_path}")
+    print(f"[OK] Created {relative_path}")
 
 
 def create_projectile(color: tuple[int, int, int]) -> Image.Image:
@@ -41,7 +41,7 @@ def create_projectile(color: tuple[int, int, int]) -> Image.Image:
 
 
 def generate_entity_textures(overwrite: bool = False) -> None:
-    print("\n🔮 Entity Textures")
+    print("\n[ENTITIES] Entity Textures")
     ensure_dir(ENTITY_DIR)
     # Default arcane projectile
     save_texture(create_projectile(SCHOOL_COLORS["arcane"]["accent"]), "spell_projectile.png", overwrite)
@@ -58,8 +58,8 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     generate_entity_textures(overwrite=args.overwrite)
-    print("\n✅ Entity texture generation complete")
-    print(f"📁 Output: {ENTITY_DIR}")
+    print("\n[OK] Entity texture generation complete")
+    print(f"[OUT] Output: {ENTITY_DIR}")
 
 
 if __name__ == "__main__":

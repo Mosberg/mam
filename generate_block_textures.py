@@ -37,10 +37,10 @@ def save_texture(img: Image.Image, relative_path: str, overwrite: bool = False) 
     full_path = os.path.join(BLOCK_DIR, relative_path)
     ensure_dir(os.path.dirname(full_path))
     if not overwrite and os.path.exists(full_path):
-        print(f"✓ Skipping existing {relative_path}")
+        print(f"[SKIP] Existing {relative_path}")
         return
     img.save(full_path)
-    print(f"  ✓ Created {relative_path}")
+    print(f"[OK] Created {relative_path}")
 
 
 def make_variated_base(base: Tuple[int, int, int, int]) -> Image.Image:
@@ -196,7 +196,7 @@ def generate_ritual_blocks(overwrite: bool) -> None:
 
 
 def generate_block_textures(overwrite: bool = False) -> None:
-    print("\n🧱 Block Textures")
+    print("\n[BLOCKS] Block Textures")
     ensure_dir(BLOCK_DIR)
     generate_ores(overwrite)
     generate_infusion_blocks(overwrite)
@@ -212,8 +212,8 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     generate_block_textures(overwrite=args.overwrite)
-    print("\n✅ Block texture generation complete")
-    print(f"📁 Output: {BLOCK_DIR}")
+    print("\n[OK] Block texture generation complete")
+    print(f"[OUT] Output: {BLOCK_DIR}")
 
 
 if __name__ == "__main__":

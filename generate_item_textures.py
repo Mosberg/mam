@@ -23,10 +23,10 @@ def save_texture(img: Image.Image, relative_path: str, overwrite: bool = False) 
     full_path = os.path.join(ITEM_DIR, relative_path)
     ensure_dir(os.path.dirname(full_path))
     if not overwrite and os.path.exists(full_path):
-        print(f"✓ Skipping existing {relative_path}")
+        print(f"[SKIP] Existing {relative_path}")
         return
     img.save(full_path)
-    print(f"  ✓ Created {relative_path}")
+    print(f"[OK] Created {relative_path}")
 
 
 def create_wand_texture(school: str, tier: str) -> Image.Image:
@@ -227,7 +227,7 @@ def generate_misc_items(overwrite: bool = False) -> None:
 
 
 def generate_item_textures(overwrite: bool = False) -> None:
-    print("\n📦 Item Textures")
+    print("\n[ITEMS] Item Textures")
     generate_wand_textures(overwrite)
     generate_spell_book_textures(overwrite)
     generate_gemstone_items(overwrite)
@@ -244,8 +244,8 @@ def main() -> None:
     args = parse_args()
     ensure_dir(ITEM_DIR)
     generate_item_textures(overwrite=args.overwrite)
-    print("\n✅ Item texture generation complete")
-    print(f"📁 Output: {ITEM_DIR}")
+    print("\n[OK] Item texture generation complete")
+    print(f"[OUT] Output: {ITEM_DIR}")
 
 
 if __name__ == "__main__":

@@ -24,10 +24,10 @@ def save_texture(img: Image.Image, relative_path: str, overwrite: bool = False) 
     full_path = os.path.join(GUI_DIR, relative_path)
     ensure_dir(os.path.dirname(full_path))
     if not overwrite and os.path.exists(full_path):
-        print(f"✓ Skipping existing {relative_path}")
+        print(f"[SKIP] Existing {relative_path}")
         return
     img.save(full_path)
-    print(f"  ✓ Created {relative_path}")
+    print(f"[OK] Created {relative_path}")
 
 
 def create_mana_bar() -> Image.Image:
@@ -92,7 +92,7 @@ def create_spell_book_gui() -> Image.Image:
 
 
 def generate_gui_textures(overwrite: bool = False) -> None:
-    print("\n🎨 GUI Textures")
+    print("\n[GUI] GUI Textures")
     ensure_dir(GUI_DIR)
     ensure_dir(SPRITES_DIR)
 
@@ -120,8 +120,8 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     generate_gui_textures(overwrite=args.overwrite)
-    print("\n✅ GUI texture generation complete")
-    print(f"📁 Output: {GUI_DIR}")
+    print("\n[OK] GUI texture generation complete")
+    print(f"[OUT] Output: {GUI_DIR}")
 
 
 if __name__ == "__main__":
