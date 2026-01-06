@@ -8,9 +8,8 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 
 /**
- * Placeholder renderer stub for fire elemental entities. TODO: Implement proper model and texture
- * rendering for fire elementals. TODO: This renderer needs to be registered in MAMClient once
- * complete.
+ * Placeholder renderer stub for fire elemental entities. Implement proper model and texture
+ * rendering for fire elementals later; register in MAMClient once complete.
  */
 @Environment(EnvType.CLIENT)
 public class FireElementalRenderer {

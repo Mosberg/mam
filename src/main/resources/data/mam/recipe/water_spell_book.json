@@ -1,16 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": ["GBG", "BPB", "GBG"],
+  "pattern": [
+    "GBG",
+    "BPB",
+    "GBG"
+  ],
   "key": {
-    "G": {
-      "tag": "mam:gemstones_uncommon"
-    },
-    "B": {
-      "item": "minecraft:book"
-    },
-    "P": {
-      "item": "minecraft:paper"
-    }
+    "G": "#mam:gemstones_uncommon",
+    "B": "minecraft:book",
+    "P": "minecraft:paper"
   },
   "result": {
     "id": "mam:water_spell_book",

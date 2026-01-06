@@ -51,7 +51,7 @@ public class CooldownOverlay {
         // Render custom spell crosshair
         renderSpellCrosshair(context, centerX, centerY);
 
-        // TODO: Get actual spell cooldowns from player component
+        // Placeholder: swap in player spell cooldown data once hooked up
         // For now, render example cooldowns
         renderExampleCooldowns(context, centerX, centerY);
     }

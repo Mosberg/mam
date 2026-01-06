@@ -20,6 +20,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
  */
 public class MAMClient implements ClientModInitializer {
 	@Override
+	@SuppressWarnings({"deprecation", "null"})
 	public void onInitializeClient() {
 		MAM.LOGGER.info("Initializing {} client...", MAM.MOD_NAME);
 

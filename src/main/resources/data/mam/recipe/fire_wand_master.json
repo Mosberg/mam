@@ -1,10 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": ["  G", " W ", "D  "],
+  "pattern": [
+    "  G",
+    " W ",
+    "D  "
+  ],
   "key": {
-    "G": { "tag": "mam:gemstones_rare" },
-    "W": { "item": "mam:fire_wand_novice" },
-    "D": { "item": "minecraft:diamond" }
+    "G": "#mam:gemstones_rare",
+    "W": "mam:fire_wand_novice",
+    "D": "minecraft:diamond"
   },
   "result": {
     "id": "mam:fire_wand_master",

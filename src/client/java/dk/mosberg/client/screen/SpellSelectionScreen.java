@@ -54,6 +54,9 @@ public class SpellSelectionScreen extends Screen {
     private final int spellsPerPage = 8;
     private List<Spell> currentSpells = new ArrayList<>();
 
+    // Guard to prevent double-blur during background rendering
+    private boolean renderingBackground = false;
+
     // UI state
     private int schoolButtonStartX = 0;
     private int schoolButtonStartY = 0;
@@ -114,8 +117,10 @@ public class SpellSelectionScreen extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        // Render darkened game background
-        this.renderBackground(context, mouseX, mouseY, delta);
+        // Render darkened game background once per frame
+        renderingBackground = true;
+        super.renderBackground(context, mouseX, mouseY, delta);
+        renderingBackground = false;
 
         // Render main panel background texture (centered)
         int panelWidth = 256;
@@ -147,8 +152,15 @@ public class SpellSelectionScreen extends Screen {
             renderSpellInfo(context);
         }
 
-        // Render super (buttons)
+        // Render super (buttons) without re-applying blur
         super.render(context, mouseX, mouseY, delta);
+    }
+
+    @Override
+    public void renderBackground(DrawContext context, int mouseX, int mouseY, float delta) {
+        if (renderingBackground) {
+            super.renderBackground(context, mouseX, mouseY, delta);
+        }
     }
 
     private void renderSpellList(DrawContext context, int mouseX, int mouseY) {

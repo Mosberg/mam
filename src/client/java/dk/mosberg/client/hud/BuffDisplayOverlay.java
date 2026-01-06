@@ -45,7 +45,7 @@ public class BuffDisplayOverlay {
         int x = screenWidth + xOffset - ICON_SIZE;
         int y = yOffset;
 
-        // TODO: Get actual buff/debuff data from player component
+        // Placeholder: replace with player component buff data when available
         // For now, render example buffs
         renderExampleBuffs(context, client, x, y);
     }
@@ -95,12 +95,13 @@ public class BuffDisplayOverlay {
         int textY = y + ICON_SIZE / 2 - 4;
         context.drawText(textRenderer, durationText, textX, textY, 0xFFFFFF, true);
 
-        // Render buff name on hover (TODO: implement hover detection)
+        // Render buff name on hover (hover detection stub)
     }
 
     /**
      * Render tooltip for buff on hover.
      */
+    @SuppressWarnings("unused")
     private static void renderBuffTooltip(DrawContext context, MinecraftClient client, int mouseX,
             int mouseY, String name, String description, int duration) {
 

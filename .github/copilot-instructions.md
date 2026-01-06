@@ -1,154 +1,39 @@
-# Mana And Magic (MAM) - Fabric Mod Development Guide
+# Copilot Instructions for Mana And Magic (Fabric 1.21.11)
 
-## 📋 Documentation Management Protocol
+## Project Shape
 
-**CRITICAL:** Before completing ANY task or ending a work session, you MUST update the following documentation files to reflect the current state of the project:
+- Mod id `mam`; entrypoints: `src/main/java/dk/mosberg/MAM.java` (server/common) and `src/client/java/dk/mosberg/client/MAMClient.java` (client-only). Loom uses splitEnvironmentSourceSets—never import client classes from main.
+- Data-driven content: `src/main/resources/data/mam/` holds spells, rituals, worldgen, recipes, loot tables, tags. Assets in `src/main/resources/assets/mam/` (models, blockstates, lang, gui textures).
+- HUD/GUI: client overlays in `src/client/java/dk/mosberg/client/hud/` (ManaHudOverlay, CooldownOverlay, BuffDisplayOverlay, ManaNodeIndicator); screens in `src/client/java/dk/mosberg/client/screen/`. GUI textures under `assets/mam/textures/gui/**`, many produced by Python generators in repo root.
 
-### Required Documentation Updates
+## Rendering (MC 1.21.11)
 
-1. **README.md** (Root) - User-facing project overview
+- Use `DrawContext.drawTexture(RenderPipelines.GUI_TEXTURED, id, x, y, u, v, w, h, texW, texH)`; `RenderPipelines` is `net.minecraft.client.gl.RenderPipelines`. U/V are floats. No `drawBorder`; draw outlines with `fill` strips.
+- Avoid matrix push/pop on `DrawContext` (Matrix3x2fStack lacks them). Keep HUD 2D; adjust coordinates instead of scaling via matrices.
 
-   - Update feature status when new features are implemented
-   - Reflect current version numbers and dependencies
-   - Keep installation/usage instructions current
+## Build & Run
 
-2. **docs/ROADMAP.md** - Development timeline and progress tracking
+- Build: `./gradlew build` (or `./gradlew build -x test`).
+- Client: `./gradlew runClient`; Server: `./gradlew runServer`.
+- Sources: `./gradlew genSources` (Loom 1.14.10).
 
-   - Mark completed tasks with ✅
-   - Update progress percentages
-   - Move completed items from "NOT STARTED" to "COMPLETED" sections
-   - Update "Last Updated" date to current date
+## Conventions & Patterns
 
-3. **docs/IMPLEMENTATION_SUMMARY.md** - Technical implementation details
+- Registration and constants live in `MAM.java` (mod id, logger). Client hooks go only in `MAMClient`.
+- Data-first: add spells/rituals/worldgen via JSON; Java only for registration or special behavior.
+- Assets/models follow vanilla layout; block/item models in `assets/mam/models/`, blockstates in `assets/mam/blockstates/`.
+- Networking/config: mana sync packets and server/client configs exist—follow existing packet/loader patterns in main sources when extending.
 
-   - Add newly implemented features with full technical descriptions
-   - Document API changes, new classes, and system architectures
-   - Include code snippets showing how new features work
+## Documentation Expectations
 
-4. **docs/FEATURES_FUNCTIONS.md** - Feature catalog with usage examples
+- Keep docs in `docs/` current when features change: ROADMAP.md, IMPLEMENTATION_SUMMARY.md, FEATURES_FUNCTIONS.md, COMPLETION_REPORT.md, README.md. Update “Last Updated” dates and mark status ✅/🚧 as appropriate.
 
-   - Document new spells, rituals, items, blocks with full specifications
-   - Include JSON schemas and example configurations
-   - Add usage instructions for new features
+## Quick Pointers
 
-5. **docs/COMPLETION_REPORT.md** - Work session summary
-
-   - Append new completion entries with timestamp
-   - Summarize what was implemented/fixed
-   - Note any breaking changes or migration steps
-
-6. **docs/ASSETS_COMPLETE.md** or **docs/TEXTURES_COMPLETE.md** - Asset tracking
-
-   - Update when assets (models, textures, sounds) are added
-   - Mark completion status of asset categories
-   - List newly added files
-
-7. **docs/PLANNED_FEATURES.md** - Future feature planning
-   - Remove features that are now implemented
-   - Add new ideas that emerge during development
-   - Prioritize based on current project state
-
-### Documentation Update Workflow
-
-When completing ANY development task:
-
-```
-1. Implement code/content changes
-2. Run ./gradlew build to verify compilation
-3. Update ALL relevant documentation files listed above
-4. Verify documentation is accurate and complete
-5. Commit changes with descriptive message
-```
-
-### Documentation Style Guidelines
-
-- Use clear, concise language
-- Include practical code examples
-- Mark status with emojis: ✅ (done), ❌ (not started), 🚧 (in progress)
-- Always update "Last Updated" timestamps
-- Cross-reference related documents
-- Keep technical accuracy paramount
-
-### Why This Matters
-
-- Ensures project state is always documented
-- Prevents information loss between sessions
-- Helps new contributors understand the project
-- Tracks progress toward milestones
-- Makes troubleshooting easier with accurate historical records
-
-### Cross-Document Synchronization
-
-When updating documentation, ensure consistency across all files:
-
-#### Feature Implementation Flow
-
-1. **Task starts** → Update docs/ROADMAP.md (mark 🚧 in progress)
-2. **Code written** → Document in docs/IMPLEMENTATION_SUMMARY.md
-3. **Feature complete** → Update docs/FEATURES_FUNCTIONS.md with usage
-4. **Task ends** → Update docs/ROADMAP.md (mark ✅ complete), docs/COMPLETION_REPORT.md
-5. **If user-facing** → Update README.md feature list
-
-#### Document Relationships
-
-- **README.md** references → docs/ROADMAP.md, docs/FEATURES_FUNCTIONS.md
-- **ROADMAP.md** tasks align with → PLANNED_FEATURES.md goals
-- **IMPLEMENTATION_SUMMARY.md** technical details match → FEATURES_FUNCTIONS.md schemas
-- **COMPLETION_REPORT.md** logs reference → ROADMAP.md task IDs
-- **ASSETS_COMPLETE.md** file lists match → actual files in src/main/resources/
-
-#### Auto-Update Triggers
-
-Update documentation when:
-
-- ✅ New Java class/method added → IMPLEMENTATION_SUMMARY.md
-- ✅ New JSON file created (spell/ritual) → FEATURES_FUNCTIONS.md, ROADMAP.md
-- ✅ New block/item registered → README.md feature count, IMPLEMENTATION_SUMMARY.md
-- ✅ Asset file created → ASSETS_COMPLETE.md, TEXTURES_COMPLETE.md
-- ✅ Build completes successfully → COMPLETION_REPORT.md session log
-- ✅ gradle.properties version changed → README.md, ROADMAP.md
-
-#### README.md Special Rules
-
-The README.md serves as the project's public face. Update it when:
-
-1. **Major features complete** - Add to Features section with ✅
-2. **Version changes** - Update version badge/number
-3. **Dependencies change** - Update Tech Stack section
-4. **Installation changes** - Update setup instructions
-5. **New content types added** - Update spell/ritual/gemstone counts
-
-Example README.md update triggers:
-
-```markdown
-# When you implement 5 new spells:
-
-- Update "X spell schools" count if schools changed
-- Don't update README for individual spells (use FEATURES_FUNCTIONS.md)
-
-# When you add worldgen system:
-
-- Add "✅ Ore Generation" to Features section
-- Update feature description
-
-# When you complete a major milestone:
-
-- Update "Current Progress: X%" if it exists
-- Add to changelog/release notes section
-```
-
----
-
-## Project Overview
-
-**Mana And Magic** is a data-driven, extensible magic mod for Minecraft 1.21.11 using Fabric Loader. Built with Java 21, Yarn mappings, and split source sets for strict client/server separation.
-
-**Tech Stack:**
-
-- Minecraft 1.21.11 + Fabric Loader 0.18.4
-- Yarn mappings `1.21.11+build.3` (intermediary → named)
-- Fabric Loom 1.14.10 with split source sets
-- Java 21 toolchain with G1GC optimization
+- Version lock: MC 1.21.11, Fabric Loader 0.18.4, Fabric API 0.140.2+1.21.11, Java 21.
+- Do not edit `fabric.mod.json` directly; values come from `gradle.properties` during `processResources`.
+- Client/server rule: never reference `dk.mosberg.client` from `src/main` code (prevents dedicated-server crashes).
+- Prefer existing generated GUI textures under `assets/mam/textures/gui/` before adding new ones.
 
 ## Minecraft 1.21.11 Remote Indexing & API References
 

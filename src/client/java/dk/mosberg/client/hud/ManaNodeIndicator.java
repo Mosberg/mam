@@ -34,7 +34,7 @@ public class ManaNodeIndicator {
             return;
         }
 
-        // TODO: Get actual mana node locations from world
+        // Placeholder: swap in real mana node positions from world once available
         // For now, render example indicator
         renderExampleIndicator(context, client);
     }
@@ -44,7 +44,6 @@ public class ManaNodeIndicator {
      */
     private static void renderExampleIndicator(DrawContext context, MinecraftClient client) {
         int screenWidth = client.getWindow().getScaledWidth();
-        int screenHeight = client.getWindow().getScaledHeight();
 
         // Position at top center
         int x = screenWidth / 2 - ICON_SIZE / 2;

@@ -1,9 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": ["  G", " S ", "S  "],
+  "pattern": [
+    "  G",
+    " S ",
+    "S  "
+  ],
   "key": {
-    "G": { "tag": "mam:gemstones_uncommon" },
-    "S": { "item": "minecraft:stick" }
+    "G": "#mam:gemstones_uncommon",
+    "S": "minecraft:stick"
   },
   "result": {
     "id": "mam:water_wand_novice",

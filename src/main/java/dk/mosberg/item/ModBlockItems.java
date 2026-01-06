@@ -45,7 +45,7 @@ public class ModBlockItems {
         // Special Block Items
         public static final BlockItem GIFT_BOX = registerBlockItem("gift_box", ModBlocks.GIFT_BOX);
 
-        // Utility Block Items - TODO: Add custom textures
+        // Utility Block Items - custom textures pending
         public static final BlockItem MANA_CRYSTAL_BLOCK =
                         registerBlockItem("mana_crystal_block", ModBlocks.MANA_CRYSTAL_BLOCK);
         public static final BlockItem MANA_INFUSER =
@@ -63,7 +63,7 @@ public class ModBlockItems {
         public static final BlockItem SPELL_AMPLIFIER =
                         registerBlockItem("spell_amplifier", ModBlocks.SPELL_AMPLIFIER);
 
-        // Natural Block Items - TODO: Add custom textures
+        // Natural Block Items - custom textures pending
         public static final BlockItem ARCANE_TREE_LOG =
                         registerBlockItem("arcane_tree_log", ModBlocks.ARCANE_TREE_LOG);
         public static final BlockItem ARCANE_TREE_LEAVES =
@@ -74,6 +74,7 @@ public class ModBlockItems {
         /**
          * Register a block item.
          */
+        @SuppressWarnings({"null", "unchecked"})
         private static BlockItem registerBlockItem(String name, net.minecraft.block.Block block) {
                 Identifier id = Identifier.of(MAM.MOD_ID, name);
                 RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);

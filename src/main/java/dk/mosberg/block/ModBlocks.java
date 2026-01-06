@@ -285,7 +285,7 @@ public class ModBlocks {
                                         .mapColor(MapColor.RED).strength(1.0f, 1.0f)
                                         .sounds(BlockSoundGroup.WOOD), false));
 
-        // Utility blocks - TODO: Add custom textures
+        // Utility blocks - custom textures pending
         public static final Block MANA_CRYSTAL_BLOCK = registerBlock("mana_crystal_block",
                         new Block(AbstractBlock.Settings.create()
                                         .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
@@ -348,7 +348,7 @@ public class ModBlocks {
                                         .mapColor(MapColor.BRIGHT_TEAL).strength(2.0f, 6.0f)
                                         .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
-        // Natural blocks - TODO: Add custom textures
+        // Natural blocks - custom textures pending
         public static final Block ARCANE_TREE_LOG = registerBlock("arcane_tree_log",
                         new Block(AbstractBlock.Settings.create()
                                         .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
