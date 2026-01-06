@@ -1,5 +1,23 @@
 # Mana And Magic - Implementation Summary
 
+**Version:** 1.0.0 | **Last Updated:** January 6, 2026
+
+## 📊 Architecture Overview
+
+### Package Structure
+
+- `dk.mosberg` - Main mod entry point
+- `dk.mosberg.mana` - Mana pool system with persistence
+- `dk.mosberg.spell` - Spell casting engine and data loading
+- `dk.mosberg.ritual` - Ritual pattern validation and execution
+- `dk.mosberg.item` - Items registry (wands, books, gemstones)
+- `dk.mosberg.block` - Blocks registry (crystals, ores, altars)
+- `dk.mosberg.entity` - Custom entities (spell projectiles)
+- `dk.mosberg.network` - Client-server packet handling
+- `dk.mosberg.registry` - Central registry for spells/rituals
+- `dk.mosberg.event` - Server tick handlers
+- `dk.mosberg.command` - Debug commands
+
 ## ✅ Successfully Implemented Features
 
 ### Core Mana System

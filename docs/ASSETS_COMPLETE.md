@@ -1,8 +1,72 @@
-# Asset Infrastructure Complete ✅
+# Asset Infrastructure Status
+
+**Last Updated:** January 6, 2026
 
 ## Summary
 
-All JSON asset files have been generated and validated. The mod now has complete model, blockstate, translation, and sound definitions. Only actual PNG texture files remain (see TEXTURE_GUIDE.md).
+Core data-driven JSON files are complete. The mod has:
+
+- ✅ **151 JSON Data Files:** Spells, rituals, worldgen, loot tables
+- ✅ **Worldgen System:** All 15 gemstone ores configured for generation
+- ✅ **Loot Tables:** Fortune/Silk Touch compatible ore drops
+- 🚧 **Assets:** Block/item models, textures, blockstates need creation
+- 🚧 **Translations:** Language files need comprehensive entries
+
+## ✅ Completed Data Files
+
+### Spells (65+ files)
+
+- **13 Spell Schools:** Air, Arcane, Blood, Chaos, Dark, Earth, Fire, Ice, Light, Nature, Thunder, Void, Water
+- **Location:** `src/main/resources/data/mam/spells/[school]/*.json`
+- **Cast Types:** Projectile, AoE, Utility, Ritual, Synergy
+- **Format:** JSON with id, school, castType, manaCost, tier, damage, statusEffects, vfx
+
+### Rituals (34+ files)
+
+- **13 Categories:** Ascension, Circle, Cosmic, Elemental, Fountain, Planar, Reality, Resurrection, Sacrifice, Summoning, Temporal, Transformation, Vortex
+- **Location:** `src/main/resources/data/mam/rituals/[category]/*.json`
+- **Pattern Types:** Circle, multi-ring, star, pentagram, custom
+- **Format:** JSON with id, category, ritual_items, pattern, effect
+
+### Worldgen (30 files)
+
+- **15 Configured Features:** Define ore vein sizes (3-10 blocks based on rarity)
+- **15 Placed Features:** Define y-levels and spawn rates per chunk
+- **Location:** `src/main/resources/data/mam/worldgen/configured_feature/` and `placed_feature/`
+- **Ores:** Ruby, Sapphire, Tanzanite (Epic); Apatite, Aquamarine, Moonstone, Rhodonite, Topaz, Tourmaline (Rare); Carnelian, Citrine, Jade, Peridot, Sodalite (Uncommon); Hematite (Common)
+
+### Loot Tables (19 files)
+
+- **Location:** `src/main/resources/data/mam/loot_tables/blocks/`
+- **Features:** Silk Touch (drops ore block), Fortune (bonus drops), Explosion decay
+- **Ores:** All 15 gemstone ores plus deepslate variants (ruby, sapphire, tanzanite, hematite)
+
+## 🚧 Pending Asset Work
+
+### Block Models & Blockstates (Needed)
+
+- 19 ore block models (stone/deepslate variants)
+- 8 existing blocks (mana crystals, ritual blocks, altar) - models exist
+- Blockstate JSON files for all blocks
+
+### Item Models (Needed)
+
+- 26 wand models (13 schools × 2 tiers)
+- 13 spell book models
+- 15 gemstone models
+- 19 ore block item models
+
+### Textures (Needed)
+
+- Ore textures (19 blocks)
+- Wand textures (26 items)
+- Spell book textures (13 items)
+- Gemstone textures (15 items)
+
+### Translations (Needed)
+
+- English (en_us.json) with ~100+ entries
+- Item names, block names, creative tab, status effects, tooltips
 
 ---
 
