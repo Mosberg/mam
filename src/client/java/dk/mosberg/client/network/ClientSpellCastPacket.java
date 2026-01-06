@@ -1,6 +1,7 @@
 package dk.mosberg.client.network;
 
 import dk.mosberg.MAM;
+import dk.mosberg.network.SpellCastNetworkHandler;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -24,7 +25,7 @@ public class ClientSpellCastPacket {
             return;
         }
 
-        // TODO: Implement proper packet sending once packet infrastructure is in place
-        MAM.LOGGER.debug("Spell cast packet would be sent: {}", spellId);
+        ClientPlayNetworking.send(new SpellCastNetworkHandler.SpellCastPayload(spellId.toString()));
+        MAM.LOGGER.debug("Spell cast packet sent: {}", spellId);
     }
 }

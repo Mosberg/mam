@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import dk.mosberg.MAM;
+import dk.mosberg.entity.FireElementalEntity;
 import dk.mosberg.mana.ManaComponent;
 import dk.mosberg.mana.ManaManager;
 import dk.mosberg.mana.ManaPoolType;
@@ -317,8 +318,27 @@ public class RitualExecutor {
 
     private static void executeSummonEffect(ServerPlayerEntity player, RitualEffect effect,
             BlockPos pos) {
-        // TODO: Spawn entity
-        sendSuccessMessage(player, "A creature has been summoned!");
+        String entityToSummon = effect.getSummonEntity();
+        if (entityToSummon == null || entityToSummon.isEmpty()) {
+            MAM.LOGGER.warn("Summon ritual has no entity specified");
+            return;
+        }
+
+        // Summon Fire Elemental
+        if (entityToSummon.equals("fire_elemental")) {
+            net.minecraft.server.world.ServerWorld world =
+                    (net.minecraft.server.world.ServerWorld) player.getEntityWorld();
+            FireElementalEntity elemental =
+                    new FireElementalEntity(dk.mosberg.entity.ModEntities.FIRE_ELEMENTAL, world);
+            elemental.setOwner(player);
+            elemental.setPosition(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5);
+            world.spawnEntity(elemental);
+            sendSuccessMessage(player, "A Fire Elemental has been summoned!");
+            MAM.LOGGER.info("Summoned Fire Elemental for player {}", player.getName().getString());
+        } else {
+            // TODO: Add more summonable entities
+            sendSuccessMessage(player, "A creature has been summoned!");
+        }
     }
 
     private static void executeAccelerateEffect(ServerPlayerEntity player, RitualEffect effect) {

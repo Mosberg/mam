@@ -8,6 +8,7 @@ import dk.mosberg.item.ModItemGroups;
 import dk.mosberg.item.ModItems;
 import dk.mosberg.mana.ManaConfig;
 import dk.mosberg.network.ManaNetworkHandler;
+import dk.mosberg.network.SpellCastNetworkHandler;
 import dk.mosberg.registry.MagicRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -44,6 +45,7 @@ public class MAM implements ModInitializer {
 
 			// Phase 4: Register networking
 			ManaNetworkHandler.register();
+			SpellCastNetworkHandler.register();
 
 			// Phase 5: Register commands
 			CommandRegistrationCallback.EVENT.register(MagicCommands::register);

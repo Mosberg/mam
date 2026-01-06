@@ -1,6 +1,7 @@
 package dk.mosberg.entity;
 
 import dk.mosberg.MAM;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
@@ -21,10 +22,22 @@ public class ModEntities {
                     .dimensions(0.25f, 0.25f).build(RegistryKey.of(RegistryKeys.ENTITY_TYPE,
                             Identifier.of(MAM.MOD_ID, "spell_projectile"))));
 
+    public static final EntityType<FireElementalEntity> FIRE_ELEMENTAL = Registry.register(
+            Registries.ENTITY_TYPE, Identifier.of(MAM.MOD_ID, "fire_elemental"),
+            EntityType.Builder
+                    .<FireElementalEntity>create(FireElementalEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.6f, 1.8f).maxTrackingRange(64)
+                    .build(RegistryKey.of(RegistryKeys.ENTITY_TYPE,
+                            Identifier.of(MAM.MOD_ID, "fire_elemental"))));
+
     /**
      * Initialize all entities. Called from MAM.onInitialize()
      */
     public static void initialize() {
         MAM.LOGGER.info("Registering custom entities");
+
+        // Register attributes for living entities
+        FabricDefaultAttributeRegistry.register(FIRE_ELEMENTAL,
+                FireElementalEntity.createFireElementalAttributes());
     }
 }

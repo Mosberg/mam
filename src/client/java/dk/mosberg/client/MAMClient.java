@@ -31,6 +31,7 @@ public class MAMClient implements ClientModInitializer {
 
 		// Register entity renderers
 		EntityRendererRegistry.register(ModEntities.SPELL_PROJECTILE, SpellProjectileRenderer::new);
+		// TODO: Add FireElementalRenderer when entity rendering API is stable
 
 		// Register HUD overlay (suppressing deprecation warning as HudRenderCallback is best
 		// available for 1.21.11)
