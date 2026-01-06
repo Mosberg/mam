@@ -1,17 +1,42 @@
 package dk.mosberg.client.hud;
 
+import dk.mosberg.MAM;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.util.Identifier;
 
 /**
  * Client-side HUD overlay for displaying mana pools, health, and status effects. Provides
- * customizable three-tier mana bar display with smooth animations.
+ * customizable three-tier mana bar display with smooth animations and texture-based rendering.
  */
 @Environment(EnvType.CLIENT)
 public class ManaHudOverlay {
+    // Texture identifiers
+    private static final Identifier MANA_BAR_BG =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/mana_bar_background.png");
+    private static final Identifier MANA_BAR_PERSONAL =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/mana_bar_personal.png");
+    private static final Identifier MANA_BAR_AURA =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/mana_bar_aura.png");
+    private static final Identifier MANA_BAR_RESERVE =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/mana_bar_reserve.png");
+    private static final Identifier HEALTH_BAR_BG =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/health_bar_background.png");
+    private static final Identifier HEALTH_BAR_FILL =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/health_bar_fill.png");
+    private static final Identifier HEART_ICON =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/heart.png");
+    private static final Identifier MANA_ICON_PERSONAL =
+            Identifier.of(MAM.MOD_ID, "textures/gui/hud/mana_pool_icon_personal.png");
+    private static final Identifier MANA_ICON_AURA =
+            Identifier.of(MAM.MOD_ID, "textures/gui/hud/mana_pool_icon_aura.png");
+    private static final Identifier MANA_ICON_RESERVE =
+            Identifier.of(MAM.MOD_ID, "textures/gui/hud/mana_pool_icon_reserve.png");
+
     // Configuration
     private static boolean enabled = true;
     private static float scale = 1.0f;
@@ -26,7 +51,7 @@ public class ManaHudOverlay {
     private static float[] smoothMana = new float[3]; // Smooth values for animation
     private static final float ANIMATION_SPEED = 0.1f;
 
-    // Colors for mana pools
+    // Colors for mana pools (fallback when textures unavailable)
     private static final int PRIMARY_COLOR = 0xFF3399FF; // Cyan (Personal)
     private static final int SECONDARY_COLOR = 0xFF9933FF; // Purple (Aura)
     private static final int TERTIARY_COLOR = 0xFFFF9933; // Orange (Reserve)
@@ -53,29 +78,29 @@ public class ManaHudOverlay {
     }
 
     /**
-     * Render the three-tier mana bar display.
+     * Render the three-tier mana bar display with textures.
      */
     private static void renderManaDisplay(DrawContext context, MinecraftClient client,
             float tickDelta) {
         // Calculate position (default: top-left)
-        int x = xOffset;
-        int y = yOffset;
+        int scaledX = xOffset;
+        int scaledY = yOffset;
 
         // Render health bar
-        renderHealthBar(context, client, x, y);
-        y += 15;
+        renderHealthBar(context, client, scaledX, scaledY);
+        scaledY += 15;
 
-        // Render mana pools
-        y = renderManaPool(context, client, 0, "Primary", PRIMARY_COLOR, maxMana[0], currentMana[0],
-                x, y);
-        y = renderManaPool(context, client, 1, "Secondary", SECONDARY_COLOR, maxMana[1],
-                currentMana[1], x, y);
-        y = renderManaPool(context, client, 2, "Tertiary", TERTIARY_COLOR, maxMana[2],
-                currentMana[2], x, y);
+        // Render mana pools with icons and textures
+        scaledY = renderManaPoolWithTexture(context, client, 0, "Personal", MANA_BAR_PERSONAL,
+                MANA_ICON_PERSONAL, maxMana[0], currentMana[0], scaledX, scaledY);
+        scaledY = renderManaPoolWithTexture(context, client, 1, "Aura", MANA_BAR_AURA,
+                MANA_ICON_AURA, maxMana[1], currentMana[1], scaledX, scaledY);
+        scaledY = renderManaPoolWithTexture(context, client, 2, "Reserve", MANA_BAR_RESERVE,
+                MANA_ICON_RESERVE, maxMana[2], currentMana[2], scaledX, scaledY);
     }
 
     /**
-     * Render health bar with heart icons.
+     * Render health bar with textures and heart icons.
      */
     private static void renderHealthBar(DrawContext context, MinecraftClient client, int x, int y) {
         if (client.player == null) {
@@ -84,51 +109,68 @@ public class ManaHudOverlay {
 
         float health = client.player.getHealth();
         float maxHealth = client.player.getMaxHealth();
-        int barWidth = 100;
-        int barHeight = 10;
+        int barWidth = 102;
+        int barHeight = 9;
 
-        // Background
-        context.fill(x, y, x + barWidth + 2, y + barHeight + 2, 0x88000000);
+        // Render heart icon
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, HEART_ICON, x - 11, y, 0.0f, 0.0f, 9, 9,
+                9, 9);
 
-        // Health bar (red)
+        // Render health bar background texture
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, HEALTH_BAR_BG, x, y, 0.0f, 0.0f, barWidth,
+                barHeight, 182, 9);
+
+        // Render health bar fill (scaled by health percentage)
         int healthWidth = (int) ((health / maxHealth) * barWidth);
-        context.fill(x + 1, y + 1, x + 1 + healthWidth, y + 1 + barHeight, 0xFFFF0000);
+        if (healthWidth > 0) {
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, HEALTH_BAR_FILL, x, y, 0.0f, 0.0f,
+                    healthWidth, barHeight, 182, 9);
+        }
 
-        // Text
+        // Text overlay
         TextRenderer textRenderer = client.textRenderer;
-        String healthText = String.format("❤ %.1f/%.1f", health, maxHealth);
-        context.drawText(textRenderer, healthText, x + 2, y + 2, 0xFFFFFFFF, true);
+        String healthText = String.format("%.1f/%.1f", health, maxHealth);
+        context.drawText(textRenderer, healthText, x + 4, y + 1, 0xFFFFFFFF, true);
     }
 
     /**
-     * Render a single mana pool bar.
+     * Render a single mana pool bar with texture.
      *
      * @return The y position for the next element
      */
-    private static int renderManaPool(DrawContext context, MinecraftClient client, int poolIndex,
-            String name, int color, double maxMana, double currentMana, int x, int y) {
+    private static int renderManaPoolWithTexture(DrawContext context, MinecraftClient client,
+            int poolIndex, String name, Identifier barTexture, Identifier iconTexture,
+            double maxMana, double currentMana, int x, int y) {
 
-        int barWidth = 100;
-        int barHeight = 8;
+        int barWidth = 102;
+        int barHeight = 5;
 
         // Update smooth animation
         float targetMana = (float) currentMana;
         smoothMana[poolIndex] += (targetMana - smoothMana[poolIndex]) * ANIMATION_SPEED;
 
-        // Background
-        context.fill(x, y, x + barWidth + 2, y + barHeight + 2, 0x88000000);
+        // Render mana pool icon
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, iconTexture, x - 18, y - 1, 0.0f, 0.0f,
+                16, 16, 16, 16);
 
-        // Mana bar
+        // Render mana bar background
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, MANA_BAR_BG, x, y, 0.0f, 0.0f, barWidth,
+                barHeight, 182, 5);
+
+        // Render mana bar fill (scaled by mana percentage)
         int manaWidth = (int) ((smoothMana[poolIndex] / maxMana) * barWidth);
-        context.fill(x + 1, y + 1, x + 1 + manaWidth, y + 1 + barHeight,
-                applyAlpha(color, transparency));
+        if (manaWidth > 0) {
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, barTexture, x, y, 0.0f, 0.0f,
+                    manaWidth, barHeight, 182, 5);
+        }
 
-        // Text
+        // Text overlay
         TextRenderer textRenderer = client.textRenderer;
-        String manaText = String.format("%s: %.0f/%.0f", name, smoothMana[poolIndex], maxMana);
-        context.drawText(textRenderer, manaText, x + 2, y + 2, 0xFFFFFFFF, true);
+        String manaText = String.format("%s: %.0f/%.0f (%.0f%%)", name, smoothMana[poolIndex],
+                maxMana, (smoothMana[poolIndex] / maxMana) * 100);
+        context.drawText(textRenderer, manaText, x + 4, y - 8, 0xFFFFFFFF, true);
 
-        return y + barHeight + 4; // Return next Y position
+        return y + barHeight + 12; // Return next Y position with spacing
     }
 
     /**

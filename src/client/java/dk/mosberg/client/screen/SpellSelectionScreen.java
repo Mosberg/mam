@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import dk.mosberg.MAM;
 import dk.mosberg.spell.Spell;
 import dk.mosberg.spell.SpellLoader;
 import dk.mosberg.spell.SpellSchool;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -20,10 +22,26 @@ import net.minecraft.util.Identifier;
 
 /**
  * Screen for selecting and viewing spells organized by school. Allows players to cast spells by
- * selecting them from a UI.
+ * selecting them from a UI with texture-based rendering.
  */
 @Environment(EnvType.CLIENT)
 public class SpellSelectionScreen extends Screen {
+    // Texture identifiers
+    private static final Identifier BACKGROUND_TEXTURE =
+            Identifier.of(MAM.MOD_ID, "textures/gui/spell_selection_bg.png");
+    private static final Identifier INFO_PANEL_TEXTURE =
+            Identifier.of(MAM.MOD_ID, "textures/gui/spell_info_panel.png");
+    private static final Identifier SPELL_SLOT_EMPTY =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/spell_slot_empty.png");
+    private static final Identifier SPELL_SLOT_SELECTED =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/spell_slot_selected.png");
+    private static final Identifier SCHOOL_BUTTON_NORMAL =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/school_button_normal.png");
+    private static final Identifier SCHOOL_BUTTON_HOVER =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/school_button_hover.png");
+    private static final Identifier SCHOOL_BUTTON_SELECTED =
+            Identifier.of(MAM.MOD_ID, "textures/gui/sprites/school_button_selected.png");
+
     private static final int BUTTON_WIDTH = 120;
     private static final int BUTTON_HEIGHT = 20;
     private static final int MARGIN = 10;
@@ -96,13 +114,22 @@ public class SpellSelectionScreen extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        // Render background
-        context.fill(0, 0, this.width, this.height, 0xAA000000);
+        // Render darkened game background
+        this.renderBackground(context, mouseX, mouseY, delta);
+
+        // Render main panel background texture (centered)
+        int panelWidth = 256;
+        int panelHeight = 256;
+        int panelX = (this.width - panelWidth) / 2;
+        int panelY = (this.height - panelHeight) / 2;
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, BACKGROUND_TEXTURE, panelX, panelY, 0.0f,
+                0.0f, panelWidth, panelHeight, 256, 256);
 
         // Render title
         TextRenderer textRenderer = this.client.textRenderer;
-        context.drawText(textRenderer, "Spell Selection - " + selectedSchool.getId().toUpperCase(),
-                MARGIN, MARGIN, 0xFFFFFF, false);
+        String title = "Spell Selection - " + selectedSchool.getId().toUpperCase();
+        int titleX = (this.width - textRenderer.getWidth(title)) / 2;
+        context.drawText(textRenderer, title, titleX, panelY + 10, 0xFFD700, false);
 
         // Render schools section header
         context.drawText(textRenderer, "Schools:", schoolButtonStartX, schoolButtonStartY - 20,
@@ -112,7 +139,7 @@ public class SpellSelectionScreen extends Screen {
         context.drawText(textRenderer, "Spells:", spellListStartX, spellListStartY - 20, 0xCCCCCC,
                 false);
 
-        // Render spell list
+        // Render spell list with textures
         renderSpellList(context, mouseX, mouseY);
 
         // Render info box
@@ -132,18 +159,27 @@ public class SpellSelectionScreen extends Screen {
 
         for (int i = scrollOffset; i < currentSpells.size() && displayCount < spellsPerPage; i++) {
             Spell spell = currentSpells.get(i);
-            boolean isHovered = mouseX >= spellListStartX && mouseX <= spellListStartX + 120
-                    && mouseY >= yPos && mouseY <= yPos + 15;
+            boolean isHovered = mouseX >= spellListStartX && mouseX <= spellListStartX + 140
+                    && mouseY >= yPos && mouseY <= yPos + 20;
             boolean isSelected = spell == selectedSpell;
 
-            int bgColor = isSelected ? 0x5500FF00 : (isHovered ? 0x55FF8800 : 0x553344FF);
-            context.fill(spellListStartX, yPos, spellListStartX + 140, yPos + 15, bgColor);
+            // Render spell slot background
+            Identifier slotTexture = isSelected ? SPELL_SLOT_SELECTED : SPELL_SLOT_EMPTY;
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, slotTexture, spellListStartX, yPos,
+                    0.0f, 0.0f, 32, 32, 32, 32);
 
-            String spellLabel = spell.getName() + " (" + (int) spell.getManaCost() + "m)";
-            context.drawText(textRenderer, spellLabel, spellListStartX + 5, yPos + 3, 0xFFFFFF,
+            // Render spell name
+            String spellLabel = spell.getName();
+            int textColor = isSelected ? 0xFFFF00 : (isHovered ? 0xFFAA00 : 0xFFFFFF);
+            context.drawText(textRenderer, spellLabel, spellListStartX + 36, yPos + 3, textColor,
                     false);
 
-            yPos += 18;
+            // Render mana cost
+            String manaCost = (int) spell.getManaCost() + "m";
+            context.drawText(textRenderer, manaCost, spellListStartX + 36, yPos + 13, 0x33FFFF,
+                    false);
+
+            yPos += 36;
             displayCount++;
         }
 
@@ -151,19 +187,19 @@ public class SpellSelectionScreen extends Screen {
         String countText = "Page " + (scrollOffset / spellsPerPage + 1) + " of "
                 + Math.max(1, (currentSpells.size() + spellsPerPage - 1) / spellsPerPage);
         context.drawText(textRenderer, countText, spellListStartX,
-                spellListStartY + (spellsPerPage * 18) + 5, 0xAAAA, false);
+                spellListStartY + (spellsPerPage * 36) + 5, 0xAAAA, false);
     }
 
     private void renderSpellInfo(DrawContext context) {
         TextRenderer textRenderer = this.client.textRenderer;
-        int boxWidth = 180;
-        int boxHeight = 200;
+        int panelWidth = 180;
+        int panelHeight = 200;
 
-        // Render info box background
-        context.fill(infoBoxStartX, infoBoxStartY, infoBoxStartX + boxWidth,
-                infoBoxStartY + boxHeight, 0xAA1A1A1A);
+        // Render info panel background texture
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, INFO_PANEL_TEXTURE, infoBoxStartX,
+                infoBoxStartY, 0.0f, 0.0f, panelWidth, panelHeight, 180, 200);
 
-        int yPos = infoBoxStartY + 10;
+        int yPos = infoBoxStartY + 25;
         int xPos = infoBoxStartX + 10;
 
         // Spell name
@@ -217,7 +253,7 @@ public class SpellSelectionScreen extends Screen {
             // Wrap text
             List<String> lines = wrapText(desc, 20);
             for (String line : lines) {
-                if (yPos < infoBoxStartY + boxHeight - 20) {
+                if (yPos < infoBoxStartY + panelHeight - 20) {
                     context.drawText(textRenderer, line, xPos, yPos, 0xCCCCCC, false);
                     yPos += 10;
                 }

@@ -2,7 +2,10 @@ package dk.mosberg.client;
 
 import dk.mosberg.MAM;
 import dk.mosberg.client.config.HudConfig;
+import dk.mosberg.client.hud.BuffDisplayOverlay;
+import dk.mosberg.client.hud.CooldownOverlay;
 import dk.mosberg.client.hud.ManaHudOverlay;
+import dk.mosberg.client.hud.ManaNodeIndicator;
 import dk.mosberg.client.input.MagicKeyBindings;
 import dk.mosberg.client.network.ClientManaNetworkHandler;
 import dk.mosberg.client.renderer.entity.SpellProjectileRenderer;
@@ -12,7 +15,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 
 /**
- * Client-side initialization for Mana And Magic mod. Registers HUD overlay, networking, and
+ * Client-side initialization for Mana And Magic mod. Registers HUD overlays, networking, and
  * client-specific features.
  */
 public class MAMClient implements ClientModInitializer {
@@ -33,15 +36,20 @@ public class MAMClient implements ClientModInitializer {
 		EntityRendererRegistry.register(ModEntities.SPELL_PROJECTILE, SpellProjectileRenderer::new);
 		// TODO: Implement and register FireElementalRenderer with proper model
 
-		// Register HUD overlay (suppressing deprecation warning)
+		// Register HUD overlays (suppressing deprecation warning)
 		@SuppressWarnings("deprecation")
 		net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback callback =
 				(drawContext, renderTickCounter) -> {
-					// Pass 1.0f as default tickDelta since HUD rendering doesn't need interpolation
-					ManaHudOverlay.render(drawContext, 1.0f);
+					float tickDelta = 1.0f; // Use renderTickCounter for interpolation if needed
+
+					// Render all HUD components
+					ManaHudOverlay.render(drawContext, tickDelta);
+					CooldownOverlay.render(drawContext, tickDelta);
+					BuffDisplayOverlay.render(drawContext, tickDelta);
+					ManaNodeIndicator.render(drawContext, tickDelta);
 				};
 		HudRenderCallback.EVENT.register(callback);
 
-		MAM.LOGGER.info("{} client initialized - HUD overlay registered", MAM.MOD_NAME);
+		MAM.LOGGER.info("{} client initialized - All HUD overlays registered", MAM.MOD_NAME);
 	}
 }
