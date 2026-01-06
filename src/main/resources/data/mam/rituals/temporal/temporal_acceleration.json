@@ -1,0 +1,26 @@
+{
+  "id": "mam:temporal_acceleration",
+  "name": "Temporal Acceleration",
+  "category": "temporal",
+  "description": "Speed up time around you to gain quick reflexes.",
+  "ritual_items": ["mam:arcane_gem", "minecraft:clock"],
+  "mana_cost": 300.0,
+  "duration_seconds": 45,
+  "cooldown_seconds": 180,
+  "level_requirement": 38,
+  "pattern": {
+    "type": "temporal_circle",
+    "center_block": "minecraft:allay_spawn_egg",
+    "ring1": {
+      "material": "minecraft:deepslate_bricks",
+      "count": 10,
+      "radius": 3,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "accelerate",
+    "buffs": ["speed", "haste"],
+    "duration": 45
+  }
+}

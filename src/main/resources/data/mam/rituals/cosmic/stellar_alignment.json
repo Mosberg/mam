@@ -1,0 +1,26 @@
+{
+  "id": "mam:stellar_alignment",
+  "name": "Stellar Alignment",
+  "category": "cosmic",
+  "description": "Align with the stars to grant cosmic power.",
+  "ritual_items": ["mam:cosmic_gem", "minecraft:nether_star"],
+  "mana_cost": 500.0,
+  "duration_seconds": 120,
+  "cooldown_seconds": 600,
+  "level_requirement": 50,
+  "pattern": {
+    "type": "cosmic_circle",
+    "center_block": "minecraft:amethyst_block",
+    "ring1": {
+      "material": "mam:cosmic_crystal_block",
+      "count": 20,
+      "radius": 5,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "cosmic",
+    "buffs": ["luck", "strength"],
+    "duration": 120
+  }
+}

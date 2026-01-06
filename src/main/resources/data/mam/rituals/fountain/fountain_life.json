@@ -1,0 +1,27 @@
+{
+  "id": "mam:fountain_life",
+  "name": "Fountain of Life",
+  "category": "fountain",
+  "description": "Create a fountain that grants healing and regeneration.",
+  "ritual_items": ["mam:water_gem", "mam:nature_gem"],
+  "mana_cost": 250.0,
+  "duration_seconds": 60,
+  "cooldown_seconds": 120,
+  "level_requirement": 25,
+  "pattern": {
+    "type": "fountain_circle",
+    "center_block": "minecraft:water",
+    "ring1": {
+      "material": "minecraft:sculk_block",
+      "count": 8,
+      "radius": 2,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "heal",
+    "buffs": ["regeneration"],
+    "duration": 60,
+    "healing": 10.0
+  }
+}

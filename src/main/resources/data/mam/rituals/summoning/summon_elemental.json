@@ -1,0 +1,27 @@
+{
+  "id": "mam:summon_elemental",
+  "name": "Summon Elemental",
+  "category": "summoning",
+  "description": "Summon an elemental guardian to fight at your side.",
+  "ritual_items": ["mam:fire_gem", "minecraft:soul_sand"],
+  "mana_cost": 350.0,
+  "duration_seconds": 120,
+  "cooldown_seconds": 600,
+  "level_requirement": 40,
+  "pattern": {
+    "type": "summoning_circle",
+    "center_block": "minecraft:crying_obsidian",
+    "ring1": {
+      "material": "minecraft:blackstone",
+      "count": 12,
+      "radius": 3,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "summon",
+    "entity": "mam:fire_elemental",
+    "duration": 120,
+    "count": 1
+  }
+}

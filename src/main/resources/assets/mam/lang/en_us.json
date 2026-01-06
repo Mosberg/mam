@@ -96,6 +96,10 @@
   "tooltip.mam.gemstone.rarity": "Rarity: %s",
   "tooltip.mam.gemstone.schools": "Schools: %s",
 
+  "key.mam.open_spell_menu": "Open Spell Menu",
+  "key.mam.toggle_hud": "Toggle HUD",
+  "key.mam.cycle_schools": "Cycle Spell Schools",
+
   "hud.mam.mana.personal": "Personal",
   "hud.mam.mana.aura": "Aura",
   "hud.mam.mana.reserve": "Reserve",

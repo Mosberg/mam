@@ -1,0 +1,25 @@
+{
+  "id": "mam:planar_gateway",
+  "name": "Planar Gateway",
+  "category": "planar",
+  "description": "Open a gateway between planes of existence.",
+  "ritual_items": ["mam:void_gem", "minecraft:ender_pearl"],
+  "mana_cost": 450.0,
+  "duration_seconds": 30,
+  "cooldown_seconds": 600,
+  "level_requirement": 55,
+  "pattern": {
+    "type": "gateway_portal",
+    "center_block": "minecraft:end_rod",
+    "ring1": {
+      "material": "minecraft:purpur_block",
+      "count": 12,
+      "radius": 4,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "teleport",
+    "duration": 30
+  }
+}

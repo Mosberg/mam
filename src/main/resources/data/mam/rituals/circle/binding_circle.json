@@ -1,0 +1,26 @@
+{
+  "id": "mam:binding_circle",
+  "name": "Binding Circle",
+  "category": "circle",
+  "description": "Bind enemies within the circle, preventing escape.",
+  "ritual_items": ["mam:binding_gem", "minecraft:enchanting_table"],
+  "mana_cost": 300.0,
+  "duration_seconds": 45,
+  "cooldown_seconds": 180,
+  "level_requirement": 30,
+  "pattern": {
+    "type": "binding_circle",
+    "center_block": "minecraft:structure_block",
+    "ring1": {
+      "material": "minecraft:purpur_pillar",
+      "count": 16,
+      "radius": 4,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "bind",
+    "buffs": ["slowness", "weakness"],
+    "duration": 45
+  }
+}

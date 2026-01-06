@@ -1,0 +1,26 @@
+{
+  "id": "mam:reality_fold",
+  "name": "Reality Fold",
+  "category": "reality",
+  "description": "Fold reality to distort space and time.",
+  "ritual_items": ["mam:arcane_gem", "minecraft:chorus_fruit"],
+  "mana_cost": 400.0,
+  "duration_seconds": 45,
+  "cooldown_seconds": 300,
+  "level_requirement": 40,
+  "pattern": {
+    "type": "reality_fold",
+    "center_block": "minecraft:sculk_catalyst",
+    "ring1": {
+      "material": "minecraft:amethyst_block",
+      "count": 8,
+      "radius": 3,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "distort",
+    "buffs": ["slowness"],
+    "duration": 45
+  }
+}

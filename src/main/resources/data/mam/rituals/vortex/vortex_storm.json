@@ -1,0 +1,28 @@
+{
+  "id": "mam:vortex_storm",
+  "name": "Vortex Storm",
+  "category": "vortex",
+  "description": "Create a destructive vortex that pulls and damages enemies.",
+  "ritual_items": ["mam:air_gem", "mam:thunder_gem"],
+  "mana_cost": 450.0,
+  "duration_seconds": 45,
+  "cooldown_seconds": 240,
+  "level_requirement": 50,
+  "pattern": {
+    "type": "vortex_spiral",
+    "center_block": "minecraft:lightning_rod",
+    "ring1": {
+      "material": "minecraft:copper_block",
+      "count": 12,
+      "radius": 3,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "vortex",
+    "buffs": [],
+    "duration": 45,
+    "damage": 20.0,
+    "pull_radius": 4.0
+  }
+}

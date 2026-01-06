@@ -1,0 +1,26 @@
+{
+  "id": "mam:void_embrace",
+  "name": "Void Embrace",
+  "category": "void",
+  "description": "Embrace the void to gain immunity and invisibility.",
+  "ritual_items": ["mam:void_gem", "minecraft:dark_oak_wood"],
+  "mana_cost": 500.0,
+  "duration_seconds": 90,
+  "cooldown_seconds": 300,
+  "level_requirement": 60,
+  "pattern": {
+    "type": "void_circle",
+    "center_block": "minecraft:obsidian",
+    "ring1": {
+      "material": "minecraft:obsidian",
+      "count": 16,
+      "radius": 4,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "void_embrace",
+    "buffs": ["invisibility", "resistance"],
+    "duration": 90
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "mam:nature_harmony",
+  "name": "Nature's Harmony",
+  "category": "nature",
+  "description": "Harmonize with nature to restore health and grow plants.",
+  "ritual_items": ["mam:nature_gem", "minecraft:oak_sapling"],
+  "mana_cost": 250.0,
+  "duration_seconds": 60,
+  "cooldown_seconds": 180,
+  "level_requirement": 30,
+  "pattern": {
+    "type": "nature_circle",
+    "center_block": "minecraft:moss_block",
+    "ring1": {
+      "material": "minecraft:moss_block",
+      "count": 8,
+      "radius": 2,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:grass_block",
+      "count": 8,
+      "radius": 4,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "nature_heal",
+    "buffs": ["regeneration"],
+    "duration": 60,
+    "healing": 8.0
+  }
+}

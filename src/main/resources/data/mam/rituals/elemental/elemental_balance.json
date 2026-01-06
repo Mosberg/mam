@@ -1,0 +1,37 @@
+{
+  "id": "mam:elemental_balance",
+  "name": "Elemental Balance",
+  "category": "elemental",
+  "description": "Balance all elemental forces within and around you.",
+  "ritual_items": [
+    "mam:fire_gem",
+    "mam:water_gem",
+    "mam:earth_gem",
+    "mam:air_gem"
+  ],
+  "mana_cost": 350.0,
+  "duration_seconds": 90,
+  "cooldown_seconds": 240,
+  "level_requirement": 35,
+  "pattern": {
+    "type": "elemental_square",
+    "center_block": "minecraft:chiseled_deepslate",
+    "ring1": {
+      "material": "minecraft:raw_copper_block",
+      "count": 4,
+      "radius": 3,
+      "height": 0
+    },
+    "ring2": {
+      "material": "minecraft:raw_iron_block",
+      "count": 4,
+      "radius": 5,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "elemental_balance",
+    "buffs": ["resistance"],
+    "duration": 90
+  }
+}

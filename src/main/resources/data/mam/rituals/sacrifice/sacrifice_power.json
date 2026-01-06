@@ -1,0 +1,27 @@
+{
+  "id": "mam:sacrifice_power",
+  "name": "Sacrifice for Power",
+  "category": "sacrifice",
+  "description": "Sacrifice health to gain immense magical power.",
+  "ritual_items": ["mam:blood_gem", "minecraft:redstone_block"],
+  "mana_cost": 200.0,
+  "duration_seconds": 30,
+  "cooldown_seconds": 180,
+  "level_requirement": 35,
+  "pattern": {
+    "type": "sacrifice_circle",
+    "center_block": "minecraft:redstone_block",
+    "ring1": {
+      "material": "minecraft:redstone_ore",
+      "count": 8,
+      "radius": 3,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "sacrifice",
+    "buffs": ["strength", "speed"],
+    "duration": 30,
+    "health_cost": 5.0
+  }
+}

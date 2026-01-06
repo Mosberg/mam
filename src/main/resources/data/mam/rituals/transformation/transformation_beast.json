@@ -1,0 +1,27 @@
+{
+  "id": "mam:transformation_beast",
+  "name": "Transform to Beast",
+  "category": "transformation",
+  "description": "Transform into a powerful beast form.",
+  "ritual_items": ["mam:nature_gem", "minecraft:wolf_spawn_egg"],
+  "mana_cost": 400.0,
+  "duration_seconds": 60,
+  "cooldown_seconds": 300,
+  "level_requirement": 45,
+  "pattern": {
+    "type": "transformation_circle",
+    "center_block": "minecraft:bone_block",
+    "ring1": {
+      "material": "minecraft:bone_block",
+      "count": 12,
+      "radius": 3,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "transform",
+    "buffs": ["strength", "resistance"],
+    "duration": 60,
+    "form": "beast"
+  }
+}

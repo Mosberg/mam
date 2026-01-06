@@ -1,0 +1,28 @@
+{
+  "id": "mam:meteor_strike",
+  "name": "Meteor Strike",
+  "school": "fire",
+  "description": "Summon meteors from the sky on a target location.",
+  "castType": "aoe",
+  "manaCost": 150.0,
+  "castTime": 1.5,
+  "cooldown": 30.0,
+  "tier": 5,
+  "requiredLevel": 60,
+  "damage": 60.0,
+  "range": 64.0,
+  "projectileSpeed": 0.0,
+  "aoeRadius": 6.0,
+  "statusEffects": [
+    {
+      "effect": "minecraft:slowness",
+      "duration": 180,
+      "amplifier": 1
+    }
+  ],
+  "sound": "minecraft:entity.lightning_bolt.thunder",
+  "vfx": {
+    "particleType": "minecraft:large_smoke",
+    "color": "8B4513"
+  }
+}

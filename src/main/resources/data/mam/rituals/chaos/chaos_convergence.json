@@ -1,0 +1,27 @@
+{
+  "id": "mam:chaos_convergence",
+  "name": "Chaos Convergence",
+  "category": "chaos",
+  "description": "Unleash chaotic forces to damage and disorient enemies.",
+  "ritual_items": ["mam:chaos_gem", "mam:void_crystal"],
+  "mana_cost": 400.0,
+  "duration_seconds": 60,
+  "cooldown_seconds": 300,
+  "level_requirement": 45,
+  "pattern": {
+    "type": "chaos_spiral",
+    "center_block": "minecraft:purpur_block",
+    "ring1": {
+      "material": "mam:chaos_crystal_block",
+      "count": 12,
+      "radius": 3,
+      "height": 0
+    }
+  },
+  "effect": {
+    "type": "chaos",
+    "buffs": ["nausea", "blindness"],
+    "duration": 60,
+    "damage": 15.0
+  }
+}
