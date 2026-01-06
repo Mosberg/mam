@@ -35,6 +35,11 @@ Mana and Magic is a data-driven, extensible Minecraft magic mod for Fabric. It f
 - **✅ 19 Gemstone Ores:** With deepslate variants and worldgen placement
 - **✅ Loot Tables:** Fortune-compatible ore drops with Silk Touch support
 - **✅ Worldgen:** Configured and placed features for all ore types
+- **✅ Item Models:** 47 JSON models for wands, spell books, gemstones
+- **✅ Block Models:** 19 ore models with blockstates
+- **✅ Translations:** English (US) with 100+ entries
+- **✅ Crafting Recipes:** 39 recipes using gemstone tags
+- **✅ Item Tags:** 5 gemstone rarity tags for flexible crafting
 
 ### Data-Driven Architecture ✅
 
@@ -47,9 +52,11 @@ Mana and Magic is a data-driven, extensible Minecraft magic mod for Fabric. It f
 ### Project Stats
 
 - **56 Java Classes:** Core systems and game logic
-- **151 JSON Data Files:** Spells (65+), Rituals (34+), Worldgen (30+), Loot Tables (19+)
+- **220+ JSON Data Files:** Spells (65+), Rituals (34+), Worldgen (30+), Loot Tables (19+), Recipes (39+), Models (66+), Tags (5+)
 - **26 Wands:** 2 tiers × 13 schools
 - **15 Gemstones:** Epic (3), Rare (6), Uncommon (5), Common (1)
+- **19 Ore Blocks:** With deepslate variants
+- **100+ Translations:** Full English language support
 
 ---
 

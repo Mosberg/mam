@@ -1,16 +1,22 @@
 # Asset Infrastructure Status
 
 **Last Updated:** January 6, 2026
+**Last Updated:** January 6, 2026 (Session 2)
 
 ## Summary
 
-Core data-driven JSON files are complete. The mod has:
+Data files, models, and translation systems are substantially complete. The mod has:
 
-- ✅ **151 JSON Data Files:** Spells, rituals, worldgen, loot tables
+- ✅ **220+ JSON Data Files:** Spells, rituals, worldgen, loot tables, recipes, tags
 - ✅ **Worldgen System:** All 15 gemstone ores configured for generation
 - ✅ **Loot Tables:** Fortune/Silk Touch compatible ore drops
-- 🚧 **Assets:** Block/item models, textures, blockstates need creation
-- 🚧 **Translations:** Language files need comprehensive entries
+- ✅ **Item Models:** 47 models (20 wands, 7 spell books, 15 gemstones, 5 existing)
+- ✅ **Block Models:** 19 ore block models (cube_all with texture refs)
+- ✅ **Blockstates:** 19 ore blockstate JSONs
+- ✅ **Translations:** English (US) with 100+ entries
+- ✅ **Item Tags:** 5 gemstone tags by rarity
+- ✅ **Crafting Recipes:** 39 recipes (26 wands, 13 spell books)
+- 🚧 **Textures:** Block/item textures need PNG creation (85+ files)
 
 ## ✅ Completed Data Files
 
@@ -43,11 +49,19 @@ Core data-driven JSON files are complete. The mod has:
 
 ## 🚧 Pending Asset Work
 
-### Block Models & Blockstates (Needed)
+### Textures (Primary Remaining Work)
 
-- 19 ore block models (stone/deepslate variants)
-- 8 existing blocks (mana crystals, ritual blocks, altar) - models exist
-- Blockstate JSON files for all blocks
+**Item Textures Needed (47 files):**
+
+- 20 wand textures (air/blood/chaos/dark/earth/light/nature/thunder/void/water × novice/master)
+- 7 spell book textures (air/blood/chaos/earth/thunder/void/water)
+- 15 gemstone textures (ruby to hematite)
+- 5 existing item textures (already present)
+
+**Block Textures Needed (19 files):**
+
+- 15 gemstone ore textures (ruby_ore to hematite_ore)
+- 4 deepslate ore textures (deepslate_ruby_ore, deepslate_sapphire_ore, deepslate_tanzanite_ore, deepslate_hematite_ore)
 
 ### Item Models (Needed)
 

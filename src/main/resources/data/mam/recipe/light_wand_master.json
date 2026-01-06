@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["  G", " W ", "D  "],
+  "key": {
+    "G": {
+      "tag": "mam:gemstones_rare"
+    },
+    "W": {
+      "item": "mam:light_wand_novice"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "id": "mam:light_wand_master",
+    "count": 1
+  }
+}

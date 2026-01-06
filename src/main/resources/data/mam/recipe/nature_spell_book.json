@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["GBG", "BPB", "GBG"],
+  "key": {
+    "G": {
+      "tag": "mam:gemstones_uncommon"
+    },
+    "B": {
+      "item": "minecraft:book"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "id": "mam:nature_spell_book",
+    "count": 1
+  }
+}
