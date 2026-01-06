@@ -1,6 +1,6 @@
 # Mana And Magic - Implementation Summary
 
-**Version:** 1.0.0 | **Last Updated:** January 6, 2026 (Spell Book Recipe Corrections)
+**Version:** 1.0.0 | **Last Updated:** January 6, 2026 (Crafting Key Normalization)
 
 ## 📊 Architecture Overview
 
@@ -87,6 +87,7 @@
 ### Recipe Data Corrections
 
 - Updated all 13 spell book crafting recipe JSONs to emit the proper `result.id` and `count` fields for each school, replacing the incorrect ingredient-map payload that previously appeared in outputs.
+- Flattened all spell book `key` definitions from single-element arrays to object form for compatibility with vanilla shaped recipe parsing.
 
 ## 📁 New Files Created
 

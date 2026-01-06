@@ -2,21 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "pattern": ["GBG", "BPB", "GBG"],
   "key": {
-    "G": [
-      {
-        "tag": "mam:gemstones_uncommon"
-      }
-    ],
-    "B": [
-      {
-        "item": "minecraft:book"
-      }
-    ],
-    "P": [
-      {
-        "item": "minecraft:paper"
-      }
-    ]
+    "G": {
+      "tag": "mam:gemstones_uncommon"
+    },
+    "B": {
+      "item": "minecraft:book"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
   },
   "result": {
     "id": "mam:light_spell_book",
