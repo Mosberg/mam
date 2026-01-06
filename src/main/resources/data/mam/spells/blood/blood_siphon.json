@@ -1,0 +1,15 @@
+{
+  "id": "mam:blood_siphon",
+  "school": "blood",
+  "castType": "projectile",
+  "manaCost": 20.0,
+  "tier": 2,
+  "cooldown": 3.0,
+  "damage": 6.0,
+  "description": "Drain life from enemies to heal yourself",
+  "healing": 3.0,
+  "vfx": {
+    "particleType": "damage_indicator",
+    "color": "8B0000"
+  }
+}

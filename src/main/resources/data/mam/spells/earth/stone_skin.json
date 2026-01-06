@@ -1,0 +1,20 @@
+{
+  "id": "mam:stone_skin",
+  "school": "earth",
+  "castType": "utility",
+  "manaCost": 30.0,
+  "tier": 2,
+  "cooldown": 15.0,
+  "description": "Grant temporary damage resistance",
+  "statusEffects": [
+    {
+      "effect": "resistance",
+      "duration": 200,
+      "amplifier": 1
+    }
+  ],
+  "vfx": {
+    "particleType": "block_crack",
+    "color": "8B4513"
+  }
+}

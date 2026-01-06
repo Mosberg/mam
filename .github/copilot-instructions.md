@@ -304,24 +304,8 @@ mana.personal.regen_rate=0.5
 ### Key Dependencies
 
 - **Fabric API** (`fabric-api`) - Required; provides hooks into Minecraft events
-- **Modding Helper API** (`dk.mosberg:moddinghelperapi:1.0.0`) - Custom utility library (local Maven dependency)
 - **GSON** (bundled) - JSON serialization for spell/ritual configs
 - **JetBrains Annotations** (compile-only) - `@NotNull`, `@Nullable` for better IDE hints
-
-### Modding Helper API Setup
-
-**Local Maven dependency** - not from CurseMaven:
-
-```gradle
-modImplementation "dk.mosberg:moddinghelperapi:1.0.0"
-```
-
-If missing, check `mavenLocal()` repository or install locally:
-
-```bash
-cd /path/to/moddinghelperapi
-./gradlew publishToMavenLocal
-```
 
 ### Working with Yarn Mappings
 
@@ -376,21 +360,6 @@ Common Minecraft class names in Yarn:
 
 - Edit properties in `gradle.properties` instead
 - Run `./gradlew clean build` to regenerate
-
-### 4. Modding Helper API Not Found
-
-**Symptom:** `Could not resolve dk.mosberg:moddinghelperapi:1.0.0`
-**Cause:** Dependency not installed in local Maven repository
-**Fix:**
-
-1. Ensure moddinghelperapi is published to local Maven:
-
-```bash
-cd /path/to/moddinghelperapi
-./gradlew publishToMavenLocal
-```
-
-2. Verify `mavenLocal()` is in repositories section of build.gradle
 
 ## Quick Reference
 

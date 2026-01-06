@@ -1,0 +1,21 @@
+{
+  "id": "mam:entangle",
+  "school": "nature",
+  "castType": "aoe",
+  "manaCost": 20.0,
+  "tier": 2,
+  "cooldown": 6.0,
+  "radius": 6.0,
+  "description": "Bind enemies with vines",
+  "statusEffects": [
+    {
+      "effect": "slowness",
+      "duration": 100,
+      "amplifier": 3
+    }
+  ],
+  "vfx": {
+    "particleType": "falling_spore_blossom",
+    "color": "228B22"
+  }
+}

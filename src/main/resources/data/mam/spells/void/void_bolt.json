@@ -1,0 +1,15 @@
+{
+  "id": "mam:void_bolt",
+  "school": "void",
+  "castType": "projectile",
+  "manaCost": 30.0,
+  "tier": 3,
+  "cooldown": 4.0,
+  "damage": 12.0,
+  "description": "Pure void energy that ignores armor",
+  "ignoreArmor": true,
+  "vfx": {
+    "particleType": "portal",
+    "color": "000000"
+  }
+}

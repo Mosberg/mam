@@ -1,0 +1,13 @@
+{
+  "id": "mam:dimensional_rift",
+  "school": "void",
+  "castType": "utility",
+  "manaCost": 80.0,
+  "tier": 4,
+  "cooldown": 60.0,
+  "description": "Create a portal to another location",
+  "vfx": {
+    "particleType": "reverse_portal",
+    "color": "000000"
+  }
+}

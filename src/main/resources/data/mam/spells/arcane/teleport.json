@@ -1,0 +1,13 @@
+{
+  "id": "mam:teleport",
+  "school": "arcane",
+  "castType": "utility",
+  "manaCost": 50.0,
+  "tier": 3,
+  "cooldown": 10.0,
+  "description": "Teleport forward a short distance",
+  "vfx": {
+    "particleType": "portal",
+    "color": "9966CC"
+  }
+}

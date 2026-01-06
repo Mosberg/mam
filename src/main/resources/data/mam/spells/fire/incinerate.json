@@ -1,0 +1,22 @@
+{
+  "id": "mam:incinerate",
+  "school": "fire",
+  "castType": "aoe",
+  "manaCost": 50.0,
+  "tier": 3,
+  "cooldown": 10.0,
+  "radius": 6.0,
+  "damage": 10.0,
+  "description": "Burn everything in an area",
+  "statusEffects": [
+    {
+      "effect": "fire",
+      "duration": 100,
+      "amplifier": 0
+    }
+  ],
+  "vfx": {
+    "particleType": "lava",
+    "color": "FF4500"
+  }
+}

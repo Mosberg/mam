@@ -5,6 +5,7 @@ import java.util.Map;
 import dk.mosberg.MAM;
 import dk.mosberg.item.MagicWandItem.WandTier;
 import dk.mosberg.spell.SpellSchool;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -61,19 +62,93 @@ public class ModItems {
         public static final MagicWandItem ARCANE_WAND_MASTER =
                         registerWand("arcane_wand_master", WandTier.MASTER, SpellSchool.ARCANE);
 
+        // Air School Wands
+        public static final MagicWandItem AIR_WAND_NOVICE =
+                        registerWand("air_wand_novice", WandTier.NOVICE, SpellSchool.AIR);
+        public static final MagicWandItem AIR_WAND_MASTER =
+                        registerWand("air_wand_master", WandTier.MASTER, SpellSchool.AIR);
+
+        // Blood School Wands
+        public static final MagicWandItem BLOOD_WAND_NOVICE =
+                        registerWand("blood_wand_novice", WandTier.NOVICE, SpellSchool.BLOOD);
+        public static final MagicWandItem BLOOD_WAND_MASTER =
+                        registerWand("blood_wand_master", WandTier.MASTER, SpellSchool.BLOOD);
+
+        // Chaos School Wands
+        public static final MagicWandItem CHAOS_WAND_NOVICE =
+                        registerWand("chaos_wand_novice", WandTier.NOVICE, SpellSchool.CHAOS);
+        public static final MagicWandItem CHAOS_WAND_MASTER =
+                        registerWand("chaos_wand_master", WandTier.MASTER, SpellSchool.CHAOS);
+
+        // Dark School Wands
+        public static final MagicWandItem DARK_WAND_NOVICE =
+                        registerWand("dark_wand_novice", WandTier.NOVICE, SpellSchool.DARK);
+        public static final MagicWandItem DARK_WAND_MASTER =
+                        registerWand("dark_wand_master", WandTier.MASTER, SpellSchool.DARK);
+
+        // Earth School Wands
+        public static final MagicWandItem EARTH_WAND_NOVICE =
+                        registerWand("earth_wand_novice", WandTier.NOVICE, SpellSchool.EARTH);
+        public static final MagicWandItem EARTH_WAND_MASTER =
+                        registerWand("earth_wand_master", WandTier.MASTER, SpellSchool.EARTH);
+
+        // Light School Wands
+        public static final MagicWandItem LIGHT_WAND_NOVICE =
+                        registerWand("light_wand_novice", WandTier.NOVICE, SpellSchool.LIGHT);
+        public static final MagicWandItem LIGHT_WAND_MASTER =
+                        registerWand("light_wand_master", WandTier.MASTER, SpellSchool.LIGHT);
+
+        // Nature School Wands
+        public static final MagicWandItem NATURE_WAND_NOVICE =
+                        registerWand("nature_wand_novice", WandTier.NOVICE, SpellSchool.NATURE);
+        public static final MagicWandItem NATURE_WAND_MASTER =
+                        registerWand("nature_wand_master", WandTier.MASTER, SpellSchool.NATURE);
+
+        // Thunder School Wands
+        public static final MagicWandItem THUNDER_WAND_NOVICE =
+                        registerWand("thunder_wand_novice", WandTier.NOVICE, SpellSchool.THUNDER);
+        public static final MagicWandItem THUNDER_WAND_MASTER =
+                        registerWand("thunder_wand_master", WandTier.MASTER, SpellSchool.THUNDER);
+
+        // Void School Wands
+        public static final MagicWandItem VOID_WAND_NOVICE =
+                        registerWand("void_wand_novice", WandTier.NOVICE, SpellSchool.VOID);
+        public static final MagicWandItem VOID_WAND_MASTER =
+                        registerWand("void_wand_master", WandTier.MASTER, SpellSchool.VOID);
+
+        // Water School Wands
+        public static final MagicWandItem WATER_WAND_NOVICE =
+                        registerWand("water_wand_novice", WandTier.NOVICE, SpellSchool.WATER);
+        public static final MagicWandItem WATER_WAND_MASTER =
+                        registerWand("water_wand_master", WandTier.MASTER, SpellSchool.WATER);
+
         // === SPELL BOOKS ===
+        public static final SpellBookItem AIR_SPELL_BOOK =
+                        registerSpellBook("air_spell_book", SpellSchool.AIR);
+        public static final SpellBookItem ARCANE_SPELL_BOOK =
+                        registerSpellBook("arcane_spell_book", SpellSchool.ARCANE);
+        public static final SpellBookItem BLOOD_SPELL_BOOK =
+                        registerSpellBook("blood_spell_book", SpellSchool.BLOOD);
+        public static final SpellBookItem CHAOS_SPELL_BOOK =
+                        registerSpellBook("chaos_spell_book", SpellSchool.CHAOS);
+        public static final SpellBookItem DARK_SPELL_BOOK =
+                        registerSpellBook("dark_spell_book", SpellSchool.DARK);
+        public static final SpellBookItem EARTH_SPELL_BOOK =
+                        registerSpellBook("earth_spell_book", SpellSchool.EARTH);
         public static final SpellBookItem FIRE_SPELL_BOOK =
                         registerSpellBook("fire_spell_book", SpellSchool.FIRE);
         public static final SpellBookItem ICE_SPELL_BOOK =
                         registerSpellBook("ice_spell_book", SpellSchool.ICE);
-        public static final SpellBookItem ARCANE_SPELL_BOOK =
-                        registerSpellBook("arcane_spell_book", SpellSchool.ARCANE);
-        public static final SpellBookItem NATURE_SPELL_BOOK =
-                        registerSpellBook("nature_spell_book", SpellSchool.NATURE);
-        public static final SpellBookItem DARK_SPELL_BOOK =
-                        registerSpellBook("dark_spell_book", SpellSchool.DARK);
         public static final SpellBookItem LIGHT_SPELL_BOOK =
                         registerSpellBook("light_spell_book", SpellSchool.LIGHT);
+        public static final SpellBookItem NATURE_SPELL_BOOK =
+                        registerSpellBook("nature_spell_book", SpellSchool.NATURE);
+        public static final SpellBookItem THUNDER_SPELL_BOOK =
+                        registerSpellBook("thunder_spell_book", SpellSchool.THUNDER);
+        public static final SpellBookItem VOID_SPELL_BOOK =
+                        registerSpellBook("void_spell_book", SpellSchool.VOID);
+        public static final SpellBookItem WATER_SPELL_BOOK =
+                        registerSpellBook("water_spell_book", SpellSchool.WATER);
 
         // === MAGICAL ITEMS ===
         public static final Item MANA_BOTTLE = registerItem("mana_bottle",
@@ -128,6 +203,37 @@ public class ModItems {
                                         .registryKey(RegistryKey.of(RegistryKeys.ITEM,
                                                         Identifier.of(MAM.MOD_ID, "enchanted_gem")))
                                         .maxCount(16)));
+
+        // === BLOCK ITEMS ===
+        // Gemstone Ore Block Items - Epic Tier
+        public static final Item RUBY_ORE = registerBlockItem("ruby_ore");
+        public static final Item DEEPSLATE_RUBY_ORE = registerBlockItem("deepslate_ruby_ore");
+        public static final Item SAPPHIRE_ORE = registerBlockItem("sapphire_ore");
+        public static final Item DEEPSLATE_SAPPHIRE_ORE =
+                        registerBlockItem("deepslate_sapphire_ore");
+        public static final Item TANZANITE_ORE = registerBlockItem("tanzanite_ore");
+        public static final Item DEEPSLATE_TANZANITE_ORE =
+                        registerBlockItem("deepslate_tanzanite_ore");
+
+        // Gemstone Ore Block Items - Rare Tier
+        public static final Item APATITE_ORE = registerBlockItem("apatite_ore");
+        public static final Item AQUAMARINE_ORE = registerBlockItem("aquamarine_ore");
+        public static final Item MOONSTONE_ORE = registerBlockItem("moonstone_ore");
+        public static final Item RHODONITE_ORE = registerBlockItem("rhodonite_ore");
+        public static final Item TOPAZ_ORE = registerBlockItem("topaz_ore");
+        public static final Item TOURMALINE_ORE = registerBlockItem("tourmaline_ore");
+
+        // Gemstone Ore Block Items - Uncommon Tier
+        public static final Item CARNELIAN_ORE = registerBlockItem("carnelian_ore");
+        public static final Item CITRINE_ORE = registerBlockItem("citrine_ore");
+        public static final Item JADE_ORE = registerBlockItem("jade_ore");
+        public static final Item PERIDOT_ORE = registerBlockItem("peridot_ore");
+        public static final Item SODALITE_ORE = registerBlockItem("sodalite_ore");
+
+        // Gemstone Ore Block Items - Common Tier
+        public static final Item HEMATITE_ORE = registerBlockItem("hematite_ore");
+        public static final Item DEEPSLATE_HEMATITE_ORE =
+                        registerBlockItem("deepslate_hematite_ore");
 
         /**
          * Register a gemstone item with appropriate settings based on its rarity.
@@ -194,7 +300,25 @@ public class ModItems {
         }
 
         /**
-         * Get a gemstone item by its type.
+         * * Register a block item.
+         */
+        private static Item registerBlockItem(String name) {
+                Identifier id = Identifier.of(MAM.MOD_ID, name);
+                RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
+
+                Block block = dk.mosberg.block.ModBlocks.getBlock(name);
+                if (block == null) {
+                        MAM.LOGGER.warn("Block {} not found when registering block item", name);
+                        throw new IllegalStateException("Block " + name + " not found");
+                }
+
+                Item.Settings settings = new Item.Settings().registryKey(key);
+                return Registry.register(Registries.ITEM, key,
+                                new net.minecraft.item.BlockItem(block, settings));
+        }
+
+        /**
+         * * Get a gemstone item by its type.
          *
          * @param type The gemstone type
          * @return The gemstone item, or null if not found

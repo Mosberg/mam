@@ -1,0 +1,22 @@
+{
+  "id": "mam:healing_spring",
+  "school": "water",
+  "castType": "aoe",
+  "manaCost": 40.0,
+  "tier": 3,
+  "cooldown": 15.0,
+  "radius": 8.0,
+  "description": "Create a healing aura",
+  "healing": 5.0,
+  "statusEffects": [
+    {
+      "effect": "regeneration",
+      "duration": 100,
+      "amplifier": 0
+    }
+  ],
+  "vfx": {
+    "particleType": "falling_water",
+    "color": "1E90FF"
+  }
+}

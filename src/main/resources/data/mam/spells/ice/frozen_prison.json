@@ -1,0 +1,21 @@
+{
+  "id": "mam:frozen_prison",
+  "school": "ice",
+  "castType": "aoe",
+  "manaCost": 40.0,
+  "tier": 3,
+  "cooldown": 15.0,
+  "radius": 5.0,
+  "description": "Freeze enemies in place",
+  "statusEffects": [
+    {
+      "effect": "slowness",
+      "duration": 100,
+      "amplifier": 4
+    }
+  ],
+  "vfx": {
+    "particleType": "falling_water",
+    "color": "00FFFF"
+  }
+}

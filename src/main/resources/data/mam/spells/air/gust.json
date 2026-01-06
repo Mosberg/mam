@@ -1,0 +1,20 @@
+{
+  "id": "mam:gust",
+  "school": "air",
+  "castType": "utility",
+  "manaCost": 10.0,
+  "tier": 1,
+  "cooldown": 2.0,
+  "description": "Push enemies away with a gust of wind",
+  "statusEffects": [
+    {
+      "effect": "slowness",
+      "duration": 40,
+      "amplifier": 0
+    }
+  ],
+  "vfx": {
+    "particleType": "cloud",
+    "color": "C0C0C0"
+  }
+}

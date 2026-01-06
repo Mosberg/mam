@@ -1,0 +1,15 @@
+{
+  "id": "mam:life_tap",
+  "school": "blood",
+  "castType": "utility",
+  "manaCost": 0.0,
+  "tier": 1,
+  "cooldown": 5.0,
+  "description": "Convert health into mana",
+  "healthCost": 4.0,
+  "manaGain": 20.0,
+  "vfx": {
+    "particleType": "soul",
+    "color": "8B0000"
+  }
+}

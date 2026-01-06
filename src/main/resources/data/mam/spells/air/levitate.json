@@ -1,0 +1,20 @@
+{
+  "id": "mam:levitate",
+  "school": "air",
+  "castType": "utility",
+  "manaCost": 25.0,
+  "tier": 2,
+  "cooldown": 5.0,
+  "description": "Float in the air for a short duration",
+  "statusEffects": [
+    {
+      "effect": "levitation",
+      "duration": 100,
+      "amplifier": 0
+    }
+  ],
+  "vfx": {
+    "particleType": "cloud",
+    "color": "C0C0C0"
+  }
+}
