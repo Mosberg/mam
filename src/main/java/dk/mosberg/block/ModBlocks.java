@@ -277,6 +277,102 @@ public class ModBlocks {
                                                         .requiresTool(),
                                         UniformIntProvider.create(0, 2)));
 
+        // Special blocks
+        public static final Block GIFT_BOX = registerBlock("gift_box",
+                        new GiftBoxBlock(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID, "gift_box")))
+                                        .mapColor(MapColor.RED).strength(1.0f, 1.0f)
+                                        .sounds(BlockSoundGroup.WOOD), false));
+
+        // Utility blocks - TODO: Add custom textures
+        public static final Block MANA_CRYSTAL_BLOCK = registerBlock("mana_crystal_block",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID,
+                                                                        "mana_crystal_block")))
+                                        .mapColor(MapColor.CYAN).strength(3.0f, 9.0f)
+                                        .sounds(BlockSoundGroup.AMETHYST_BLOCK)
+                                        .luminance(state -> 10)));
+
+        public static final Block MANA_INFUSER = registerBlock("mana_infuser",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID, "mana_infuser")))
+                                        .mapColor(MapColor.PURPLE).strength(2.0f, 6.0f)
+                                        .sounds(BlockSoundGroup.METAL)));
+
+        public static final Block MANA_LAMP = registerBlock("mana_lamp",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID, "mana_lamp")))
+                                        .mapColor(MapColor.YELLOW).strength(1.5f, 3.0f)
+                                        .sounds(BlockSoundGroup.LANTERN).luminance(state -> 15)));
+
+        public static final Block MANA_LEY_LINE = registerBlock("mana_ley_line",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID, "mana_ley_line")))
+                                        .mapColor(MapColor.MAGENTA).strength(1.0f, 1.0f)
+                                        .sounds(BlockSoundGroup.NETHER_WOOD)));
+
+        public static final Block MANA_NODE_BLOCK = registerBlock("mana_node_block",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID,
+                                                                        "mana_node_block")))
+                                        .mapColor(MapColor.LIGHT_BLUE).strength(2.0f, 6.0f)
+                                        .sounds(BlockSoundGroup.AMETHYST_BLOCK)
+                                        .luminance(state -> 12)));
+
+        public static final Block RITUAL_CIRCLE_BLOCK = registerBlock("ritual_circle_block",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID,
+                                                                        "ritual_circle_block")))
+                                        .mapColor(MapColor.DARK_RED).strength(1.5f, 3.0f)
+                                        .sounds(BlockSoundGroup.STONE)));
+
+        public static final Block SPELL_ALTAR = registerBlock("spell_altar",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID, "spell_altar")))
+                                        .mapColor(MapColor.TERRACOTTA_PURPLE).strength(2.0f, 6.0f)
+                                        .sounds(BlockSoundGroup.STONE)));
+
+        public static final Block SPELL_AMPLIFIER = registerBlock("spell_amplifier",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID,
+                                                                        "spell_amplifier")))
+                                        .mapColor(MapColor.BRIGHT_TEAL).strength(2.0f, 6.0f)
+                                        .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+
+        // Natural blocks - TODO: Add custom textures
+        public static final Block ARCANE_TREE_LOG = registerBlock("arcane_tree_log",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID,
+                                                                        "arcane_tree_log")))
+                                        .mapColor(MapColor.BROWN).strength(2.0f, 2.0f)
+                                        .sounds(BlockSoundGroup.WOOD)));
+
+        public static final Block ARCANE_TREE_LEAVES = registerBlock("arcane_tree_leaves",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID,
+                                                                        "arcane_tree_leaves")))
+                                        .mapColor(MapColor.TEAL).strength(0.2f, 0.2f)
+                                        .sounds(BlockSoundGroup.AZALEA_LEAVES).nonOpaque()));
+
+        public static final Block ARCANE_WORKBENCH = registerBlock("arcane_workbench",
+                        new Block(AbstractBlock.Settings.create()
+                                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK,
+                                                        Identifier.of(MAM.MOD_ID,
+                                                                        "arcane_workbench")))
+                                        .mapColor(MapColor.BROWN).strength(2.5f, 2.5f)
+                                        .sounds(BlockSoundGroup.WOOD)));
+
         /**
          * Register a block.
          */

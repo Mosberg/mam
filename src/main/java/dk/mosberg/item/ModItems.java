@@ -203,6 +203,11 @@ public class ModItems {
                                         .registryKey(RegistryKey.of(RegistryKeys.ITEM,
                                                         Identifier.of(MAM.MOD_ID, "enchanted_gem")))
                                         .maxCount(16)));
+        public static final Item MANA_NODE = registerItem("mana_node",
+                        new Item(new Item.Settings()
+                                        .registryKey(RegistryKey.of(RegistryKeys.ITEM,
+                                                        Identifier.of(MAM.MOD_ID, "mana_node")))
+                                        .maxCount(64)));
 
         // === BLOCK ITEMS ===
         // Gemstone Ore Block Items - Epic Tier
